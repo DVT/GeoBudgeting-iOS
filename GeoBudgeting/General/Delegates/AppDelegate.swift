@@ -13,15 +13,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let googleApiKey = "AIzaSyDDtcaLZBvDytnbSLTku8mT-d5f1Lyw4Dg"
 
 //    override init() {
 //        FirebaseApp.configure()
 //        Database.database().isPersistenceEnabled = true
 //    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey(googleApiKey)
-        GMSPlacesClient.provideAPIKey(googleApiKey)
+        GMSServices.provideAPIKey(APIKeys.googleApiKey)
+        GMSPlacesClient.provideAPIKey(APIKeys.googleApiKey)
         FirebaseApp.configure()
         return true
     }
