@@ -15,7 +15,7 @@ class CategoryListFinder {
         guard let encodedStoreName = storeName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return
         }
-        let url : String = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=\(encodedStoreName)&key=AIzaSyDDtcaLZBvDytnbSLTku8mT-d5f1Lyw4Dg"
+        let url : String = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=\(encodedStoreName)&key=\(getAPIKey())"
         
         let defaultSession = URLSession(configuration: .default)
         var dataTask: URLSessionDataTask?
