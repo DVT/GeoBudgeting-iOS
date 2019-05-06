@@ -7,11 +7,12 @@
 //
 import GooglePlaces
 import GoogleMaps
+import Firebase
 import UIKit
 
 class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelegate {
     //Firebase
-    // let ref = Database.database().reference(withPath: "reciepts")
+     let ref = Database.database().reference(withPath: "receipts")
     //Selecting location
     let search = SearchView()
     let locationManager = CLLocationManager()
@@ -23,7 +24,25 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
         mapView.delegate = self
         search.searchTextView.delegate = self
         setUpTextView()
-        self.showMarkers(lat: -26.201125007851232, long: 28.041075356304646)
+        //database
+        ref.observe(.value, with: { snapshot in
+            print(snapshot.value as Any)
+        })
+        ref.observe(.value, with: { snapshot in
+            print("here1")
+            for child in snapshot.children {
+                print("here2")
+                if let snapshot = child as? DataSnapshot,
+                    let postItem = PostItem(snapshot: snapshot) {
+                     print("here3")
+                    print(postItem.storeName)
+                    let locationMarker = self.reverseGeocodeCoordinateToCordinate(postItem.storeName)
+                    let latMarker = locationMarker.latitude
+                    let longMarker = locationMarker.longitude
+                    print(latMarker)
+                }
+            }
+        })
     }
     //location manager
     func setUpLocationManager() {
@@ -103,10 +122,36 @@ extension MapViewController {
         let marker=GMSMarker()
         marker.title = "Pick n Pay"
         marker.snippet = "Total Amount: R200"
-        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
         marker.map = self.mapView
         marker.icon = GMSMarker.markerImage(with: .black)
     }
+}
+extension MapViewController {
+//    func reverseGeocodeCoordinateToString(_ coordinate: CLLocationCoordinate2D) -> String {
+//        let geocoder = GMSGeocoder()
+//        geocoder.reverseGeocodeCoordinate(coordinate) { response, _ in
+//            guard let address = response?.firstResult(), let lines = address.lines else {
+//                return
+//            }
+//            self.geoAddress = lines.joined(separator: "\n")
+//        }
+//        return geoAddress
+//    }
+    func reverseGeocodeCoordinateToCordinate(_ address: String) -> CLLocationCoordinate2D {
+        let geoCoder = CLGeocoder()
+        var addressCoordinates = CLLocation()
+        geoCoder.geocodeAddressString(address) { (placemarks, error) in
+            guard
+                let placemarks = placemarks,
+                let location = placemarks.first?.location
+                else {
+                    return
+            }
+           addressCoordinates = location
+        }
+        print(addressCoordinates)
+        return addressCoordinates.coordinate
+}
 }
 
 

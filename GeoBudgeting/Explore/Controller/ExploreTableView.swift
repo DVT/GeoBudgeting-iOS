@@ -13,7 +13,7 @@ import Firebase
 class ExploreTableView: UITableViewController {
    // var items: [PostItem] = []
     // MARK: Properties
-   // let ref = Database.database().reference(withPath: "recipets")
+   let ref = Database.database().reference(withPath: "receipts")
     let postCell = PostCell()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,9 @@ class ExploreTableView: UITableViewController {
     }
 }
 //Get values from database
-
-//        let user = Auth.auth().currentUser
 //
-//        ref.queryOrdered(byChild: "timestamp").observe(.value, with: { snapshot in
-//            var newItems: [PostItemTwo] = []
-//            if self.ref.child("account") != user {
+//        ref.queryOrdered(byChild: "date").observe(.value, with: { snapshot in
+//            var newItems: [PostItem] = []
 //                for child in snapshot.children {
 //                    if let snapshot = child as? DataSnapshot,
 //                        let postItem = PostItemTwo(snapshot: snapshot) {
@@ -39,12 +36,10 @@ class ExploreTableView: UITableViewController {
 //                            }
 //                        }
 //                    }
-//                }
 //                self.items = newItems
 //                self.tableView.reloadData()
 //            }})
-
-    // MARK: UITableView Delegate methods
+//
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return items.count
 //    }
@@ -68,4 +63,4 @@ class ExploreTableView: UITableViewController {
 //        }
 //    }
 //}
-
+//
