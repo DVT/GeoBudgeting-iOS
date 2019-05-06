@@ -1,0 +1,6 @@
+framework module Pods_GeoBudgeting_GeoBudgetingUITests {
+  umbrella header "Pods-GeoBudgeting-GeoBudgetingUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
