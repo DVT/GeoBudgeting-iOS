@@ -17,7 +17,6 @@ struct Results : Codable {
 	let icon : String?
 	let id : String?
 	let name : String?
-	let opening_hours : Opening_hours?
 	let place_id : String?
 	let rating : Double?
 	let reference : String?
@@ -30,7 +29,6 @@ struct Results : Codable {
 		case icon = "icon"
 		case id = "id"
 		case name = "name"
-		case opening_hours = "opening_hours"
 		case place_id = "place_id"
 		case rating = "rating"
 		case reference = "reference"
@@ -44,7 +42,6 @@ struct Results : Codable {
 		icon = try values.decodeIfPresent(String.self, forKey: .icon)
 		id = try values.decodeIfPresent(String.self, forKey: .id)
 		name = try values.decodeIfPresent(String.self, forKey: .name)
-		opening_hours = try values.decodeIfPresent(Opening_hours.self, forKey: .opening_hours)
 		place_id = try values.decodeIfPresent(String.self, forKey: .place_id)
 		rating = try values.decodeIfPresent(Double.self, forKey: .rating)
 		reference = try values.decodeIfPresent(String.self, forKey: .reference)
