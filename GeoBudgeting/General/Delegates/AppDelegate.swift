@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Database.database().isPersistenceEnabled = true
 //    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey()
-        GMSPlacesClient.provideAPIKey(APIKeys.googleApiKey)
+        GMSServices.provideAPIKey(getAPIKey())
+        GMSPlacesClient.provideAPIKey(getAPIKey())
         FirebaseApp.configure()
         return true
     }

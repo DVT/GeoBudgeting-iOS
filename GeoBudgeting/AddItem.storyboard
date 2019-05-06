@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Gi-lX-ZWf">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,6 +26,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
                                 <state key="normal" title="Add Item"/>
+                                <connections>
+                                    <action selector="addItemTapped:" destination="mU2-kn-Gh9" eventType="touchUpInside" id="iZr-0J-cSN"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kng-D9-Xu6">
                                 <rect key="frame" x="47" y="208.5" width="320" height="216"/>
@@ -60,7 +63,7 @@
                         <constraints>
                             <constraint firstItem="ftc-Js-ZEK" firstAttribute="top" secondItem="kng-D9-Xu6" secondAttribute="bottom" constant="8" symbolic="YES" id="9AM-0T-hhJ"/>
                             <constraint firstItem="ftc-Js-ZEK" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="BXc-rW-RcX"/>
-                            <constraint firstItem="PSM-MC-rMj" firstAttribute="firstBaseline" secondItem="ftc-Js-ZEK" secondAttribute="baseline" constant="21" symbolType="layoutAnchor" id="RP5-fs-Ua5"/>
+                            <constraint firstItem="PSM-MC-rMj" firstAttribute="firstBaseline" secondItem="ftc-Js-ZEK" secondAttribute="baseline" constant="25.5" symbolType="layoutAnchor" id="RP5-fs-Ua5"/>
                             <constraint firstItem="kng-D9-Xu6" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="XO9-zY-ilu"/>
                             <constraint firstItem="k4A-2L-8gW" firstAttribute="top" secondItem="uHF-Yc-3gW" secondAttribute="top" constant="26" id="cwg-QF-dmh"/>
                             <constraint firstItem="PSM-MC-rMj" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="gBV-Rb-95R"/>
@@ -78,6 +81,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addItemButton" destination="Z1t-E3-1Q7" id="v8o-1c-vYo"/>
+                        <outlet property="categorySpinner" destination="kng-D9-Xu6" id="Ocb-RV-W07"/>
+                        <outlet property="datePicker" destination="ftc-Js-ZEK" id="uC9-df-IrR"/>
+                        <outlet property="priceEditText" destination="PSM-MC-rMj" id="DRt-EP-fqT"/>
+                        <outlet property="storeNameTextField" destination="k4A-2L-8gW" id="CUS-kx-dTC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mi3-wM-8D5" userLabel="First Responder" sceneMemberID="firstResponder"/>

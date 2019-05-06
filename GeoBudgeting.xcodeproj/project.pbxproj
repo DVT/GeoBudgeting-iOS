@@ -15,6 +15,8 @@
 		C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */; };
 		C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */; };
 		C8A13CBE22803A0200FD6A00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8A13CBD22803A0200FD6A00 /* GoogleService-Info.plist */; };
+		C8A13CC022805D2800FD6A00 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CBF22805D2800FD6A00 /* Functions.swift */; };
+		C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CC12280623800FD6A00 /* FirebaseServices.swift */; };
 		F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304A227C30370050B861 /* AppDelegate.swift */; };
 		F6AD304D227C30370050B861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304C227C30370050B861 /* MapViewController.swift */; };
 		F6AD3050227C30370050B861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD304E227C30370050B861 /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddItem.storyboard; sourceTree = "<group>"; };
 		C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		C8A13CBD22803A0200FD6A00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C8A13CBF22805D2800FD6A00 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		C8A13CC12280623800FD6A00 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6AD3047227C30370050B861 /* GeoBudgeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBudgeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6AD304A227C30370050B861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				F6AD304E227C30370050B861 /* Main.storyboard */,
 				F6AD3053227C30390050B861 /* LaunchScreen.storyboard */,
 				C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */,
+				C8A13CC12280623800FD6A00 /* FirebaseServices.swift */,
 			);
 			path = GeoBudgeting;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			children = (
 				F6AD307A227C32510050B861 /* Resources */,
 				F6AD3079227C32470050B861 /* Delegates */,
+				C8A13CBF22805D2800FD6A00 /* Functions.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -577,8 +583,10 @@
 				C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
 				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
+				C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */,
 				C8A13CAF2280003B00FD6A00 /* APIKeys.swift in Sources */,
 				F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */,
+				C8A13CC022805D2800FD6A00 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
