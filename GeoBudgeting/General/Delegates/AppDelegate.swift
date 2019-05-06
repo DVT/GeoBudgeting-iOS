@@ -13,8 +13,6 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let googleApiKey = "AIzaSyDDtcaLZBvDytnbSLTku8mT-d5f1Lyw4Dg"
-
 //    override init() {
 //        FirebaseApp.configure()
 //        Database.database().isPersistenceEnabled = true
