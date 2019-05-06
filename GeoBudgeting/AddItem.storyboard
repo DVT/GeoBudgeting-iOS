@@ -10,22 +10,102 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add-->
+        <!--Add Item-->
         <scene sceneID="Jln-MR-T57">
             <objects>
-                <viewController id="mU2-kn-Gh9" sceneMemberID="viewController">
+                <viewController id="mU2-kn-Gh9" customClass="AddItemViewController" customModule="GeoBudgeting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mGF-Iv-bKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1t-E3-1Q7">
+                                <rect key="frame" x="152" y="733" width="110" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1bF-sY-048"/>
+                                    <constraint firstAttribute="width" constant="110" id="pVh-dZ-AvZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                                <state key="normal" title="Add Item"/>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kng-D9-Xu6">
+                                <rect key="frame" x="47" y="208.5" width="320" height="216"/>
+                            </pickerView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ftc-Js-ZEK">
+                                <rect key="frame" x="47" y="432.5" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="578827191.261958">
+                                    <!--2019-05-06 09:19:51 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PSM-MC-rMj">
+                                <rect key="frame" x="47" y="652.5" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="fwH-fx-dJu"/>
+                                    <constraint firstAttribute="height" constant="30" id="hTj-dm-UFH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter store name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k4A-2L-8gW">
+                                <rect key="frame" x="47" y="166" width="320" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="hHk-1S-YE0"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ftc-Js-ZEK" firstAttribute="top" secondItem="kng-D9-Xu6" secondAttribute="bottom" constant="8" symbolic="YES" id="9AM-0T-hhJ"/>
+                            <constraint firstItem="ftc-Js-ZEK" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="BXc-rW-RcX"/>
+                            <constraint firstItem="PSM-MC-rMj" firstAttribute="firstBaseline" secondItem="ftc-Js-ZEK" secondAttribute="baseline" constant="21" symbolType="layoutAnchor" id="RP5-fs-Ua5"/>
+                            <constraint firstItem="kng-D9-Xu6" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="XO9-zY-ilu"/>
+                            <constraint firstItem="k4A-2L-8gW" firstAttribute="top" secondItem="uHF-Yc-3gW" secondAttribute="top" constant="26" id="cwg-QF-dmh"/>
+                            <constraint firstItem="PSM-MC-rMj" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="gBV-Rb-95R"/>
+                            <constraint firstItem="kng-D9-Xu6" firstAttribute="firstBaseline" secondItem="k4A-2L-8gW" secondAttribute="baseline" constant="16.5" symbolType="layoutAnchor" id="gOJ-Ih-1ci"/>
+                            <constraint firstItem="PSM-MC-rMj" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="lwb-9c-YMP"/>
+                            <constraint firstItem="uHF-Yc-3gW" firstAttribute="bottom" secondItem="Z1t-E3-1Q7" secondAttribute="bottom" constant="40" id="occ-hb-vM7"/>
+                            <constraint firstItem="Z1t-E3-1Q7" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="v0Q-Zw-y2T"/>
+                            <constraint firstItem="k4A-2L-8gW" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="web-Qr-dZJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uHF-Yc-3gW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add" id="sRn-lA-NXb"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="2Ha-e9-Egx">
+                        <barButtonItem key="rightBarButtonItem" title="Scan" image="Scan" style="plain" id="rBQ-qM-CvL"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addItemButton" destination="Z1t-E3-1Q7" id="v8o-1c-vYo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mi3-wM-8D5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-125" y="-87"/>
+            <point key="canvasLocation" x="784.05797101449286" y="-87.053571428571431"/>
+        </scene>
+        <!--Add-->
+        <scene sceneID="LSl-id-CAg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Gi-lX-ZWf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Add" id="sRn-lA-NXb"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="m3B-1m-6A3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mU2-kn-Gh9" kind="relationship" relationship="rootViewController" id="AhX-96-Fbr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRG-9F-j56" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126.08695652173914" y="-87.053571428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Scan" width="24" height="24"/>
+    </resources>
 </document>
