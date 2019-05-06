@@ -23,6 +23,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
         mapView.delegate = self
         search.searchTextView.delegate = self
         setUpTextView()
+        self.showMarkers(lat: -26.201125007851232, long: 28.041075356304646)
     }
     //location manager
     func setUpLocationManager() {
@@ -97,3 +98,15 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
 }
+extension MapViewController {
+    func showMarkers(lat: Double, long: Double) {
+        let marker=GMSMarker()
+        marker.title = "Pick n Pay"
+        marker.snippet = "Total Amount: R200"
+        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        marker.map = self.mapView
+        marker.icon = GMSMarker.markerImage(with: .black)
+    }
+}
+
+
