@@ -13,7 +13,6 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
     override init() {
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
@@ -22,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(getAPIKey())
         GMSPlacesClient.provideAPIKey(getAPIKey())
         FirebaseApp.configure()
+   override init() {
+       FirebaseApp.configure()
+       Database.database().isPersistenceEnabled = true
+   }
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        GMSServices.provideAPIKey(getAPIKey())
+        GMSPlacesClient.provideAPIKey(getAPIKey())
         return true
     }
 }

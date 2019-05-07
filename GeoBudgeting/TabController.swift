@@ -20,5 +20,3 @@ class TabController: UITabBarController, UITabBarControllerDelegate {
         addTabs(tabIndex: index, tabController: tabBarController)
     }
 }
-
-

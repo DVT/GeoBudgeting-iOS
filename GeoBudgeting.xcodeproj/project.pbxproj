@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171D867D2280269500B29BA1 /* CategoryListFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D867C2280269500B29BA1 /* CategoryListFinder.swift */; };
+		171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D86942280306700B29BA1 /* Json4Swift_Base.swift */; };
+		17AB310522815F88004E0C0A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310422815F88004E0C0A /* Geometry.swift */; };
+		17AB310722815FC5004E0C0A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310622815FC5004E0C0A /* Location.swift */; };
 		3CA71A6135822B1EDA3856DF /* Pods_GeoBudgeting_GeoBudgetingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */; };
 		4B4375CDE380B9D7B25BBC81 /* Pods_GeoBudgeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */; };
 		7081C656228035CC0067AADD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7081C654228035CC0067AADD /* GoogleService-Info.plist */; };
 		7081C657228035CC0067AADD /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7081C655228035CC0067AADD /* api.plist */; };
 		7081C65C2280362F0067AADD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7081C65B2280362F0067AADD /* Settings.storyboard */; };
 		7081C65E22803B5B0067AADD /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7081C65D22803B5B0067AADD /* TabController.swift */; };
+		70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36BE2281755A006F7658 /* GoogleService-Info.plist */; };
+		70CC36C12281760D006F7658 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C02281760D006F7658 /* TabController.swift */; };
+		70CC36C422817733006F7658 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C322817733006F7658 /* api.plist */; };
 		8AD058B7E0622102234FFEE7 /* Pods_GeoBudgetingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF8EBFA64E248E8886E6083 /* Pods_GeoBudgetingTests.framework */; };
+		C8A13CB72280299500FD6A00 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */; };
+		C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */; };
+		C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CC12280623800FD6A00 /* FirebaseServices.swift */; };
+		C8FA595C22816C4B0003656B /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA595B22816C4B0003656B /* Results.swift */; };
 		F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304A227C30370050B861 /* AppDelegate.swift */; };
 		F6AD304D227C30370050B861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304C227C30370050B861 /* MapViewController.swift */; };
 		F6AD3050227C30370050B861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD304E227C30370050B861 /* Main.storyboard */; };
@@ -23,6 +35,9 @@
 		F6AD306B227C30390050B861 /* GeoBudgetingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD306A227C30390050B861 /* GeoBudgetingUITests.swift */; };
 		F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3081227C3AA40050B861 /* SearchView.swift */; };
 		F6AD3091228029D90050B861 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3090228029D90050B861 /* Functions.swift */; };
+		F6AD3094228034E70050B861 /* ExploreTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3093228034E70050B861 /* ExploreTableView.swift */; };
+		F6AD3097228035FD0050B861 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3096228035FD0050B861 /* PostCell.swift */; };
+		F6AD309A228039970050B861 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3099228039970050B861 /* PostItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		171D86792280253100B29BA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		171D867C2280269500B29BA1 /* CategoryListFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListFinder.swift; sourceTree = "<group>"; };
+		171D86942280306700B29BA1 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
+		17AB310422815F88004E0C0A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		17AB310622815FC5004E0C0A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgeting_GeoBudgetingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -52,9 +72,16 @@
 		7081C655228035CC0067AADD /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = api.plist; path = ../../../../../Downloads/api.plist; sourceTree = "<group>"; };
 		7081C65B2280362F0067AADD /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		7081C65D22803B5B0067AADD /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		70CC36BE2281755A006F7658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70CC36C02281760D006F7658 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		70CC36C322817733006F7658 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 		8E737A5DBF40CA80694B6726 /* Pods-GeoBudgeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF8EBFA64E248E8886E6083 /* Pods_GeoBudgetingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgetingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DEF46838554EF7A59AADD5 /* Pods-GeoBudgeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.release.xcconfig"; sourceTree = "<group>"; };
+		C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddItem.storyboard; sourceTree = "<group>"; };
+		C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		C8A13CC12280623800FD6A00 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
+		C8FA595B22816C4B0003656B /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6AD3047227C30370050B861 /* GeoBudgeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBudgeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6AD304A227C30370050B861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +98,9 @@
 		F6AD306C227C30390050B861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6AD3081227C3AA40050B861 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		F6AD3090228029D90050B861 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		F6AD3093228034E70050B861 /* ExploreTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableView.swift; sourceTree = "<group>"; };
+		F6AD3096228035FD0050B861 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		F6AD3099228039970050B861 /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +131,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		171D867B2280265400B29BA1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				171D867E22802E3200B29BA1 /* Models */,
+				171D867C2280269500B29BA1 /* CategoryListFinder.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		171D867E22802E3200B29BA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C8FA595B22816C4B0003656B /* Results.swift */,
+				17AB310622815FC5004E0C0A /* Location.swift */,
+				17AB310422815F88004E0C0A /* Geometry.swift */,
+				171D86942280306700B29BA1 /* Json4Swift_Base.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		17AB310122815CAA004E0C0A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				171D86792280253100B29BA1 /* GoogleService-Info.plist */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		5ADDA4A7792C660E9EA4698C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +183,12 @@
 				7081C65B2280362F0067AADD /* Settings.storyboard */,
 			);
 			path = Views;
+		C8A13CBA2280373800FD6A00 /* Add Item */ = {
+			isa = PBXGroup;
+			children = (
+				C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */,
+			);
+			path = "Add Item";
 			sourceTree = "<group>";
 		};
 		F2FF08A3DDF1ABF65960677A /* Pods */ = {
@@ -149,6 +213,7 @@
 				F6AD3048227C30370050B861 /* Products */,
 				F2FF08A3DDF1ABF65960677A /* Pods */,
 				5ADDA4A7792C660E9EA4698C /* Frameworks */,
+				17AB310122815CAA004E0C0A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,11 +233,19 @@
 				7081C659228036160067AADD /* Settings */,
 				7081C655228035CC0067AADD /* api.plist */,
 				7081C654228035CC0067AADD /* GoogleService-Info.plist */,
+				70CC36BE2281755A006F7658 /* GoogleService-Info.plist */,
+				70CC36C322817733006F7658 /* api.plist */,
+				F6AD3092228034840050B861 /* Explore */,
+				C8A13CBA2280373800FD6A00 /* Add Item */,
+				171D867B2280265400B29BA1 /* Category */,
 				F6AD307E227C3A5D0050B861 /* Map */,
 				F6AD3078227C32410050B861 /* General */,
 				F6AD304E227C30370050B861 /* Main.storyboard */,
+				70CC36C02281760D006F7658 /* TabController.swift */,
 				F6AD3053227C30390050B861 /* LaunchScreen.storyboard */,
 				7081C65D22803B5B0067AADD /* TabController.swift */,
+				C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */,
+				C8A13CC12280623800FD6A00 /* FirebaseServices.swift */,
 			);
 			path = GeoBudgeting;
 			sourceTree = "<group>";
@@ -245,6 +318,32 @@
 				F6AD3081227C3AA40050B861 /* SearchView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F6AD3092228034840050B861 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				F6AD30982280360C0050B861 /* Controller */,
+				F6AD3095228035E80050B861 /* Model */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		F6AD3095228035E80050B861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6AD3096228035FD0050B861 /* PostCell.swift */,
+				F6AD3099228039970050B861 /* PostItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F6AD30982280360C0050B861 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6AD3093228034E70050B861 /* ExploreTableView.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,8 +462,13 @@
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
 				7081C656228035CC0067AADD /* GoogleService-Info.plist in Resources */,
 				7081C65C2280362F0067AADD /* Settings.storyboard in Resources */,
+				70CC36C422817733006F7658 /* api.plist in Resources */,
+				C8A13CB72280299500FD6A00 /* (null) in Resources */,
+				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
+				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
+				70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,10 +687,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				7081C65E22803B5B0067AADD /* TabController.swift in Sources */,
+				F6AD309A228039970050B861 /* PostItem.swift in Sources */,
+				70CC36C12281760D006F7658 /* TabController.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
 				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
+				F6AD3094228034E70050B861 /* ExploreTableView.swift in Sources */,
+				C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */,
+				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
+				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
+				C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */,
+				171D867D2280269500B29BA1 /* CategoryListFinder.swift in Sources */,
+				17AB310722815FC5004E0C0A /* Location.swift in Sources */,
+				171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */,
+				C8FA595C22816C4B0003656B /* Results.swift in Sources */,
+				17AB310522815F88004E0C0A /* Geometry.swift in Sources */,
 				F6AD3091228029D90050B861 /* Functions.swift in Sources */,
 				F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */,
+				F6AD3097228035FD0050B861 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

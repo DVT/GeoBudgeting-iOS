@@ -84,7 +84,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
+         identifier = "Johannesburg, South Africa"
          referenceType = "1">
       </LocationScenarioReference>
    </LaunchAction>

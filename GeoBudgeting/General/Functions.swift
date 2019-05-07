@@ -51,6 +51,28 @@ func addTabs(tabIndex: Int, tabController: UITabBarController) {
 //        tabController.viewControllers?.remove(at: tabIndex)
 //        tabController.viewControllers?.append(initialViewController)
 //        tabController.selectedViewController = initialViewController
+        //        let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        //        let initialViewController = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsNav")
+        //        initialViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        //        tabController.viewControllers?.remove(at: tabIndex)
+        //        tabController.viewControllers?.append(initialViewController)
+        //        tabController.selectedViewController = initialViewController
+        return
+    case 1:
+        //        let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        //        let initialViewController = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsNav")
+        //        initialViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        //        tabController.viewControllers?.remove(at: tabIndex)
+        //        tabController.viewControllers?.append(initialViewController)
+        //        tabController.selectedViewController = initialViewController
+        return
+    case 2:
+        //        let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        //        let initialViewController = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsNav")
+        //        initialViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        //        tabController.viewControllers?.remove(at: tabIndex)
+        //        tabController.viewControllers?.append(initialViewController)
+        //        tabController.selectedViewController = initialViewController
         return
     case 3:
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
