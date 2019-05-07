@@ -13,16 +13,16 @@
         <!--Add Item-->
         <scene sceneID="Jln-MR-T57">
             <objects>
-                <viewController id="mU2-kn-Gh9" customClass="AddItemViewController" customModule="GeoBudgeting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddItemViewController" id="mU2-kn-Gh9" customClass="AddItemViewController" customModule="GeoBudgeting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mGF-Iv-bKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBV-Rn-Cww">
-                                <rect key="frame" x="27" y="146" width="360" height="647"/>
+                                <rect key="frame" x="0.0" y="146" width="414" height="647"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1t-E3-1Q7">
-                                        <rect key="frame" x="125" y="587" width="110" height="40"/>
+                                        <rect key="frame" x="152" y="587" width="110" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="1bF-sY-048"/>
                                             <constraint firstAttribute="width" constant="110" id="pVh-dZ-AvZ"/>
@@ -34,7 +34,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PSM-MC-rMj">
-                                        <rect key="frame" x="20" y="507" width="320" height="30"/>
+                                        <rect key="frame" x="47" y="507" width="320" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="fwH-fx-dJu"/>
                                             <constraint firstAttribute="height" constant="30" id="hTj-dm-UFH"/>
@@ -44,16 +44,16 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ftc-Js-ZEK">
-                                        <rect key="frame" x="20" y="287" width="320" height="216"/>
+                                        <rect key="frame" x="47" y="287" width="320" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="578827191.261958">
                                             <!--2019-05-06 09:19:51 +0000-->
                                         </date>
                                     </datePicker>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kng-D9-Xu6">
-                                        <rect key="frame" x="20" y="63" width="320" height="216"/>
+                                        <rect key="frame" x="47" y="63" width="320" height="216"/>
                                     </pickerView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter store name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k4A-2L-8gW">
-                                        <rect key="frame" x="20" y="20" width="320" height="34"/>
+                                        <rect key="frame" x="47" y="20" width="320" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="h7t-u7-8EN"/>
                                             <constraint firstAttribute="width" constant="320" id="hHk-1S-YE0"/>
@@ -65,6 +65,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ftc-Js-ZEK" firstAttribute="centerX" secondItem="wBV-Rn-Cww" secondAttribute="centerX" id="5WS-BC-dha"/>
+                                    <constraint firstItem="kng-D9-Xu6" firstAttribute="centerX" secondItem="wBV-Rn-Cww" secondAttribute="centerX" id="70w-WY-UTE"/>
                                     <constraint firstAttribute="trailing" secondItem="k4A-2L-8gW" secondAttribute="trailing" constant="20" id="7mo-4Y-jFy"/>
                                     <constraint firstItem="PSM-MC-rMj" firstAttribute="firstBaseline" secondItem="ftc-Js-ZEK" secondAttribute="baseline" constant="25.5" symbolType="layoutAnchor" id="8qq-CW-mDX"/>
                                     <constraint firstItem="Z1t-E3-1Q7" firstAttribute="centerX" secondItem="wBV-Rn-Cww" secondAttribute="centerX" id="AC1-E5-Rch"/>
@@ -83,17 +84,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wBV-Rn-Cww" firstAttribute="leading" secondItem="uHF-Yc-3gW" secondAttribute="leading" constant="27" id="19C-dc-vMD"/>
-                            <constraint firstItem="wBV-Rn-Cww" firstAttribute="top" secondItem="uHF-Yc-3gW" secondAttribute="top" constant="6" id="pZo-DR-KfW"/>
-                            <constraint firstItem="uHF-Yc-3gW" firstAttribute="bottom" secondItem="wBV-Rn-Cww" secondAttribute="bottom" constant="20" id="vvp-Fr-nLj"/>
-                            <constraint firstItem="wBV-Rn-Cww" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="yhw-1F-y60"/>
+                            <constraint firstItem="wBV-Rn-Cww" firstAttribute="width" secondItem="mGF-Iv-bKf" secondAttribute="width" id="45x-Wj-KUK"/>
+                            <constraint firstItem="wBV-Rn-Cww" firstAttribute="centerX" secondItem="mGF-Iv-bKf" secondAttribute="centerX" id="dx4-WS-4wY"/>
+                            <constraint firstItem="wBV-Rn-Cww" firstAttribute="top" secondItem="uHF-Yc-3gW" secondAttribute="top" constant="6" id="f0i-TD-i2I"/>
+                            <constraint firstItem="uHF-Yc-3gW" firstAttribute="bottom" secondItem="wBV-Rn-Cww" secondAttribute="bottom" constant="20" id="nGV-Ow-Agh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uHF-Yc-3gW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Item" id="2Ha-e9-Egx">
-                        <barButtonItem key="rightBarButtonItem" title="Scan" image="Scan" style="plain" id="rBQ-qM-CvL"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="zrG-B9-X5X">
+                        <barButtonItem key="rightBarButtonItem" title="Scan" image="Scan" style="plain" id="9MS-zk-Pdf"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="addItemButton" destination="Z1t-E3-1Q7" id="v8o-1c-vYo"/>
                         <outlet property="categorySpinner" destination="kng-D9-Xu6" id="Ocb-RV-W07"/>
@@ -110,7 +112,7 @@
         <!--Add-->
         <scene sceneID="LSl-id-CAg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Gi-lX-ZWf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddItemNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="0Gi-lX-ZWf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Add" id="sRn-lA-NXb"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
