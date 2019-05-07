@@ -11,9 +11,11 @@ import FirebaseDatabase
 
 class FirebaseServices {
     
-    func addNewItem(storeName: String, storeCategory: String, dateTime: String, amount: String) {
+    func addNewItem(storeName: String, storeCategory: String, dateTime: String, amount: Double, latitude: Double, longitude: Double) {
         let ref: DatabaseReference = Database.database().reference()
         ref.child("receipts/\(storeName)/category").setValue(storeCategory)
         ref.child("receipts/\(storeName)/date/\(dateTime)").setValue(amount)
+        ref.child("receipts/\(storeName)/mapLatitude").setValue(latitude)
+        ref.child("receipts/\(storeName)/mapLongitude").setValue(longitude)
     }
 }
