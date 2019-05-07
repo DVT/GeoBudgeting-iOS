@@ -13,7 +13,7 @@
         <!--SettingsNav-->
         <scene sceneID="dFl-js-ga4">
             <objects>
-                <navigationController storyboardIdentifier="SettingsNav" title="SettingsNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fRM-d1-gUW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Settings" title="SettingsNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fRM-d1-gUW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Don-U8-hf2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -31,7 +31,7 @@
         <!--Settings-->
         <scene sceneID="jai-iF-NeA">
             <objects>
-                <viewController storyboardIdentifier="Settings" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YTa-ut-2c5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsHome" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YTa-ut-2c5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="In7-Md-eDK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
