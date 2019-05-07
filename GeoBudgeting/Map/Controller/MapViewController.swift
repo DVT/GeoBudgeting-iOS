@@ -7,11 +7,12 @@
 //
 import GooglePlaces
 import GoogleMaps
+import Firebase
 import UIKit
 
 class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelegate {
     //Firebase
-    // let ref = Database.database().reference(withPath: "reciepts")
+    let ref = Database.database().reference(withPath: "receipts")
     //Selecting location
     let search = SearchView()
     let locationManager = CLLocationManager()
@@ -23,6 +24,20 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
         mapView.delegate = self
         search.searchTextView.delegate = self
         setUpTextView()
+        //database
+        ref.observe(.value, with: { snapshot in
+            print(snapshot.value as Any)
+        })
+        ref.observe(.value, with: { snapshot in
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let postItem = PostItem(snapshot: snapshot) {
+                    let latMarker = postItem.mapLatitude
+                    let longMarker = postItem.mapLongitude
+                    self.showMarkers(lat: latMarker, long: longMarker)
+                }
+            }
+        })
     }
     //location manager
     func setUpLocationManager() {
@@ -97,3 +112,59 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
 }
+extension MapViewController {
+    func showMarkers(lat: Double, long: Double) {
+        let marker=GMSMarker()
+        ref.observe(.value, with: { snapshot in
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let postItem = PostItem(snapshot: snapshot) {
+                    let infoTitle = postItem.key
+                    let infoSnippet = "200"
+                    let infoCategory = postItem.category
+
+
+        marker.title = infoTitle
+        marker.snippet = infoSnippet
+        switch infoCategory {
+        case "retail":
+            marker.icon = GMSMarker.markerImage(with: .purple)
+        default:
+            marker.icon = GMSMarker.markerImage(with: .gray)
+        }
+                }
+            }
+        })
+        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+           marker.map = self.mapView
+    }
+}
+//extension MapViewController {
+//    func reverseGeocodeCoordinateToString(_ coordinate: CLLocationCoordinate2D) -> String {
+//        let geocoder = GMSGeocoder()
+//        geocoder.reverseGeocodeCoordinate(coordinate) { response, _ in
+//            guard let address = response?.firstResult(), let lines = address.lines else {
+//                return
+//            }
+//            self.geoAddress = lines.joined(separator: "\n")
+//        }
+//        return geoAddress
+//    }
+//    func reverseGeocodeCoordinateToCordinate(_ address: String) -> CLLocationCoordinate2D {
+//        let geoCoder = CLGeocoder()
+//        var addressCoordinates = CLLocation()
+//        geoCoder.geocodeAddressString(address) { (placemarks, error) in
+//            guard
+//                let placemarks = placemarks,
+//                let location = placemarks.first?.location
+//                else {
+//                    return
+//            }
+//           addressCoordinates = location
+//        }
+//        print(addressCoordinates)
+//        return addressCoordinates.coordinate
+//}
+
+
+
