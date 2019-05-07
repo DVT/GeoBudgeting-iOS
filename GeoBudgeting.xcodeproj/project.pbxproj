@@ -17,6 +17,7 @@
 		70CC36C12281760D006F7658 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C02281760D006F7658 /* TabController.swift */; };
 		70CC36C422817733006F7658 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C322817733006F7658 /* api.plist */; };
 		70CC36C822817A90006F7658 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C722817A90006F7658 /* Settings.storyboard */; };
+		70CC36CA2281893B006F7658 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C92281893B006F7658 /* SettingsViewController.swift */; };
 		8AD058B7E0622102234FFEE7 /* Pods_GeoBudgetingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF8EBFA64E248E8886E6083 /* Pods_GeoBudgetingTests.framework */; };
 		C8A13CB72280299500FD6A00 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */; };
@@ -69,6 +70,7 @@
 		70CC36C02281760D006F7658 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		70CC36C322817733006F7658 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 		70CC36C722817A90006F7658 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		70CC36C92281893B006F7658 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8E737A5DBF40CA80694B6726 /* Pods-GeoBudgeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF8EBFA64E248E8886E6083 /* Pods_GeoBudgetingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgetingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DEF46838554EF7A59AADD5 /* Pods-GeoBudgeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				70CC36C722817A90006F7658 /* Settings.storyboard */,
+				70CC36C92281893B006F7658 /* SettingsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				F6AD3091228029D90050B861 /* Functions.swift in Sources */,
 				F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */,
 				F6AD3097228035FD0050B861 /* PostCell.swift in Sources */,
+				70CC36CA2281893B006F7658 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
