@@ -12,7 +12,7 @@ import UIKit
 
 class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelegate {
     //Firebase
-     let ref = Database.database().reference(withPath: "receipts")
+    let ref = Database.database().reference(withPath: "receipts")
     //Selecting location
     let search = SearchView()
     let locationManager = CLLocationManager()
@@ -29,17 +29,12 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
             print(snapshot.value as Any)
         })
         ref.observe(.value, with: { snapshot in
-            print("here1")
             for child in snapshot.children {
-                print("here2")
                 if let snapshot = child as? DataSnapshot,
                     let postItem = PostItem(snapshot: snapshot) {
-                     print("here3")
-                    print(postItem.storeName)
-                    let locationMarker = self.reverseGeocodeCoordinateToCordinate(postItem.storeName)
-                    let latMarker = locationMarker.latitude
-                    let longMarker = locationMarker.longitude
-                    print(latMarker)
+                    let latMarker = postItem.mapLatitude
+                    let longMarker = postItem.mapLongitude
+                    self.showMarkers(lat: latMarker, long: longMarker)
                 }
             }
         })
@@ -120,13 +115,31 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
 extension MapViewController {
     func showMarkers(lat: Double, long: Double) {
         let marker=GMSMarker()
-        marker.title = "Pick n Pay"
-        marker.snippet = "Total Amount: R200"
-        marker.map = self.mapView
-        marker.icon = GMSMarker.markerImage(with: .black)
+        ref.observe(.value, with: { snapshot in
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let postItem = PostItem(snapshot: snapshot) {
+                    let infoTitle = postItem.key
+                    let infoSnippet = "200"
+                    let infoCategory = postItem.category
+
+
+        marker.title = infoTitle
+        marker.snippet = infoSnippet
+        switch infoCategory {
+        case "retail":
+            marker.icon = GMSMarker.markerImage(with: .purple)
+        default:
+            marker.icon = GMSMarker.markerImage(with: .gray)
+        }
+                }
+            }
+        })
+        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+           marker.map = self.mapView
     }
 }
-extension MapViewController {
+//extension MapViewController {
 //    func reverseGeocodeCoordinateToString(_ coordinate: CLLocationCoordinate2D) -> String {
 //        let geocoder = GMSGeocoder()
 //        geocoder.reverseGeocodeCoordinate(coordinate) { response, _ in
@@ -137,21 +150,21 @@ extension MapViewController {
 //        }
 //        return geoAddress
 //    }
-    func reverseGeocodeCoordinateToCordinate(_ address: String) -> CLLocationCoordinate2D {
-        let geoCoder = CLGeocoder()
-        var addressCoordinates = CLLocation()
-        geoCoder.geocodeAddressString(address) { (placemarks, error) in
-            guard
-                let placemarks = placemarks,
-                let location = placemarks.first?.location
-                else {
-                    return
-            }
-           addressCoordinates = location
-        }
-        print(addressCoordinates)
-        return addressCoordinates.coordinate
-}
-}
+//    func reverseGeocodeCoordinateToCordinate(_ address: String) -> CLLocationCoordinate2D {
+//        let geoCoder = CLGeocoder()
+//        var addressCoordinates = CLLocation()
+//        geoCoder.geocodeAddressString(address) { (placemarks, error) in
+//            guard
+//                let placemarks = placemarks,
+//                let location = placemarks.first?.location
+//                else {
+//                    return
+//            }
+//           addressCoordinates = location
+//        }
+//        print(addressCoordinates)
+//        return addressCoordinates.coordinate
+//}
+
 
 

@@ -12,44 +12,38 @@ import Firebase
 struct PostItem {
     let ref: DatabaseReference?
     let key: String
-    let storeName: String
     let category: String
-    let date: String
-    let amount: Double
-    init(storeName: String, category: String,
-         date: String,
-         amount: Double,
+    let mapLatitude: Double
+    let mapLongitude: Double
+    init(category: String, mapLatitude: Double,
+         mapLongitude: Double,
          key: String = "") {
         self.ref = nil
         self.key = key
-        self.storeName = storeName
         self.category = category
-        self.date = date
-        self.amount = amount
+        self.mapLatitude = mapLatitude
+        self.mapLongitude = mapLongitude
     }
     init?(snapshot: DataSnapshot) {
         guard
             let value = snapshot.value as? [String: AnyObject],
-            let storeName = value["storeName"] as? String,
             let category = value["category"] as? String,
-            let date = value["date"] as? String,
-            let amount = value["amount"] as? Double
+            let mapLatitude = value["mapLatitude"] as? Double,
+            let mapLongitude = value["mapLongitude"] as? Double
             else {
                 return nil
         }
         self.ref = snapshot.ref
         self.key = snapshot.key
-        self.storeName = storeName
         self.category = category
-        self.date = date
-        self.amount = amount
+        self.mapLatitude = mapLatitude
+        self.mapLongitude = mapLongitude
     }
     func toAnyObject() -> Any {
         return [
-            "storeName": storeName,
             "category": category,
-            "date": date,
-            "amount": amount
+            "mapLatitude": mapLatitude,
+            "mapLongitude": mapLongitude
         ]
     }
 }
