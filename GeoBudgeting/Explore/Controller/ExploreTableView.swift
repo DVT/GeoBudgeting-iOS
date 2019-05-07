@@ -14,6 +14,7 @@ class ExploreTableView: UITableViewController {
     var items: [PostItem] = []
     // MARK: Properties
    let ref = Database.database().reference(withPath: "receipts")
+    let Dateref = Database.database().reference(withPath: "date/receipts")
     let postCell = PostCell()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,16 @@ class ExploreTableView: UITableViewController {
                     if let snapshot = child as? DataSnapshot,
                         let postItem = PostItem(snapshot: snapshot) {
                                 newItems.append(postItem)
+//                        Database.database().reference().child("receipts").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
+//                            if datasnapshot.exists() {
+//                                var keyArray = [String]()
+//                                for snap in datasnapshot.children.allObjects {
+//                                    if let snap = snap as? DataSnapshot {
+//                                        let key = snap.key
+//                                        let moneySpent = snap.value
+//                                        keyArray.append(key)
+//
+//                                    }
                     }
                 self.items = newItems
                 self.tableView.reloadData()
