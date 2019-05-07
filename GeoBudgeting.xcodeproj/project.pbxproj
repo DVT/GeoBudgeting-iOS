@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		171D867A2280253200B29BA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171D86792280253100B29BA1 /* GoogleService-Info.plist */; };
 		171D867D2280269500B29BA1 /* CategoryListFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D867C2280269500B29BA1 /* CategoryListFinder.swift */; };
-		171D868122802E3A00B29BA1 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D867F22802E3A00B29BA1 /* Results.swift */; };
 		171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D86942280306700B29BA1 /* Json4Swift_Base.swift */; };
+		17AB310322815F73004E0C0A /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310222815F73004E0C0A /* Results.swift */; };
+		17AB310522815F88004E0C0A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310422815F88004E0C0A /* Geometry.swift */; };
+		17AB310722815FC5004E0C0A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310622815FC5004E0C0A /* Location.swift */; };
 		3CA71A6135822B1EDA3856DF /* Pods_GeoBudgeting_GeoBudgetingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */; };
 		4B4375CDE380B9D7B25BBC81 /* Pods_GeoBudgeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */; };
 		8AD058B7E0622102234FFEE7 /* Pods_GeoBudgetingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF8EBFA64E248E8886E6083 /* Pods_GeoBudgetingTests.framework */; };
@@ -22,7 +23,6 @@
 		F6AD3060227C30390050B861 /* GeoBudgetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD305F227C30390050B861 /* GeoBudgetingTests.swift */; };
 		F6AD306B227C30390050B861 /* GeoBudgetingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD306A227C30390050B861 /* GeoBudgetingUITests.swift */; };
 		F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3081227C3AA40050B861 /* SearchView.swift */; };
-		F6AD308F228028330050B861 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD308E228028330050B861 /* api.plist */; };
 		F6AD3091228029D90050B861 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3090228029D90050B861 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +46,10 @@
 /* Begin PBXFileReference section */
 		171D86792280253100B29BA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		171D867C2280269500B29BA1 /* CategoryListFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListFinder.swift; sourceTree = "<group>"; };
-		171D867F22802E3A00B29BA1 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		171D86942280306700B29BA1 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
+		17AB310222815F73004E0C0A /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Results.swift; path = ../../../../../Downloads/codegen_5ccff8b6a5e07/Results.swift; sourceTree = "<group>"; };
+		17AB310422815F88004E0C0A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		17AB310622815FC5004E0C0A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgeting_GeoBudgetingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,10 +117,20 @@
 		171D867E22802E3200B29BA1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				17AB310622815FC5004E0C0A /* Location.swift */,
+				17AB310422815F88004E0C0A /* Geometry.swift */,
 				171D86942280306700B29BA1 /* Json4Swift_Base.swift */,
-				171D867F22802E3A00B29BA1 /* Results.swift */,
+				17AB310222815F73004E0C0A /* Results.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		17AB310122815CAA004E0C0A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				171D86792280253100B29BA1 /* GoogleService-Info.plist */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		5ADDA4A7792C660E9EA4698C /* Frameworks */ = {
@@ -153,6 +165,7 @@
 				F6AD3048227C30370050B861 /* Products */,
 				F2FF08A3DDF1ABF65960677A /* Pods */,
 				5ADDA4A7792C660E9EA4698C /* Frameworks */,
+				17AB310122815CAA004E0C0A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -361,9 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6AD308F228028330050B861 /* api.plist in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
-				171D867A2280253200B29BA1 /* GoogleService-Info.plist in Resources */,
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
 			);
@@ -583,12 +594,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				171D868122802E3A00B29BA1 /* Results.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
+				17AB310322815F73004E0C0A /* Results.swift in Sources */,
 				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
 				171D867D2280269500B29BA1 /* CategoryListFinder.swift in Sources */,
+				17AB310722815FC5004E0C0A /* Location.swift in Sources */,
 				171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */,
-				C8A13CAF2280003B00FD6A00 /* APIKeys.swift in Sources */,
+				17AB310522815F88004E0C0A /* Geometry.swift in Sources */,
 				F6AD3091228029D90050B861 /* Functions.swift in Sources */,
 				F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */,
 			);
