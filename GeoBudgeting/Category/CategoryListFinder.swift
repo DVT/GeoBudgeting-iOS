@@ -11,7 +11,7 @@ import Foundation
 class CategoryListFinder {
     
     
-    func getCategories(storeName: String, completionHandler: @escaping ([String]) -> Void) {
+    func getCategories(storeName: String, completionHandler: @escaping ([String], Double, Double) -> Void) {
         guard let encodedStoreName = storeName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return
         }
@@ -31,7 +31,13 @@ class CategoryListFinder {
                 guard let categories = responseModel.results?[0].types else {
                     return
                 }
-                completionHandler(categories)
+                guard let lat = responseModel.results?[0].geometry?.location?.lat else {
+                    return
+                }
+                guard let long = responseModel.results?[0].geometry?.location?.lng else {
+                    return
+                }
+                completionHandler(categories, lat, long)
             } catch let error as NSError {
                 print(error)
                 print("Error")
