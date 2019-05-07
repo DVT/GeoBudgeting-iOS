@@ -43,10 +43,20 @@ class AddItemViewController: UIViewController {
     @IBAction func addItemTapped(_ sender: Any) {
         let storeName = storeNameTextField.text!
         let category = storeCategories[selectedCategoryRow]
-        let amount = priceEditText.text!
+        let stringAmount = priceEditText.text
+        let amount = Double(stringAmount!) ?? 0
 
         let timestampString = getDateForStartOfDayAsString(fromDate: datePicker.date)
-        FirebaseServices().addNewItem(storeName: storeName, storeCategory: category, dateTime: timestampString, amount: amount)
+        
+        CategoryListFinder().getCategories(storeName: storeName){ categories, lat, long in
+            
+            FirebaseServices().addNewItem(storeName: storeName,
+                                          storeCategory: category,
+                                          dateTime: timestampString,
+                                          amount: amount,
+                                          latitude: lat,
+                                          longitude: long )
+        }
     }
     
     func getDateForStartOfDayAsString(fromDate date: Date) -> String {
