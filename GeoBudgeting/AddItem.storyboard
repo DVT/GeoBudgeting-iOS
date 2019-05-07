@@ -41,7 +41,10 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="amountTextFieldTapped:" destination="mU2-kn-Gh9" eventType="editingDidBegin" id="kmB-op-FAt"/>
+                                        </connections>
                                     </textField>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ftc-Js-ZEK">
                                         <rect key="frame" x="47" y="287" width="320" height="216"/>
@@ -60,7 +63,10 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="storenameEditTextTapped:" destination="mU2-kn-Gh9" eventType="editingDidBegin" id="0Kh-s1-tRn"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
