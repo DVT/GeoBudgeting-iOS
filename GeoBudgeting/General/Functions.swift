@@ -26,12 +26,6 @@ func getAPIKey() -> String {
     return ""
 }
 
-struct Tab {
-    let tabIndex: Int!
-    let tabName: String!
-    let tabNavName: String!
-}
-
 func addTabs(tabIndex: Int, tabController: UITabBarController) {
     switch tabIndex {
     case 0:
