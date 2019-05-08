@@ -240,9 +240,9 @@
 			isa = PBXGroup;
 			children = (
 				70CC36E92281A0B2006F7658 /* OCR */,
+				70CC36C522817A7B006F7658 /* Settings */,
 				70CC36BE2281755A006F7658 /* GoogleService-Info.plist */,
 				70CC36C322817733006F7658 /* api.plist */,
-				70CC36C522817A7B006F7658 /* Settings */,
 				F6AD3092228034840050B861 /* Explore */,
 				C8A13CBA2280373800FD6A00 /* Add Item */,
 				171D867B2280265400B29BA1 /* Category */,
