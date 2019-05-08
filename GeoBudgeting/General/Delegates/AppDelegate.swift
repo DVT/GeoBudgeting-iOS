@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        Database.database().isPersistenceEnabled = true
    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey(getAPIKey())
-        GMSPlacesClient.provideAPIKey(getAPIKey())
+        GMSServices.provideAPIKey(getGoogleAPIKey())
+        GMSPlacesClient.provideAPIKey(getGoogleAPIKey())
         return true
     }
 }
