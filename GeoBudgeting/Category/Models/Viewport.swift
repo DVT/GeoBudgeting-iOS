@@ -12,20 +12,20 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Geometry : Codable {
-	let location : Location?
-	let viewport : Viewport?
+struct Viewport : Codable {
+	let northeast : Northeast?
+	let southwest : Southwest?
 
 	enum CodingKeys: String, CodingKey {
 
-		case location = "location"
-		case viewport = "viewport"
+		case northeast = "northeast"
+		case southwest = "southwest"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		location = try values.decodeIfPresent(Location.self, forKey: .location)
-		viewport = try values.decodeIfPresent(Viewport.self, forKey: .viewport)
+		northeast = try values.decodeIfPresent(Northeast.self, forKey: .northeast)
+		southwest = try values.decodeIfPresent(Southwest.self, forKey: .southwest)
 	}
 
 }

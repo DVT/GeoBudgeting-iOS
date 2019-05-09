@@ -12,20 +12,23 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Geometry : Codable {
-	let location : Location?
-	let viewport : Viewport?
+struct Address_components : Codable {
+	let long_name : String?
+	let short_name : String?
+	let types : [String]?
 
 	enum CodingKeys: String, CodingKey {
 
-		case location = "location"
-		case viewport = "viewport"
+		case long_name = "long_name"
+		case short_name = "short_name"
+		case types = "types"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		location = try values.decodeIfPresent(Location.self, forKey: .location)
-		viewport = try values.decodeIfPresent(Viewport.self, forKey: .viewport)
+		long_name = try values.decodeIfPresent(String.self, forKey: .long_name)
+		short_name = try values.decodeIfPresent(String.self, forKey: .short_name)
+		types = try values.decodeIfPresent([String].self, forKey: .types)
 	}
 
 }

@@ -98,7 +98,11 @@
                         <viewLayoutGuide key="safeArea" id="uHF-Yc-3gW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="zrG-B9-X5X">
-                        <barButtonItem key="rightBarButtonItem" title="Scan" image="Scan" style="plain" id="9MS-zk-Pdf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Scan" image="Scan" style="plain" id="9MS-zk-Pdf">
+                            <connections>
+                                <action selector="openCamera:" destination="mU2-kn-Gh9" id="uu1-3X-OhB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="896"/>

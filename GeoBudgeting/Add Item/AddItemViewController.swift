@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddItemViewController: UIViewController {
+class AddItemViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var storeNameTextField: UITextField!
     @IBOutlet weak var categorySpinner: UIPickerView!
@@ -34,6 +34,37 @@ class AddItemViewController: UIViewController {
         scrollviewInsets = self.scrollView.contentInset
     }
     
+    @IBAction func openCamera(_ sender: Any) {
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let uiImage = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        ocr(cameraImage: uiImage)
+//        let vision = Vision.vision()
+//        let textRecognizer = vision.onDeviceTextRecognizer()
+//        let image = VisionImage(image: uiImage)
+//
+//        textRecognizer.process(image) { result, error in
+//            guard error == nil, let result = result else {
+//                print("Error recognizing text")
+//                return
+//            }
+//
+//            print(result.text)
+//        }
+    }
+    
     func setupUI() {
         //set up add item button
         addItemButton.layer.borderWidth = 1
@@ -47,25 +78,23 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func addItemTapped(_ sender: Any) {
-//        let storeName = storeNameTextField.text!
-//        let category = storeCategories[selectedCategoryRow]
-//        let stringAmount = priceEditText.text
-//        let amount = Double(stringAmount!) ?? 0
-//
-//        let timestampString = getDateForStartOfDayAsString(fromDate: datePicker.date)
-//
-//        CategoryListFinder().getCategories(storeName: storeName){ categories, lat, long in
-//
-//            FirebaseServices().addNewItem(storeName: storeName,
-//                                          storeCategory: category,
-//                                          dateTime: timestampString,
-//                                          amount: amount,
-//                                          latitude: lat,
-//                                          longitude: long )
-//        }
-        
-        ocr()
-        
+        let storeName = storeNameTextField.text!
+        let category = storeCategories[selectedCategoryRow]
+        let stringAmount = priceEditText.text
+        let amount = Double(stringAmount!) ?? 0
+
+        let timestampString = getDateForStartOfDayAsString(fromDate: datePicker.date)
+
+        CategoryListFinder().getCategories(telNo: storeName){ categories, lat, long in
+
+            FirebaseServices().addNewItem(storeName: storeName,
+                                          storeCategory: category,
+                                          dateTime: timestampString,
+                                          amount: amount,
+                                          latitude: lat,
+                                          longitude: long )
+        }
+ 
     }
     
     

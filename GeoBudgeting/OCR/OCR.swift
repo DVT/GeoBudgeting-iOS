@@ -10,16 +10,17 @@ import Foundation
 import UIKit
 
 // Create request
-func ocr () {
+func ocr (cameraImage: UIImage) {
     let baseUrl = "https://www.ocrwebservice.com/restservices/processDocument",
-    params = "?language=english&gettext=true&outputformat=txt",
+    params = "?language=english&gettext=true&outputformat=txt&newline=1",
     requestUrl = NSURL(string: "\(baseUrl)\(params)"),
     request = NSMutableURLRequest(url:requestUrl! as URL)
     request.httpMethod = "POST";
     request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
     request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
     
-    let imageData: Data = (UIImage(named: "receipt")?.pngData())!
+    //let imageData: Data = (UIImage(named: "receipt")?.pngData())!
+    let imageData: Data = cameraImage.pngData()!
     request.httpBodyStream = InputStream(data: imageData)
     // Create session configuration (for authentication)
     let config = URLSessionConfiguration.default,
