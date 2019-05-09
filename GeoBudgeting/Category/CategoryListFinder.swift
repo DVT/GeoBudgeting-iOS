@@ -120,7 +120,6 @@ class CategoryListFinder {
                         print(error)
                         print("Error")
                     }
-                    
                 }
                 dataTask?.resume()
             }

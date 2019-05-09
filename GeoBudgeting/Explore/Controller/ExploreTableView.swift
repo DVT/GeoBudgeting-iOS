@@ -91,6 +91,15 @@ class ExploreTableView: UITableViewController {
             postItem.ref?.removeValue()
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storeName = items[indexPath.item].key
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let storePurchaseViewController: StorePurchasesViewController = mainStoryboard.instantiateViewController(withIdentifier: "StorePurcahsesViewController") as! StorePurchasesViewController
+        storePurchaseViewController.storeName = storeName
+        self.navigationController?.pushViewController(storePurchaseViewController, animated: true)
+    }
+
 }
 func convertTimestamp(serverTimestamp: String) -> String {
     let time = Int(serverTimestamp) ?? 0 / 1000

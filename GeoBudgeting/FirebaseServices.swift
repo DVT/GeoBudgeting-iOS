@@ -18,4 +18,28 @@ class FirebaseServices {
         ref.child("receipts/\(storeName)/mapLatitude").setValue(latitude)
         ref.child("receipts/\(storeName)/mapLongitude").setValue(longitude)
     }
+    
+    func fetchAllPurchases(forStore storeName: String, completion: @escaping ([Purchase]) -> Void) {
+        var purchases: [Purchase] = [Purchase]()
+        
+        let ref: DatabaseReference = Database.database().reference()
+        ref.child("receipts/\(storeName)/date").observeSingleEvent(of: .value, with: {(datasnapshot) in
+            let children = datasnapshot.children
+            for childSnapshot in children {
+                let child = childSnapshot as! DataSnapshot
+                let timestamp = child.key
+                let date = convertTimestamp(serverTimestamp: timestamp)
+                let amount = child.value! as! Double
+                
+                let purchase = Purchase(date: date, amount: amount)
+                purchases.append(purchase)
+                
+                if purchases.count == datasnapshot.childrenCount {
+                    completion(purchases)
+                }
+            }
+            
+        })
+    }
+
 }
