@@ -85,7 +85,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
 
         let timestampString = getDateForStartOfDayAsString(fromDate: datePicker.date)
 
-        CategoryListFinder().getCategories(telNo: storeName){ categories, lat, long in
+        CategoryListFinder().getCategories(storeName: storeName){ categories, lat, long in
 
             FirebaseServices().addNewItem(storeName: storeName,
                                           storeCategory: category,
