@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // Create request
-func ocr (cameraImage: UIImage) {
+func ocr (cameraImage: UIImage, completionHandler: @escaping (FormModel) -> ()) {
     let baseUrl = "https://www.ocrwebservice.com/restservices/processDocument",
     params = "?language=english&gettext=true&outputformat=txt&newline=1",
     requestUrl = NSURL(string: "\(baseUrl)\(params)"),
@@ -45,18 +45,67 @@ func ocr (cameraImage: UIImage) {
         print("dataString = \(dataString)")
         //Convert response sent from a server side script to a NSDictionary object:
         var err: Error?
-        do {
-            let myJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)  as? NSDictionary
-            if let parseJSON = myJSON {
-                // Now we can access values of the data object by their keys
-                var availPages = parseJSON["AvailablePages"] as? Int
-                var OCRText = (parseJSON["OCRText"] as? NSArray)
-                print("Available Pages: \(availPages!)")
-                print("OCRText: \(OCRText!)")
-            }
-        } catch let error {
-            print(error)
+        
+        guard let data = data, let ocrModel = try? JSONDecoder().decode(OCRModel.self, from: data) else {
+            print("Error: Couldn't decode ocrModel")
+            return
         }
+        
+        print("the ocr model is \(ocrModel)")
+    
+        guard let ocrText = ocrModel.ocrText.first?.first else {
+            print("Error: Couldn't get the text from the OCR Text Model")
+            return
+        }
+        
+        let output = readReceiptText(receiptText: ocrText)
+        print("OCR Test out put \n\n")
+        print(output)
+        
+        var form: FormModel? = nil
+        
+        if !output.tel.isEmpty {
+            CategoryListFinder().getCategories(telNo: output.tel, completionHandler: { (cat, name, lat, lng) in
+                if name.isEmpty {
+                    form = FormModel(storeName: nil, category: nil, date: output.date, total: output.total, lat: nil, lng: nil)
+                } else {
+                    form = FormModel(storeName: name, category: cat, date: output.date, total: output.total, lat: lat, lng: lng)
+                }
+                completionHandler(form!)
+            })
+        }
+        
+        
+//        do {
+//         //   let myJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)  as? NSDictionary
+//
+//            if let parseJSON = myJSON {
+//                // Now we can access values of the data object by their keys
+//                var availPages = parseJSON["AvailablePages"] as? Int
+//                var OCRText = (parseJSON["OCRText"] as? NSArray)
+//                print("Available Pages: \(availPages!)")
+//                print("OCRText: \(OCRText!)")
+//
+//                if let ocr = OCRText, let arr = NSMutableArray(array: ocr) as NSArray as? [String]{
+//
+//                    var text = arr.reduce("", {
+//                        return "\($0)\($1)"
+//                    })
+//
+//                    print("\n*******Text***********\n")
+//
+//                    print(text)
+//
+//                    print("\n*******Output***********\n")
+//                    let output = readReceiptText(receiptText: text)
+//
+//                    print(output)
+//
+//                }
+//            }
+//        } catch let error {
+//            print(error)
+//        }
     }
     task.resume()
 }
