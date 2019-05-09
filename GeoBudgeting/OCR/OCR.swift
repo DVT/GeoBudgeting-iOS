@@ -62,6 +62,13 @@ func ocr (cameraImage: UIImage) {
         print("OCR Test out put \n\n")
         print(output)
         
+        var form: FormModel? = nil
+        
+        if !output.tel.isEmpty {
+            CategoryListFinder().getCategories(telNo: output.tel, completionHandler: { (cat, lat, lng) in
+                form = FormModel(storeName: <#T##String?#>, category: <#T##String?#>, date: <#T##String?#>, total: <#T##Double?#>, lat: <#T##Double?#>, lng: <#T##Double?#>)
+            })
+        }
         
         
 //        do {

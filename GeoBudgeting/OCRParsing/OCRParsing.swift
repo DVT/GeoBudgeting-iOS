@@ -102,7 +102,7 @@ func cleanTel(tel: String) -> String{
 
 //Returns the total spent from the recveipt,
 //takes in an array of lines and the full text of the receipt
-func getTel(lines: [String], receiptText: String) -> String{
+func getTel(lines: [String], receiptText: String) -> String {
     var tels: [String] = []
     var tel: String = ""
     
