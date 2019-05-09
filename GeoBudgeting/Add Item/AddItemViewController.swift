@@ -16,7 +16,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var priceEditText: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var storeCategories = ["Supermarket" , "Bakery"]
+    var storeCategories = ["Finances", "Transport", "Entertainment", "Food", "Health", "Hobbies", "Services", "Shopping"]
     var selectedCategoryRow = 0
     var activeField: UITextField?
     var scrollviewInsets: UIEdgeInsets?

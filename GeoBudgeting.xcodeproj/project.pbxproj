@@ -15,7 +15,6 @@
 		4B4375CDE380B9D7B25BBC81 /* Pods_GeoBudgeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */; };
 		70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36BE2281755A006F7658 /* GoogleService-Info.plist */; };
 		70CC36C12281760D006F7658 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C02281760D006F7658 /* TabController.swift */; };
-		70CC36C422817733006F7658 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C322817733006F7658 /* api.plist */; };
 		70CC36C822817A90006F7658 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C722817A90006F7658 /* Settings.storyboard */; };
 		70CC36CA2281893B006F7658 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C92281893B006F7658 /* SettingsViewController.swift */; };
 		70CC36EB2281A0D5006F7658 /* OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36EA2281A0D5006F7658 /* OCR.swift */; };
@@ -37,6 +36,9 @@
 		F6AD3094228034E70050B861 /* ExploreTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3093228034E70050B861 /* ExploreTableView.swift */; };
 		F6AD3097228035FD0050B861 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3096228035FD0050B861 /* PostCell.swift */; };
 		F6AD309A228039970050B861 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3099228039970050B861 /* PostItem.swift */; };
+		F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD309C228178170050B861 /* GoogleService-Info.plist */; };
+		F6AD30A1228190580050B861 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD30A0228190580050B861 /* MapModel.swift */; };
+		F6AD30A52284222D0050B861 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD30A42284222D0050B861 /* api.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +71,6 @@
 		4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		70CC36BE2281755A006F7658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70CC36C02281760D006F7658 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
-		70CC36C322817733006F7658 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 		70CC36C722817A90006F7658 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		70CC36C92281893B006F7658 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		70CC36EA2281A0D5006F7658 /* OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCR.swift; sourceTree = "<group>"; };
@@ -99,6 +100,9 @@
 		F6AD3093228034E70050B861 /* ExploreTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableView.swift; sourceTree = "<group>"; };
 		F6AD3096228035FD0050B861 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		F6AD3099228039970050B861 /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+		F6AD309C228178170050B861 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F6AD30A0228190580050B861 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		F6AD30A42284222D0050B861 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,9 +244,10 @@
 			isa = PBXGroup;
 			children = (
 				70CC36E92281A0B2006F7658 /* OCR */,
+				F6AD30A42284222D0050B861 /* api.plist */,
+				F6AD309C228178170050B861 /* GoogleService-Info.plist */,
 				70CC36C522817A7B006F7658 /* Settings */,
 				70CC36BE2281755A006F7658 /* GoogleService-Info.plist */,
-				70CC36C322817733006F7658 /* api.plist */,
 				F6AD3092228034840050B861 /* Explore */,
 				C8A13CBA2280373800FD6A00 /* Add Item */,
 				171D867B2280265400B29BA1 /* Category */,
@@ -305,6 +310,7 @@
 		F6AD307E227C3A5D0050B861 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				F6AD309F228190300050B861 /* Model */,
 				F6AD3080227C3A910050B861 /* View */,
 				F6AD307F227C3A620050B861 /* Controller */,
 			);
@@ -351,6 +357,14 @@
 				F6AD3093228034E70050B861 /* ExploreTableView.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F6AD309F228190300050B861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6AD30A0228190580050B861 /* MapModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,13 +479,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70CC36C422817733006F7658 /* api.plist in Resources */,
 				C8A13CB72280299500FD6A00 /* (null) in Resources */,
 				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
+				F6AD30A52284222D0050B861 /* api.plist in Resources */,
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
+				F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */,
 				70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +719,7 @@
 				17AB310722815FC5004E0C0A /* Location.swift in Sources */,
 				171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */,
 				C8FA595C22816C4B0003656B /* Results.swift in Sources */,
+				F6AD30A1228190580050B861 /* MapModel.swift in Sources */,
 				17AB310522815F88004E0C0A /* Geometry.swift in Sources */,
 				F6AD3091228029D90050B861 /* Functions.swift in Sources */,
 				F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */,
