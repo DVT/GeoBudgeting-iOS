@@ -40,22 +40,16 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
                    var amountMarker = 0.00
                     Database.database().reference().child("receipts").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
                         if datasnapshot.exists() {
-                            var keyArray = [String]()
-                            
                             for snap in datasnapshot.children.allObjects {
                                 if let snap = snap as? DataSnapshot {
                                     let key = snap.key
                                     let moneySpent = snap.value
-                                    keyArray.append(key)
-                                     amountMarker += moneySpent as! Double
+                                    amountMarker += moneySpent as! Double
                                 }
-                                
                             }
-                            
                         }
                         self.showMarkers(title: titleMarker, amount: amountMarker, lat: latMarker, long: longMarker)
                     }
-                    
                 }
             }
         })
@@ -135,7 +129,7 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
 }
 extension MapViewController {
     func showMarkers(title: String, amount: Double, lat: Double, long: Double) {
-        var colourCatgory = UIColor.gray
+        var colorCategory : String!
         var infoCategory = ""
         let marker=GMSMarker()
         ref.observe(.value, with: { snapshot in
@@ -148,84 +142,104 @@ extension MapViewController {
                     infoCategory = postItem.category
                     marker.title = infoTitle
                     marker.snippet = "R" + String(infoSnippet)
+                    colorCategory = self.getCategory(category: infoCategory)
+                    if (colorCategory == "Supermaket"){
+                        marker.icon = GMSMarker.markerImage(with: .purple)
+                    }
+                    else
+                    {
+                        marker.icon = GMSMarker.markerImage(with: .gray)
+                    }
                 }
-                print(colourCatgory)
             }
-            colourCatgory = self.otherinfo(category: infoCategory)
-            print(colourCatgory)
-       
-        marker.icon = GMSMarker.markerImage(with: colourCatgory)
+            })
+      
         marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
         marker.map = self.mapView
-             })
     }
-    func otherinfo(category: String) -> UIColor {
-    var color = UIColor.gray
-
-    let finances = ["accounting","atm","bank"]
-    let transport =
-    ["airport","bus_station","car_dealer","car_rental","gas_station","parking",
-    "subway_station",
-    "taxi_stand",
-    "train_station",
-    "transit_station"]
-    let entertainment =
-    ["amusement_park","aquarium","art_gallery","book_store","bowling_alley", "bar","campground", "casino","lodging",
-    "museum",
-    "night_club",
-    "rv_park",
-    "spa",
-    "stadium",
-    "travel_agency",
-    "movie_rental",
-    "movie_theater","zoo"]
-    let food =
-    ["bakery", "cafe", "meal_delivery",
-    "restaurant"]
-    let healthyAndBeauty =
-    ["beauty_salon","dentist","hair_care","hospital",
-    "veterinary_care","pharmacy"]
-    let hobbies =
-    ["bicycle_store","gym"]
-        let services = ["car_repair","car_wash","cemetery","church","courthouse","doctor","electrician","city_hall","embassy",
-                        "fire_station","funeral_home","hindu_temple","insurance_agency","laundry","lawyer","library",
-    "local_government_office",
-    "locksmith",
-    "mosque",
-    "moving_company",
-    "painter",
-    "physiotherapist",
-    "plumber",
-    "police",
-    "post_office",
-    "real_estate_agency",
-    "roofing_contractor",
-    "park",
-    "school",
-    "storage",
-    "synagogue"]
-    let shopping = ["clothing_store","convenience_store","department_store","electronics_store","florist","furniture_store","hardware_store","home_goods_store","insurance_agency","liquor_store",
-    "shoe_store",
-    "shopping_mall",
-    "store",
-    "supermarket","Supermarket",
-    "pet_store"]
-        let termm = "Supermarket"
-        var currentIndex = 0
-        print(category)
-        for name in shopping
-        {
-            if name == category {
-                print("Found \(name) for index \(currentIndex)")
-                color = UIColor.purple
-                break
-            }
-            
-            currentIndex += 1
+    func getCategory(category: String) -> String{
+        var result = "unknown"
+        if category == "Supermarket" {
+        result = "Supermarket"
         }
-        return color
-    }
+        return result
 }
+}
+//    func otherinfo(category: String) -> UIColor {
+//    let finances = ["accounting","atm","bank"]
+//    let transport =
+//    ["airport","bus_station","car_dealer","car_rental","gas_station","parking",
+//    "subway_station",
+//    "taxi_stand",
+//    "train_station",
+//    "transit_station"]
+//    let entertainment =
+//    ["amusement_park","aquarium","art_gallery","book_store","bowling_alley", "bar","campground", "casino","lodging",
+//    "museum",
+//    "night_club",
+//    "rv_park",
+//    "spa",
+//    "stadium",
+//    "travel_agency",
+//    "movie_rental",
+//    "movie_theater","zoo"]
+//    let food =
+//    ["bakery", "cafe", "meal_delivery",
+//    "restaurant"]
+//    let healthyAndBeauty =
+//    ["beauty_salon","dentist","hair_care","hospital",
+//    "veterinary_care","pharmacy"]
+//    let hobbies =
+//    ["bicycle_store","gym"]
+//        let services = ["car_repair","car_wash","cemetery","church","courthouse","doctor","electrician","city_hall","embassy",
+//                        "fire_station","funeral_home","hindu_temple","insurance_agency","laundry","lawyer","library",
+//    "local_government_office",
+//    "locksmith",
+//    "mosque",
+//    "moving_company",
+//    "painter",
+//    "physiotherapist",
+//    "plumber",
+//    "police",
+//    "post_office",
+//    "real_estate_agency",
+//    "roofing_contractor",
+//    "park",
+//    "school",
+//    "storage",
+//    "synagogue"]
+//    let shopping = ["clothing_store","convenience_store","department_store","electronics_store","florist","furniture_store","hardware_store","home_goods_store","insurance_agency","liquor_store",
+//    "shoe_store",
+//    "shopping_mall",
+//    "store",
+//    "supermarket","Supermarket",
+//    "pet_store"]
+//        var currentIndex = 0
+//        for name in food
+//        {
+//            if name == category.lowercased() {
+//                print("Found \(name) for index \(currentIndex)")
+//                let color = UIColor.purple
+//                return color
+//            }
+//
+//            currentIndex += 1
+//        }
+//        currentIndex = 0
+//        for name in entertainment
+//        {
+//            if name == category.lowercased() {
+//                print("Found \(name) for index \(currentIndex)")
+//                let color = UIColor.green
+//                return color
+//            }
+//
+//            currentIndex += 1
+//        }
+//
+//        return UIColor.gray
+//    }
+//}
 
 //    for items in finances {
 //    if (items.contains(category)){
