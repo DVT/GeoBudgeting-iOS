@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // Create request
-func ocr (cameraImage: UIImage) {
+func ocr (cameraImage: UIImage, completionHandler: @escaping (FormModel) -> ()) {
     let baseUrl = "https://www.ocrwebservice.com/restservices/processDocument",
     params = "?language=english&gettext=true&outputformat=txt&newline=1",
     requestUrl = NSURL(string: "\(baseUrl)\(params)"),
@@ -65,8 +65,13 @@ func ocr (cameraImage: UIImage) {
         var form: FormModel? = nil
         
         if !output.tel.isEmpty {
-            CategoryListFinder().getCategories(telNo: output.tel, completionHandler: { (cat, lat, lng) in
-                form = FormModel(storeName: <#T##String?#>, category: <#T##String?#>, date: <#T##String?#>, total: <#T##Double?#>, lat: <#T##Double?#>, lng: <#T##Double?#>)
+            CategoryListFinder().getCategories(telNo: output.tel, completionHandler: { (cat, name, lat, lng) in
+                if name.isEmpty {
+                    form = FormModel(storeName: nil, category: nil, date: output.date, total: output.total, lat: nil, lng: nil)
+                } else {
+                    form = FormModel(storeName: name, category: cat, date: output.date, total: output.total, lat: lat, lng: lng)
+                }
+                completionHandler(form!)
             })
         }
         

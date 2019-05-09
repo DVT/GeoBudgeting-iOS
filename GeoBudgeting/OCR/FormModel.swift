@@ -10,8 +10,8 @@ import Foundation
 
 struct FormModel {
     var storeName: String?
-    var category: String?
-    var date: String?
+    var category: [String]?
+    var date: Date?
     var total: Double?
     var lat: Double?
     var lng: Double?

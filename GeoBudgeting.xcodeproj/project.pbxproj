@@ -28,6 +28,7 @@
 		4B4375CDE380B9D7B25BBC81 /* Pods_GeoBudgeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */; };
 		501715DA22842D600096C3FB /* OCRParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501715D922842D600096C3FB /* OCRParsing.swift */; };
 		707DEBE52284420A009F94B4 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DEBE42284420A009F94B4 /* FormModel.swift */; };
+		707DEBE7228447B6009F94B4 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 707DEBE6228447B6009F94B4 /* api.plist */; };
 		70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36BE2281755A006F7658 /* GoogleService-Info.plist */; };
 		70CC36C12281760D006F7658 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C02281760D006F7658 /* TabController.swift */; };
 		70CC36C822817A90006F7658 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C722817A90006F7658 /* Settings.storyboard */; };
@@ -39,7 +40,6 @@
 		C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */; };
 		C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CC12280623800FD6A00 /* FirebaseServices.swift */; };
 		C8FA595C22816C4B0003656B /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA595B22816C4B0003656B /* Results.swift */; };
-		F307CC842284393600615DE7 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = F307CC832284393600615DE7 /* api.plist */; };
 		F307CC8622843B3500615DE7 /* OCRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307CC8522843B3500615DE7 /* OCRModel.swift */; };
 		F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304A227C30370050B861 /* AppDelegate.swift */; };
 		F6AD304D227C30370050B861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304C227C30370050B861 /* MapViewController.swift */; };
@@ -100,6 +100,7 @@
 		4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		501715D922842D600096C3FB /* OCRParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRParsing.swift; sourceTree = "<group>"; };
 		707DEBE42284420A009F94B4 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
+		707DEBE6228447B6009F94B4 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = api.plist; path = ../../../../../Downloads/api.plist; sourceTree = "<group>"; };
 		70CC36BE2281755A006F7658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70CC36C02281760D006F7658 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		70CC36C722817A90006F7658 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		C8A13CC12280623800FD6A00 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		C8FA595B22816C4B0003656B /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.release.xcconfig"; sourceTree = "<group>"; };
-		F307CC832284393600615DE7 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = api.plist; path = ../../../../Downloads/api.plist; sourceTree = "<group>"; };
 		F307CC8522843B3500615DE7 /* OCRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRModel.swift; sourceTree = "<group>"; };
 		F6AD3047227C30370050B861 /* GeoBudgeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBudgeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6AD304A227C30370050B861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -298,7 +298,6 @@
 		F6AD3049227C30370050B861 /* GeoBudgeting */ = {
 			isa = PBXGroup;
 			children = (
-				F307CC832284393600615DE7 /* api.plist */,
 				501715D822842CF70096C3FB /* OCRParsing */,
 				70CC36E92281A0B2006F7658 /* OCR */,
 				F6AD309C228178170050B861 /* GoogleService-Info.plist */,
@@ -311,6 +310,7 @@
 				F6AD3078227C32410050B861 /* General */,
 				F6AD304E227C30370050B861 /* Main.storyboard */,
 				70CC36C02281760D006F7658 /* TabController.swift */,
+				707DEBE6228447B6009F94B4 /* api.plist */,
 				F6AD3053227C30390050B861 /* LaunchScreen.storyboard */,
 				C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */,
 				C8A13CC12280623800FD6A00 /* FirebaseServices.swift */,
@@ -539,7 +539,7 @@
 				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
-				F307CC842284393600615DE7 /* api.plist in Resources */,
+				707DEBE7228447B6009F94B4 /* api.plist in Resources */,
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
 				F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */,
