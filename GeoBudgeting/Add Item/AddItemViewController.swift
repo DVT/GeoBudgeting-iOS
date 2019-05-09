@@ -63,7 +63,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             }
             if let date = model.date {
                 DispatchQueue.main.async {
-                   self.datePicker.date = date
+                    self.datePicker.date = date
                 }
             }
             if let cat = model.category {
@@ -82,7 +82,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             self.lat = model.lat
             self.lng = model.lng
         }
-
+        
     }
     
     func refineCategories(cats: [String]) {
@@ -174,17 +174,11 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         let category = storeCategories[selectedCategoryRow]
         let stringAmount = priceEditText.text
         let amount = Double(stringAmount!) ?? 0
-
+        
         let timestampString = getDateForStartOfDayAsString(fromDate: datePicker.date)
-
-
+        
         if let lat = lat, let long = lng {
             FirebaseServices().addNewItem(storeName: storeName.lowercased(),
-
-        CategoryListFinder().getCategories(storeName: storeName){ categories, lat, long in
-
-            FirebaseServices().addNewItem(storeName: storeName,
-
                                           storeCategory: category,
                                           dateTime: timestampString,
                                           amount: amount,
@@ -192,7 +186,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                                           longitude: long )
         } else {
             CategoryListFinder().getCategories(storeName: storeName) { categories, lat, long in
-            FirebaseServices().addNewItem(storeName: storeName.lowercased(),
+                FirebaseServices().addNewItem(storeName: storeName.lowercased(),
                                               storeCategory: category,
                                               dateTime: timestampString,
                                               amount: amount,
@@ -240,7 +234,7 @@ extension AddItemViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return storeCategories[row]
+        return storeCategories[row]
     }
 }
 
