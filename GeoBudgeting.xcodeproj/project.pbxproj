@@ -18,7 +18,7 @@
 		70CC36C822817A90006F7658 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C722817A90006F7658 /* Settings.storyboard */; };
 		70CC36CA2281893B006F7658 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C92281893B006F7658 /* SettingsViewController.swift */; };
 		8AD058B7E0622102234FFEE7 /* Pods_GeoBudgetingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF8EBFA64E248E8886E6083 /* Pods_GeoBudgetingTests.framework */; };
-		C8A13CB72280299500FD6A00 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		C8A13CB72280299500FD6A00 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */; };
 		C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */; };
 		C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CC12280623800FD6A00 /* FirebaseServices.swift */; };
@@ -38,6 +38,8 @@
 		F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD309C228178170050B861 /* GoogleService-Info.plist */; };
 		F6AD30A1228190580050B861 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD30A0228190580050B861 /* MapModel.swift */; };
 		F6AD30A52284222D0050B861 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD30A42284222D0050B861 /* api.plist */; };
+		F6CAD79C2284377200AE9237 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CAD79B2284377200AE9237 /* Login.storyboard */; };
+		F6CAD7A02284454B00AE9237 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CAD79F2284454B00AE9237 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		F6AD309C228178170050B861 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6AD30A0228190580050B861 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		F6AD30A42284222D0050B861 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
+		F6CAD79B2284377200AE9237 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Login.storyboard; path = General/Login.storyboard; sourceTree = "<group>"; };
+		F6CAD79F2284454B00AE9237 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,7 @@
 		F6AD3049227C30370050B861 /* GeoBudgeting */ = {
 			isa = PBXGroup;
 			children = (
+				F6CAD79D2284453000AE9237 /* Login */,
 				F6AD30A42284222D0050B861 /* api.plist */,
 				F6AD309C228178170050B861 /* GoogleService-Info.plist */,
 				70CC36C522817A7B006F7658 /* Settings */,
@@ -244,6 +249,7 @@
 				F6AD3078227C32410050B861 /* General */,
 				F6AD304E227C30370050B861 /* Main.storyboard */,
 				70CC36C02281760D006F7658 /* TabController.swift */,
+				F6CAD79B2284377200AE9237 /* Login.storyboard */,
 				F6AD3053227C30390050B861 /* LaunchScreen.storyboard */,
 				C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */,
 				C8A13CC12280623800FD6A00 /* FirebaseServices.swift */,
@@ -354,6 +360,22 @@
 				F6AD30A0228190580050B861 /* MapModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F6CAD79D2284453000AE9237 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F6CAD79E2284453900AE9237 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F6CAD79E2284453900AE9237 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6CAD79F2284454B00AE9237 /* LoginViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,7 +490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A13CB72280299500FD6A00 /* (null) in Resources */,
+				C8A13CB72280299500FD6A00 /* BuildFile in Resources */,
 				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
@@ -476,6 +498,7 @@
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
 				F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */,
+				F6CAD79C2284377200AE9237 /* Login.storyboard in Resources */,
 				70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +531,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -515,6 +539,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -578,6 +603,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -585,6 +611,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -600,6 +627,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -608,6 +637,8 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -648,6 +679,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -656,6 +689,8 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -698,6 +733,7 @@
 				70CC36C12281760D006F7658 /* TabController.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
 				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
+				F6CAD7A02284454B00AE9237 /* LoginViewController.swift in Sources */,
 				F6AD3094228034E70050B861 /* ExploreTableView.swift in Sources */,
 				C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
