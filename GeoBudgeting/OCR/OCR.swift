@@ -45,35 +45,55 @@ func ocr (cameraImage: UIImage) {
         print("dataString = \(dataString)")
         //Convert response sent from a server side script to a NSDictionary object:
         var err: Error?
-        do {
-            let myJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)  as? NSDictionary
-            if let parseJSON = myJSON {
-                // Now we can access values of the data object by their keys
-                var availPages = parseJSON["AvailablePages"] as? Int
-                var OCRText = (parseJSON["OCRText"] as? NSArray)
-                print("Available Pages: \(availPages!)")
-                print("OCRText: \(OCRText!)")
-                
-                if let ocr = OCRText, let arr = NSMutableArray(array: ocr) as NSArray as? [String]{
-                    
-                    var text = arr.reduce("", {
-                        return "\($0)\($1)"
-                    })
-                    
-                    print("\n*******Text***********\n")
-                    
-                    print(text)
-                    
-                    print("\n*******Output***********\n")
-                    let output = readReceiptText(receiptText: text)
-                    
-                    print(output)
-                    
-                }
-            }
-        } catch let error {
-            print(error)
+        
+        guard let data = data, let ocrModel = try? JSONDecoder().decode(OCRModel.self, from: data) else {
+            print("Error: Couldn't decode ocrModel")
+            return
         }
+        
+        print("the ocr model is \(ocrModel)")
+    
+        guard let ocrText = ocrModel.ocrText.first?.first else {
+            print("Error: Couldn't get the text from the OCR Text Model")
+            return
+        }
+        
+        let output = readReceiptText(receiptText: ocrText)
+        print("OCR Test out put \n\n")
+        print(output)
+        
+        
+        
+//        do {
+//         //   let myJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)  as? NSDictionary
+//
+//            if let parseJSON = myJSON {
+//                // Now we can access values of the data object by their keys
+//                var availPages = parseJSON["AvailablePages"] as? Int
+//                var OCRText = (parseJSON["OCRText"] as? NSArray)
+//                print("Available Pages: \(availPages!)")
+//                print("OCRText: \(OCRText!)")
+//
+//                if let ocr = OCRText, let arr = NSMutableArray(array: ocr) as NSArray as? [String]{
+//
+//                    var text = arr.reduce("", {
+//                        return "\($0)\($1)"
+//                    })
+//
+//                    print("\n*******Text***********\n")
+//
+//                    print(text)
+//
+//                    print("\n*******Output***********\n")
+//                    let output = readReceiptText(receiptText: text)
+//
+//                    print(output)
+//
+//                }
+//            }
+//        } catch let error {
+//            print(error)
+//        }
     }
     task.resume()
 }
