@@ -53,6 +53,23 @@ func ocr (cameraImage: UIImage) {
                 var OCRText = (parseJSON["OCRText"] as? NSArray)
                 print("Available Pages: \(availPages!)")
                 print("OCRText: \(OCRText!)")
+                
+                if let ocr = OCRText, let arr = NSMutableArray(array: ocr) as NSArray as? [String]{
+                    
+                    var text = arr.reduce("", {
+                        return "\($0)\($1)"
+                    })
+                    
+                    print("\n*******Text***********\n")
+                    
+                    print(text)
+                    
+                    print("\n*******Output***********\n")
+                    let output = readReceiptText(receiptText: text)
+                    
+                    print(output)
+                    
+                }
             }
         } catch let error {
             print(error)
