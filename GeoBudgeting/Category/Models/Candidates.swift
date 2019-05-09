@@ -12,20 +12,17 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Geometry : Codable {
-	let location : Location?
-	let viewport : Viewport?
+struct Candidates : Codable {
+	let place_id : String?
 
 	enum CodingKeys: String, CodingKey {
 
-		case location = "location"
-		case viewport = "viewport"
+		case place_id = "place_id"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		location = try values.decodeIfPresent(Location.self, forKey: .location)
-		viewport = try values.decodeIfPresent(Viewport.self, forKey: .viewport)
+		place_id = try values.decodeIfPresent(String.self, forKey: .place_id)
 	}
 
 }

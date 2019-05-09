@@ -1,55 +1,50 @@
-/* 
-Copyright (c) 2019 Swift Models Generated from JSON powered by http://www.json4swift.com
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar
-
-*/
+//
+//  Results.swift
+//  GeoBudgeting
+//
+//  Created by Zaheer Moola on 2019/05/09.
+//  Copyright © 2019 DVT. All rights reserved.
+//
 
 import Foundation
 struct Results : Codable {
-	let formatted_address : String?
-	let geometry : Geometry?
-	let icon : String?
-	let id : String?
-	let name : String?
-	let place_id : String?
-	let rating : Double?
-	let reference : String?
-	let types : [String]?
-	let user_ratings_total : Double?
-
-	enum CodingKeys: String, CodingKey {
-
-		case formatted_address = "formatted_address"
-		case geometry = "geometry"
-		case icon = "icon"
-		case id = "id"
-		case name = "name"
-		case place_id = "place_id"
-		case rating = "rating"
-		case reference = "reference"
-		case types = "types"
-		case user_ratings_total = "user_ratings_total"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		formatted_address = try values.decodeIfPresent(String.self, forKey: .formatted_address)
-		geometry = try values.decodeIfPresent(Geometry.self, forKey: .geometry)
-		icon = try values.decodeIfPresent(String.self, forKey: .icon)
-		id = try values.decodeIfPresent(String.self, forKey: .id)
-		name = try values.decodeIfPresent(String.self, forKey: .name)
-		place_id = try values.decodeIfPresent(String.self, forKey: .place_id)
-		rating = try values.decodeIfPresent(Double.self, forKey: .rating)
-		reference = try values.decodeIfPresent(String.self, forKey: .reference)
-		types = try values.decodeIfPresent([String].self, forKey: .types)
-		user_ratings_total = try values.decodeIfPresent(Double.self, forKey: .user_ratings_total)
-	}
-
+    let formatted_address : String?
+    let geometry : Geometry?
+    let icon : String?
+    let id : String?
+    let name : String?
+    let place_id : String?
+    let rating : Double?
+    let reference : String?
+    let types : [String]?
+    let user_ratings_total : Double?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case formatted_address = "formatted_address"
+        case geometry = "geometry"
+        case icon = "icon"
+        case id = "id"
+        case name = "name"
+        case place_id = "place_id"
+        case rating = "rating"
+        case reference = "reference"
+        case types = "types"
+        case user_ratings_total = "user_ratings_total"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        formatted_address = try values.decodeIfPresent(String.self, forKey: .formatted_address)
+        geometry = try values.decodeIfPresent(Geometry.self, forKey: .geometry)
+        icon = try values.decodeIfPresent(String.self, forKey: .icon)
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        place_id = try values.decodeIfPresent(String.self, forKey: .place_id)
+        rating = try values.decodeIfPresent(Double.self, forKey: .rating)
+        reference = try values.decodeIfPresent(String.self, forKey: .reference)
+        types = try values.decodeIfPresent([String].self, forKey: .types)
+        user_ratings_total = try values.decodeIfPresent(Double.self, forKey: .user_ratings_total)
+    }
+    
 }

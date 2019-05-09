@@ -46,6 +46,7 @@ func getOCRKey() -> (String, String) {
     }
     return ("","")
 }
+
 func addTabs(tabIndex: Int, tabController: UITabBarController) {
     switch tabIndex {
     case 0:
