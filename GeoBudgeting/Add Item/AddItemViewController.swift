@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol AddItemViewControllerProtocol: class {
-    func updateView(model: FormModel)
-}
-
 class AddItemViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var storeNameTextField: UITextField!
@@ -24,8 +20,6 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     var selectedCategoryRow = 0
     var activeField: UITextField?
     var scrollviewInsets: UIEdgeInsets?
-    var lat: Double?
-    var lng: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +40,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         vc.allowsEditing = true
         vc.delegate = self
         present(vc, animated: true)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -55,107 +50,20 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             print("No image found")
             return
         }
-        ocr(cameraImage: uiImage) { model in
-            if let name = model.storeName {
-                DispatchQueue.main.async {
-                    self.storeNameTextField.text = name
-                }
-            }
-            if let date = model.date {
-                DispatchQueue.main.async {
-                   self.datePicker.date = date
-                }
-            }
-            if let cat = model.category {
-                self.refineCategories(cats: cat)
-                print(cat)
-                DispatchQueue.main.async {
-                    self.categorySpinner.reloadAllComponents()
-                }
-            }
-            if let total:Double = model.total {
-                let  price = String(total)
-                DispatchQueue.main.async {
-                    self.priceEditText.text = price
-                }
-            }
-            self.lat = model.lat
-            self.lng = model.lng
-        }
-
+        ocr(cameraImage: uiImage)
+//        let vision = Vision.vision()
+//        let textRecognizer = vision.onDeviceTextRecognizer()
+//        let image = VisionImage(image: uiImage)
+//
+//        textRecognizer.process(image) { result, error in
+//            guard error == nil, let result = result else {
+//                print("Error recognizing text")
+//                return
+//            }
+//
+//            print(result.text)
+//        }
     }
-    
-    func refineCategories(cats: [String]) {
-        storeCategories.removeAll()
-        for cat in cats {
-            var c = ""
-            switch cat {
-            case "finances","accounting","atm","bank":
-                c = "finances"
-            case "transport",
-                 "airport","bus_station","car_dealer","car_rental","gas_station","parking", "subway_station", "taxi_stand",
-                 "train_station",
-                 "transit_station":
-                c = "transport"
-            case "entertainment",
-                 "amusement_park","aquarium","art_gallery","book_store","bowling_alley", "bar","campground", "casino","lodging",
-                 "museum",
-                 "night_club",
-                 "rv_park",
-                 "spa",
-                 "stadium",
-                 "travel_agency",
-                 "movie_rental",
-                 "movie_theater","zoo":
-                c = "entertainment"
-            case "food",
-                 "bakery", "cafe", "meal_delivery",
-                 "restaurant":
-                c = "food"
-            case "health",
-                 "beauty_salon","dentist","hair_care","hospital",
-                 "veterinary_care","pharmacy":
-                c = "health"
-            case "hobbies",
-                 "bicycle_store","gym":
-                c = "hobbies"
-            case "services","car_repair","car_wash","cemetery","church","courthouse","doctor","electrician","city_hall","embassy",
-                 "fire_station","funeral_home","hindu_temple","insurance_agency","laundry","lawyer","library",
-                 "local_government_office",
-                 "locksmith",
-                 "mosque",
-                 "moving_company",
-                 "painter",
-                 "physiotherapist",
-                 "plumber",
-                 "police",
-                 "post_office",
-                 "real_estate_agency",
-                 "roofing_contractor",
-                 "park",
-                 "school",
-                 "storage",
-                 "synagogue":
-                c = "services"
-            case "shopping","clothing_store","convenience_store","department_store","electronics_store","florist","furniture_store","hardware_store","home_goods_store","insurance_agency","liquor_store",
-                 "shoe_store",
-                 "shopping_mall",
-                 "store",
-                 "supermarket",
-                 "pet_store":
-                c = "shopping"
-            default:
-                c = ""
-            }
-            
-            if !c.isEmpty {
-                if !storeCategories.contains(c) {
-                    storeCategories.append(c)
-                }
-            }
-        }
-    }
-    
     
     func setupUI() {
         //set up add item button
@@ -177,29 +85,16 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
 
         let timestampString = getDateForStartOfDayAsString(fromDate: datePicker.date)
 
-
-        if let lat = lat, let long = lng {
-            FirebaseServices().addNewItem(storeName: storeName.lowercased(),
-
         CategoryListFinder().getCategories(storeName: storeName){ categories, lat, long in
 
             FirebaseServices().addNewItem(storeName: storeName,
-
                                           storeCategory: category,
                                           dateTime: timestampString,
                                           amount: amount,
                                           latitude: lat,
                                           longitude: long )
-        } else {
-            CategoryListFinder().getCategories(storeName: storeName) { categories, lat, long in
-            FirebaseServices().addNewItem(storeName: storeName.lowercased(),
-                                              storeCategory: category,
-                                              dateTime: timestampString,
-                                              amount: amount,
-                                              latitude: lat,
-                                              longitude: long )
-            }
         }
+ 
     }
     
     
@@ -252,7 +147,6 @@ extension AddItemViewController: UIPickerViewDelegate {
 
 // MARK: Move view when keyboard opens
 extension AddItemViewController {
-    
     func registerForKeyboardNotifications(){
         //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self,

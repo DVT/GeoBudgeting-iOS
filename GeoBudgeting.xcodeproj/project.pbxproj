@@ -9,19 +9,6 @@
 /* Begin PBXBuildFile section */
 		171D867D2280269500B29BA1 /* CategoryListFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D867C2280269500B29BA1 /* CategoryListFinder.swift */; };
 		171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D86942280306700B29BA1 /* Json4Swift_Base.swift */; };
-		176B988622842C4400A749A1 /* Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987822842C4400A749A1 /* Close.swift */; };
-		176B988722842C4400A749A1 /* Northeast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987922842C4400A749A1 /* Northeast.swift */; };
-		176B988822842C4400A749A1 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987A22842C4400A749A1 /* Viewport.swift */; };
-		176B988922842C4400A749A1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987B22842C4400A749A1 /* Result.swift */; };
-		176B988A22842C4400A749A1 /* Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987C22842C4400A749A1 /* Periods.swift */; };
-		176B988B22842C4400A749A1 /* Plus_code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987D22842C4400A749A1 /* Plus_code.swift */; };
-		176B988C22842C4400A749A1 /* Candidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987E22842C4400A749A1 /* Candidates.swift */; };
-		176B988D22842C4400A749A1 /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987F22842C4400A749A1 /* Open.swift */; };
-		176B988E22842C4400A749A1 /* Address_components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988022842C4400A749A1 /* Address_components.swift */; };
-		176B988F22842C4400A749A1 /* Southwest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988122842C4400A749A1 /* Southwest.swift */; };
-		176B989022842C4400A749A1 /* Json4Swift_Base2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988222842C4400A749A1 /* Json4Swift_Base2.swift */; };
-		176B989122842C4400A749A1 /* PlaceIdBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988322842C4400A749A1 /* PlaceIdBase.swift */; };
-		176B989222842C4400A749A1 /* Opening_hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988422842C4400A749A1 /* Opening_hours.swift */; };
 		176B986822842B6B00A749A1 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B985B22842B6B00A749A1 /* Viewport.swift */; };
 		176B986922842B6B00A749A1 /* Opening_hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B985C22842B6B00A749A1 /* Opening_hours.swift */; };
 		176B986A22842B6B00A749A1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B985D22842B6B00A749A1 /* Result.swift */; };
@@ -39,9 +26,6 @@
 		17AB310722815FC5004E0C0A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310622815FC5004E0C0A /* Location.swift */; };
 		3CA71A6135822B1EDA3856DF /* Pods_GeoBudgeting_GeoBudgetingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */; };
 		4B4375CDE380B9D7B25BBC81 /* Pods_GeoBudgeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */; };
-		501715DA22842D600096C3FB /* OCRParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501715D922842D600096C3FB /* OCRParsing.swift */; };
-		707DEBE52284420A009F94B4 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DEBE42284420A009F94B4 /* FormModel.swift */; };
-		707DEBE7228447B6009F94B4 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 707DEBE6228447B6009F94B4 /* api.plist */; };
 		70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36BE2281755A006F7658 /* GoogleService-Info.plist */; };
 		70CC36C12281760D006F7658 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C02281760D006F7658 /* TabController.swift */; };
 		70CC36C822817A90006F7658 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C722817A90006F7658 /* Settings.storyboard */; };
@@ -56,7 +40,6 @@
 		C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */; };
 		C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CC12280623800FD6A00 /* FirebaseServices.swift */; };
 		C8FA595C22816C4B0003656B /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA595B22816C4B0003656B /* Results.swift */; };
-		F307CC8622843B3500615DE7 /* OCRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307CC8522843B3500615DE7 /* OCRModel.swift */; };
 		F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304A227C30370050B861 /* AppDelegate.swift */; };
 		F6AD304D227C30370050B861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304C227C30370050B861 /* MapViewController.swift */; };
 		F6AD3050227C30370050B861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD304E227C30370050B861 /* Main.storyboard */; };
@@ -71,6 +54,7 @@
 		F6AD309A228039970050B861 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3099228039970050B861 /* PostItem.swift */; };
 		F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD309C228178170050B861 /* GoogleService-Info.plist */; };
 		F6AD30A1228190580050B861 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD30A0228190580050B861 /* MapModel.swift */; };
+		F6AD30A52284222D0050B861 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD30A42284222D0050B861 /* api.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,19 +78,6 @@
 		171D86792280253100B29BA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		171D867C2280269500B29BA1 /* CategoryListFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListFinder.swift; sourceTree = "<group>"; };
 		171D86942280306700B29BA1 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
-		176B987822842C4400A749A1 /* Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Close.swift; sourceTree = "<group>"; };
-		176B987922842C4400A749A1 /* Northeast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Northeast.swift; sourceTree = "<group>"; };
-		176B987A22842C4400A749A1 /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
-		176B987B22842C4400A749A1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		176B987C22842C4400A749A1 /* Periods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periods.swift; sourceTree = "<group>"; };
-		176B987D22842C4400A749A1 /* Plus_code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plus_code.swift; sourceTree = "<group>"; };
-		176B987E22842C4400A749A1 /* Candidates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidates.swift; sourceTree = "<group>"; };
-		176B987F22842C4400A749A1 /* Open.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
-		176B988022842C4400A749A1 /* Address_components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address_components.swift; sourceTree = "<group>"; };
-		176B988122842C4400A749A1 /* Southwest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Southwest.swift; sourceTree = "<group>"; };
-		176B988222842C4400A749A1 /* Json4Swift_Base2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base2.swift; sourceTree = "<group>"; };
-		176B988322842C4400A749A1 /* PlaceIdBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceIdBase.swift; sourceTree = "<group>"; };
-		176B988422842C4400A749A1 /* Opening_hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening_hours.swift; sourceTree = "<group>"; };
 		176B985B22842B6B00A749A1 /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
 		176B985C22842B6B00A749A1 /* Opening_hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening_hours.swift; sourceTree = "<group>"; };
 		176B985D22842B6B00A749A1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -127,9 +98,6 @@
 		45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		47AC8818BEA5B04777F88C27 /* Pods-GeoBudgetingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		501715D922842D600096C3FB /* OCRParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRParsing.swift; sourceTree = "<group>"; };
-		707DEBE42284420A009F94B4 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
-		707DEBE6228447B6009F94B4 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = api.plist; path = ../../../../../Downloads/api.plist; sourceTree = "<group>"; };
 		70CC36BE2281755A006F7658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70CC36C02281760D006F7658 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		70CC36C722817A90006F7658 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -146,7 +114,6 @@
 		C8A13CC12280623800FD6A00 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		C8FA595B22816C4B0003656B /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.release.xcconfig"; sourceTree = "<group>"; };
-		F307CC8522843B3500615DE7 /* OCRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRModel.swift; sourceTree = "<group>"; };
 		F6AD3047227C30370050B861 /* GeoBudgeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBudgeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6AD304A227C30370050B861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6AD304C227C30370050B861 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +134,7 @@
 		F6AD3099228039970050B861 /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
 		F6AD309C228178170050B861 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6AD30A0228190580050B861 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		F6AD30A42284222D0050B861 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,19 +177,6 @@
 		171D867E22802E3200B29BA1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				176B988022842C4400A749A1 /* Address_components.swift */,
-				176B987E22842C4400A749A1 /* Candidates.swift */,
-				176B987822842C4400A749A1 /* Close.swift */,
-				176B988222842C4400A749A1 /* Json4Swift_Base2.swift */,
-				176B987922842C4400A749A1 /* Northeast.swift */,
-				176B987F22842C4400A749A1 /* Open.swift */,
-				176B988422842C4400A749A1 /* Opening_hours.swift */,
-				176B987C22842C4400A749A1 /* Periods.swift */,
-				176B988322842C4400A749A1 /* PlaceIdBase.swift */,
-				176B987D22842C4400A749A1 /* Plus_code.swift */,
-				176B987B22842C4400A749A1 /* Result.swift */,
-				176B988122842C4400A749A1 /* Southwest.swift */,
-				176B987A22842C4400A749A1 /* Viewport.swift */,
 				176B985F22842B6B00A749A1 /* Address_components.swift */,
 				176B986422842B6B00A749A1 /* Candidates.swift */,
 				176B986122842B6B00A749A1 /* Close.swift */,
@@ -249,14 +204,6 @@
 				171D86792280253100B29BA1 /* GoogleService-Info.plist */,
 			);
 			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		501715D822842CF70096C3FB /* OCRParsing */ = {
-			isa = PBXGroup;
-			children = (
-				501715D922842D600096C3FB /* OCRParsing.swift */,
-			);
-			path = OCRParsing;
 			sourceTree = "<group>";
 		};
 		5ADDA4A7792C660E9EA4698C /* Frameworks */ = {
@@ -290,8 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				70CC36EA2281A0D5006F7658 /* OCR.swift */,
-				F307CC8522843B3500615DE7 /* OCRModel.swift */,
-				707DEBE42284420A009F94B4 /* FormModel.swift */,
 			);
 			path = OCR;
 			sourceTree = "<group>";
@@ -361,9 +306,9 @@
 		F6AD3049227C30370050B861 /* GeoBudgeting */ = {
 			isa = PBXGroup;
 			children = (
-				501715D822842CF70096C3FB /* OCRParsing */,
 				C870ADB222844FFD008196C8 /* StorePurchases */,
 				70CC36E92281A0B2006F7658 /* OCR */,
+				F6AD30A42284222D0050B861 /* api.plist */,
 				F6AD309C228178170050B861 /* GoogleService-Info.plist */,
 				70CC36C522817A7B006F7658 /* Settings */,
 				70CC36BE2281755A006F7658 /* GoogleService-Info.plist */,
@@ -374,7 +319,6 @@
 				F6AD3078227C32410050B861 /* General */,
 				F6AD304E227C30370050B861 /* Main.storyboard */,
 				70CC36C02281760D006F7658 /* TabController.swift */,
-				707DEBE6228447B6009F94B4 /* api.plist */,
 				F6AD3053227C30390050B861 /* LaunchScreen.storyboard */,
 				C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */,
 				C8A13CC12280623800FD6A00 /* FirebaseServices.swift */,
@@ -603,7 +547,7 @@
 				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
-				707DEBE7228447B6009F94B4 /* api.plist in Resources */,
+				F6AD30A52284222D0050B861 /* api.plist in Resources */,
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
 				F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */,
@@ -827,47 +771,32 @@
 			files = (
 				176B986C22842B6B00A749A1 /* Address_components.swift in Sources */,
 				F6AD309A228039970050B861 /* PostItem.swift in Sources */,
-				501715DA22842D600096C3FB /* OCRParsing.swift in Sources */,
 				176B986F22842B6B00A749A1 /* Periods.swift in Sources */,
 				70CC36C12281760D006F7658 /* TabController.swift in Sources */,
-				707DEBE52284420A009F94B4 /* FormModel.swift in Sources */,
-				176B988622842C4400A749A1 /* Close.swift in Sources */,
-				176B988C22842C4400A749A1 /* Candidates.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
 				176B987222842B6B00A749A1 /* Open.swift in Sources */,
 				70CC36EB2281A0D5006F7658 /* OCR.swift in Sources */,
 				C870ADB722845092008196C8 /* PurchaseCell.swift in Sources */,
 				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
-				176B988922842C4400A749A1 /* Result.swift in Sources */,
-				176B988D22842C4400A749A1 /* Open.swift in Sources */,
 				176B987322842B6B00A749A1 /* Plus_code.swift in Sources */,
 				176B986D22842B6B00A749A1 /* Northeast.swift in Sources */,
 				176B987022842B6B00A749A1 /* Json4Swift_Base2.swift in Sources */,
 				176B986E22842B6B00A749A1 /* Close.swift in Sources */,
 				F6AD3094228034E70050B861 /* ExploreTableView.swift in Sources */,
-				176B988E22842C4400A749A1 /* Address_components.swift in Sources */,
 				C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */,
-				176B988822842C4400A749A1 /* Viewport.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
-				176B988F22842C4400A749A1 /* Southwest.swift in Sources */,
-				176B988A22842C4400A749A1 /* Periods.swift in Sources */,
-				F307CC8622843B3500615DE7 /* OCRModel.swift in Sources */,
 				176B986B22842B6B00A749A1 /* Southwest.swift in Sources */,
 				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
 				C870ADB522845083008196C8 /* StorePurchasesViewController.swift in Sources */,
 				176B987122842B6B00A749A1 /* Candidates.swift in Sources */,
 				C870ADB92284509D008196C8 /* Purchase.swift in Sources */,
 				C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */,
-				176B988722842C4400A749A1 /* Northeast.swift in Sources */,
 				171D867D2280269500B29BA1 /* CategoryListFinder.swift in Sources */,
 				17AB310722815FC5004E0C0A /* Location.swift in Sources */,
 				171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */,
-				176B989122842C4400A749A1 /* PlaceIdBase.swift in Sources */,
 				176B986A22842B6B00A749A1 /* Result.swift in Sources */,
 				176B987422842B6B00A749A1 /* PlaceIdBase.swift in Sources */,
 				C8FA595C22816C4B0003656B /* Results.swift in Sources */,
-				176B989022842C4400A749A1 /* Json4Swift_Base2.swift in Sources */,
-				176B989222842C4400A749A1 /* Opening_hours.swift in Sources */,
 				F6AD30A1228190580050B861 /* MapModel.swift in Sources */,
 				17AB310522815F88004E0C0A /* Geometry.swift in Sources */,
 				F6AD3091228029D90050B861 /* Functions.swift in Sources */,
@@ -876,7 +805,6 @@
 				176B986822842B6B00A749A1 /* Viewport.swift in Sources */,
 				F6AD3097228035FD0050B861 /* PostCell.swift in Sources */,
 				70CC36CA2281893B006F7658 /* SettingsViewController.swift in Sources */,
-				176B988B22842C4400A749A1 /* Plus_code.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1059,7 +987,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mrosendorff.GeoBudgeting;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.GeoBudgeting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1078,7 +1006,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mrosendorff.GeoBudgeting;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.GeoBudgeting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
