@@ -80,7 +80,7 @@ class CategoryListFinder {
         
     }
     
-    func getCategories(telNo: String, completionHandler: @escaping ([String], Double, Double) -> Void) {
+    func getCategories(telNo: String, completionHandler: @escaping ([String],String, Double, Double) -> Void) {
         
         getPlaceDetails(telNo: telNo) { placeId in
             let url : String = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=\(getGoogleAPIKey())"
@@ -105,7 +105,10 @@ class CategoryListFinder {
                     guard let long = responseModel.result?.geometry?.location?.lng else {
                         return
                     }
-                    completionHandler(categories, lat, long)
+                    guard let storeName = responseModel.result?.name else {
+                        return
+                    }
+                    completionHandler(categories, storeName, lat, long)
                 } catch let error as NSError {
                     print(error)
                     print("Error")
