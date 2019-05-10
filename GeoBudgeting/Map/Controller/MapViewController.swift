@@ -11,6 +11,15 @@ import Firebase
 import UIKit
 
 class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelegate {
+    
+    
+    @IBOutlet weak var foodButton: UIButton!
+    @IBOutlet weak var entertainmentButton: UIButton!
+    @IBOutlet weak var shoppingButton: UIButton!
+    @IBOutlet weak var hobbiesButton: UIButton!
+    @IBOutlet weak var hoverLabel: UILabel!
+    
+    
     //Firebase
     let ref = Database.database().reference(withPath: "receipts")
     //Selecting location
@@ -77,6 +86,44 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
         let alert = UIAlertController(title: title, message: "Pick a category", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func applyFoodFilter(_ sender: Any) {
+        hoverLabel.center.y = foodButton.center.y
+        hoverLabel.text = "Food"
+        hoverLabel.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyEntertainmentFilter(_ sender: Any) {
+        hoverLabel.center.y = entertainmentButton.center.y
+        hoverLabel.text = "Entertainment"
+        hoverLabel.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyShoppingFilter(_ sender: Any) {
+        hoverLabel.center.y = shoppingButton.center.y
+        hoverLabel.text = "Shopping"
+        hoverLabel.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyHobbiesFilter(_ sender: Any) {
+        hoverLabel.center.y = hobbiesButton.center.y
+        hoverLabel.text = "Hobbies"
+        hoverLabel.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
     }
 }
 extension MapViewController: CLLocationManagerDelegate {
