@@ -89,11 +89,12 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                 var count = 0
                 for category in self.storeCategories {
                     if category == fetchedStorecategory {
-                       self.categorySpinner.selectRow(count, inComponent: 0, animated: true)
+                       self.selectedCategoryRow = count
                     }
                     count += 1
                 }
                 DispatchQueue.main.async {
+                    self.categorySpinner.selectRow(self.selectedCategoryRow, inComponent: 0, animated: true)
                     self.categorySpinner.reloadAllComponents()
                 }
             }
