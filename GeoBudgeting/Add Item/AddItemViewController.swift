@@ -19,6 +19,8 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var priceEditText: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var toastView: UIView!
+    @IBOutlet weak var viewOnMapButton: UIButton!
     
     var storeCategories = ["Finances", "Transport", "Entertainment", "Food", "Health", "Hobbies", "Services", "Shopping"]
     var selectedCategoryRow = 0
@@ -38,6 +40,9 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         
         registerForKeyboardNotifications()
         scrollviewInsets = self.scrollView.contentInset
+        
+        toastView.layer.cornerRadius = 8
+        
     }
     
     @IBAction func openCamera(_ sender: Any) {
@@ -63,7 +68,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             }
             if let date = model.date {
                 DispatchQueue.main.async {
-                    self.datePicker.date = date
+                    self.datePicker.setDate(date, animated: true)
                 }
             }
             if let cat = model.category {
@@ -194,6 +199,10 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                                               longitude: long )
             }
         }
+        
+        refreshForm()
+        showAddedItemMessage()
+
     }
     
     
@@ -221,6 +230,25 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         timestampString = String(timestampString.prefix(upTo: dotIndex!))
         return timestampString
     }
+    
+    func refreshForm() {
+        storeNameTextField.text = ""
+        priceEditText.text = ""
+        categorySpinner.selectRow(0, inComponent: 0, animated: true)
+        datePicker.setDate(Date(), animated: true)
+    }
+    
+    func showAddedItemMessage() {
+        toastView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.toastView.isHidden = true
+        }
+    }
+    
+    @IBAction func viewOnMap(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 0 //To go to map to see
+    }
+    
 }
 
 extension AddItemViewController: UIPickerViewDataSource {
