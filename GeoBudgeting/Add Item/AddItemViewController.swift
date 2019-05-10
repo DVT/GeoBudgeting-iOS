@@ -75,12 +75,13 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             } else {
                 error += "Store details not found, please enter store name and choose category manually. \n"
             }
-            
+            var canEnableButton = true
             if let date = model.date {
                 DispatchQueue.main.async {
                     self.datePicker.setDate(date, animated: true)
                 }
             } else {
+                canEnableButton = false
                 error += "Date could not be found on receipt, please select manually. \n"
             }
             
@@ -106,6 +107,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                         self.priceEditText.text = price
                     }
                 } else {
+                    canEnableButton = false
                     error += "Total could not be found on receipt, please enter manually"
                 }
             }
@@ -113,6 +115,11 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             self.lat = model.lat
             self.lng = model.lng
             Functions.showLoadingIndicator(mustShow: false, viewController: self)
+            if canEnableButton {
+                DispatchQueue.main.async {
+                self.addItemButton.isEnabled = true
+                }
+            }
             
             if error != "" {
                 self.displayErrorPopup(error)
