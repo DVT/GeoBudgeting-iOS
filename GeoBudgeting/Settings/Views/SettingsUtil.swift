@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GoogleSignIn
 
 
 let USER_ID = "user"
@@ -52,6 +52,31 @@ func getSignedInUser() -> User? {
                     profileURL: profileURL)
     
     return user
+}
+
+func routeToLogin(from view: UIViewController) {
+//    let rootController = UIStoryboard(name: "Login",
+//                                      bundle: Bundle.main)
+//        .instantiateViewController(withIdentifier: "SignIn")
+//        view.navigationController?.pushViewController(rootController, animated: true)
+    
+    let rootController = UIStoryboard(name: "Login",
+                                      bundle: Bundle.main)
+        .instantiateViewController(withIdentifier: "SignIn")
+    view.view.window?.rootViewController = rootController
+}
+
+func logout() {
+    let pref = UserDefaults.standard
+    pref.removeObject(forKey: ID_TOKEN)
+    pref.removeObject(forKey: FULL_NAME)
+    pref.removeObject(forKey: GIVEN_NAME)
+    pref.removeObject(forKey: FAMILY_NAME)
+    pref.removeObject(forKey: PROFILE_URL)
+    pref.removeObject(forKey: EMAIL)
+    pref.synchronize()
+    
+    GIDSignIn.sharedInstance().signOut()
 }
 
 

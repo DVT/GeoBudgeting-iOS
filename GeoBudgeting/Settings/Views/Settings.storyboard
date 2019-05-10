@@ -158,6 +158,7 @@
                         <outlet property="emailLbl" destination="2wg-gA-tlc" id="b82-Kr-Bys"/>
                         <outlet property="historyPicker" destination="rnS-ba-gWI" id="heE-dw-ELA"/>
                         <outlet property="nameLbl" destination="ZPt-8w-Q0e" id="xkq-2A-WDt"/>
+                        <outlet property="userProfileImg" destination="xSp-hz-qF9" id="6Ol-iS-vtw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXw-Dm-Od2" userLabel="First Responder" sceneMemberID="firstResponder"/>

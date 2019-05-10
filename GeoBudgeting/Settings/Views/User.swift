@@ -31,6 +31,7 @@ class User: NSCoder {
         self.givenName = givenName
         self.familyName = familyName
         self.email = email
+        self.profileURL = profileURL
     }
     
     //try this new property observers

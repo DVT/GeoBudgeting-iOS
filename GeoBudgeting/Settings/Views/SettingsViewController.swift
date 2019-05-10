@@ -15,7 +15,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var historyPicker: UIPickerView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var userProfileImg: UIImageView!
     
+    var user: User?
     
     var selectedHistoryOptionIndex: Int = 0
     
@@ -23,7 +25,24 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         historyPicker.delegate = self
         historyPicker.dataSource = self
+        
+        user = getSignedInUser()
+        
         loadPreviousSettings()
+        
+        
+        guard user != nil else {
+            //this should never happen
+            return
+        }
+        nameLbl.text = user?.givenName
+        emailLbl.text = user?.email
+        makeUIImageViewCircle(imageView: userProfileImg, imgSize: 65)
+        
+        if let profileURL = user?.profileURL {
+            userProfileImg.dowloadFromServer(link: profileURL)
+        }
+        
     }
     
     // save button
@@ -32,7 +51,8 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logoutBtn(_ sender: Any) {
-        
+        logout()
+        routeToLogin(from: self)
     }
     func loadPreviousSettings() {
         selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
