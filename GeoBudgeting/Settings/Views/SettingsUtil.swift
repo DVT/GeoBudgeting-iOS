@@ -67,6 +67,9 @@ func routeToLogin(from view: UIViewController) {
 }
 
 func logout() {
+    
+    GIDSignIn.sharedInstance().signOut()
+    
     let pref = UserDefaults.standard
     pref.removeObject(forKey: ID_TOKEN)
     pref.removeObject(forKey: FULL_NAME)
@@ -74,9 +77,9 @@ func logout() {
     pref.removeObject(forKey: FAMILY_NAME)
     pref.removeObject(forKey: PROFILE_URL)
     pref.removeObject(forKey: EMAIL)
+    pref.removeObject(forKey: USER_ID)
     pref.synchronize()
     
-    GIDSignIn.sharedInstance().signOut()
 }
 
 

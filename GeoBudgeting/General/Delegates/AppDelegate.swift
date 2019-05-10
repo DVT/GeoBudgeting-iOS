@@ -23,11 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         //Userlogged in
-        if Auth.auth().currentUser == nil {
+        if getSignedInUser() == nil {
             let rootController = UIStoryboard(name: "Login",
                                               bundle: Bundle.main)
                 .instantiateViewController(withIdentifier: "SignIn")
             self.window?.rootViewController = rootController
+            return true
         }
         //Google Services
         GMSServices.provideAPIKey(getGoogleAPIKey())

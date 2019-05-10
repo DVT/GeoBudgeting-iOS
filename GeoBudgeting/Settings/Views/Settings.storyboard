@@ -98,7 +98,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnS-ba-gWI">
-                                                <rect key="frame" x="272" y="0.0" width="142" height="85"/>
+                                                <rect key="frame" x="272" y="0.0" width="126" height="85"/>
                                             </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,7 +110,7 @@
                                             <constraint firstAttribute="bottom" secondItem="rnS-ba-gWI" secondAttribute="bottom" id="jlY-gG-UXl"/>
                                             <constraint firstItem="PkV-0h-wV4" firstAttribute="top" secondItem="XaP-Cu-nbv" secondAttribute="top" constant="31" id="nzQ-P4-yf6"/>
                                             <constraint firstItem="PkV-0h-wV4" firstAttribute="centerY" secondItem="XaP-Cu-nbv" secondAttribute="centerY" id="sGN-Ng-ciS"/>
-                                            <constraint firstAttribute="trailing" secondItem="rnS-ba-gWI" secondAttribute="trailing" id="t2g-yU-dKG"/>
+                                            <constraint firstAttribute="trailing" secondItem="rnS-ba-gWI" secondAttribute="trailing" constant="16" id="t2g-yU-dKG"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8a-3t-Y40">

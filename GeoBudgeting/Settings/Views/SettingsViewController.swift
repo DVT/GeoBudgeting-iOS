@@ -19,22 +19,19 @@ class SettingsViewController: UIViewController {
     
     var user: User?
     
-    var selectedHistoryOptionIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         historyPicker.delegate = self
         historyPicker.dataSource = self
-        
         user = getSignedInUser()
-        
         loadPreviousSettings()
-        
         
         guard user != nil else {
             //this should never happen
             return
         }
+        
         nameLbl.text = user?.givenName
         emailLbl.text = user?.email
         makeUIImageViewCircle(imageView: userProfileImg, imgSize: 65)
@@ -46,16 +43,21 @@ class SettingsViewController: UIViewController {
     }
     
     // save button
-    @IBAction func saveCurrentChanges(_ sender: Any) {
-        UserDefaults.standard.set(selectedHistoryOptionIndex, forKey: "history")
+    func saveCurrentChanges(row: Int) {
+        print("savedChanges \(row)")
+      let pref = UserDefaults.standard
+        pref.set(row, forKey: "history")
+   //     pref.synchronize() // this method is unnecessry and should not be used!
     }
     
     @IBAction func logoutBtn(_ sender: Any) {
         logout()
         routeToLogin(from: self)
     }
+    
     func loadPreviousSettings() {
-        selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
+        let selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
+        historyPicker.selectRow(selectedHistoryOptionIndex, inComponent: 0, animated: true)
         print("historyOption:\(selectedHistoryOptionIndex)")
     }
     
@@ -81,7 +83,7 @@ extension SettingsViewController: UIPickerViewDataSource {
 extension SettingsViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedHistoryOptionIndex = row
+        saveCurrentChanges(row: row)
     }
 }
 
