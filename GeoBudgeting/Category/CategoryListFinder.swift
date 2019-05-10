@@ -31,15 +31,15 @@ class CategoryListFinder {
                 
                 let candidates = responseModel.candidates
                 
-                if let noPlace = responseModel.candidates?.isEmpty{
+                let noPlace = responseModel.candidates?.count == 0
                     if noPlace {
                         print("Error: No Place found using phone number")
-                    }else{
+                    } else{
                         if let placeId = candidates?[0].place_id{
                             completionHandler(placeId)
                         }
                     }
-                }
+                
             } catch let error as NSError {
                 print(error)
                 print("Error")
@@ -90,6 +90,9 @@ class CategoryListFinder {
     func getCategories(telNo: String, completionHandler: @escaping ([String],String, Double, Double) -> Void) {
         
         getPlaceDetails(telNo: telNo) { placeId in
+            if placeId == "" {
+                completionHandler([] , "", 0.0 , 0.0)
+            }
             let url : String = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=\(getGoogleAPIKey())"
             
             let defaultSession = URLSession(configuration: .default)

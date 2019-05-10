@@ -19,6 +19,10 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var priceEditText: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var toastView: UIView!
+    @IBOutlet weak var viewOnMapButton: UIButton!
+    
+   
     
     var storeCategories = ["Finances", "Transport", "Entertainment", "Food", "Health", "Hobbies", "Services", "Shopping"]
     var selectedCategoryRow = 0
@@ -38,6 +42,9 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         
         registerForKeyboardNotifications()
         scrollviewInsets = self.scrollView.contentInset
+        
+        toastView.layer.cornerRadius = 8
+        
     }
     
     @IBAction func openCamera(_ sender: Any) {
@@ -50,22 +57,30 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
+       Functions.showLoadingIndicator(mustShow: true, viewController: self)
         
         guard let uiImage = info[.editedImage] as? UIImage else {
             print("No image found")
             return
         }
         ocr(cameraImage: uiImage) { model in
+            var error = ""
             if let name = model.storeName {
                 DispatchQueue.main.async {
                     self.storeNameTextField.text = name
                 }
+            } else {
+                error += "Store details not found, please enter store name and choose category manually. \n"
             }
+            
             if let date = model.date {
                 DispatchQueue.main.async {
-                    self.datePicker.date = date
+                    self.datePicker.setDate(date, animated: true)
                 }
+            } else {
+                error += "Date could not be found on receipt, please select manually. \n"
             }
+            
             if let cat = model.category {
                 self.refineCategories(cats: cat)
                 print(cat)
@@ -78,9 +93,17 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                 DispatchQueue.main.async {
                     self.priceEditText.text = price
                 }
+            } else {
+                error += "Total could not be found on receipt, please enter manually"
             }
+            
             self.lat = model.lat
             self.lng = model.lng
+            Functions.showLoadingIndicator(mustShow: false, viewController: self)
+            
+            if error != "" {
+                self.displayErrorPopup(error)
+            }
         }
         
     }
@@ -194,6 +217,18 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                                               longitude: long )
             }
         }
+        
+        refreshForm()
+        showAddedItemMessage()
+
+    }
+    
+   
+    
+    func displayErrorPopup(_ error: String) {
+        let alert = UIAlertController(title: title, message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     
@@ -221,6 +256,25 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         timestampString = String(timestampString.prefix(upTo: dotIndex!))
         return timestampString
     }
+    
+    func refreshForm() {
+        storeNameTextField.text = ""
+        priceEditText.text = ""
+        categorySpinner.selectRow(0, inComponent: 0, animated: true)
+        datePicker.setDate(Date(), animated: true)
+    }
+    
+    func showAddedItemMessage() {
+        toastView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.toastView.isHidden = true
+        }
+    }
+    
+    @IBAction func viewOnMap(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 0 //To go to map to see
+    }
+    
 }
 
 extension AddItemViewController: UIPickerViewDataSource {
