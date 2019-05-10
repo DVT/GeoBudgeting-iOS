@@ -180,19 +180,100 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jDU-yg-w0e">
+                                <rect key="frame" x="0.0" y="600" width="67" height="213"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-hj-uRJ">
+                                        <rect key="frame" x="11" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="LZm-VK-0iR"/>
+                                            <constraint firstAttribute="width" constant="44" id="tK1-Sy-l0c"/>
+                                        </constraints>
+                                        <state key="normal" image="icons8-food"/>
+                                        <connections>
+                                            <action selector="applyFoodFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lc4-ES-vxu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdI-Zd-5az">
+                                        <rect key="frame" x="11" y="60" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="DES-SI-Yck"/>
+                                        </constraints>
+                                        <state key="normal" image="icons8-party_whistle"/>
+                                        <connections>
+                                            <action selector="applyEntertainmentFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OVW-FT-XOH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bno-2i-HYp">
+                                        <rect key="frame" x="11" y="168" width="45" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="6FW-m5-dbb"/>
+                                            <constraint firstAttribute="height" constant="44" id="p7m-f2-7WI"/>
+                                        </constraints>
+                                        <state key="normal" image="icons8-art_prices"/>
+                                        <connections>
+                                            <action selector="applyHobbiesFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TtK-HG-1AZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECv-XW-wGH">
+                                        <rect key="frame" x="12" y="116" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Qk9-f4-Hss"/>
+                                        </constraints>
+                                        <state key="normal" image="icons8-shopping_mall_filled"/>
+                                        <connections>
+                                            <action selector="applyShoppingFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NLt-O5-J0g"/>
+                                        </connections>
+                                    </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-BM-gnv">
+                                        <rect key="frame" x="50" y="12" width="107" height="21"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.8099136700913242" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="21k-zE-Zir"/>
+                                    <constraint firstItem="kaI-hj-uRJ" firstAttribute="leading" secondItem="EdI-Zd-5az" secondAttribute="leading" id="48E-YF-mfS"/>
+                                    <constraint firstItem="kaI-hj-uRJ" firstAttribute="leading" secondItem="ECv-XW-wGH" secondAttribute="leading" constant="-1" id="6ec-9D-sP6"/>
+                                    <constraint firstItem="kaI-hj-uRJ" firstAttribute="trailing" secondItem="EdI-Zd-5az" secondAttribute="trailing" id="6wk-6T-x6f"/>
+                                    <constraint firstAttribute="width" constant="67" id="Eme-zZ-HKG"/>
+                                    <constraint firstItem="kaI-hj-uRJ" firstAttribute="trailing" secondItem="bno-2i-HYp" secondAttribute="trailing" constant="-1" id="GF4-wM-FxO"/>
+                                    <constraint firstItem="ECv-XW-wGH" firstAttribute="top" secondItem="EdI-Zd-5az" secondAttribute="bottom" constant="12" id="MW6-Sl-yR0"/>
+                                    <constraint firstItem="EdI-Zd-5az" firstAttribute="top" secondItem="ucc-BM-gnv" secondAttribute="bottom" constant="27" id="WWg-Gm-Wtg"/>
+                                    <constraint firstItem="bno-2i-HYp" firstAttribute="leading" secondItem="jDU-yg-w0e" secondAttribute="leading" constant="11" id="WbY-Zg-OlH"/>
+                                    <constraint firstItem="bno-2i-HYp" firstAttribute="top" secondItem="ECv-XW-wGH" secondAttribute="bottom" constant="8" id="baa-8n-1uw"/>
+                                    <constraint firstItem="EdI-Zd-5az" firstAttribute="top" secondItem="kaI-hj-uRJ" secondAttribute="bottom" constant="16" id="jYd-dA-AVw"/>
+                                    <constraint firstItem="bno-2i-HYp" firstAttribute="centerX" secondItem="jDU-yg-w0e" secondAttribute="centerX" id="k9p-6D-NGh"/>
+                                    <constraint firstAttribute="trailing" secondItem="ucc-BM-gnv" secondAttribute="trailing" constant="-90" id="m7p-Nj-Gea"/>
+                                    <constraint firstItem="kaI-hj-uRJ" firstAttribute="leading" secondItem="bno-2i-HYp" secondAttribute="leading" id="nc7-0z-OGx"/>
+                                    <constraint firstAttribute="bottom" secondItem="bno-2i-HYp" secondAttribute="bottom" constant="1" id="nrC-hE-QHK"/>
+                                    <constraint firstItem="ucc-BM-gnv" firstAttribute="leading" secondItem="jDU-yg-w0e" secondAttribute="leading" constant="50" id="vAR-H1-Rd2"/>
+                                    <constraint firstItem="ucc-BM-gnv" firstAttribute="top" secondItem="jDU-yg-w0e" secondAttribute="top" constant="12" id="y60-VY-rxt"/>
+                                    <constraint firstItem="kaI-hj-uRJ" firstAttribute="trailing" secondItem="ECv-XW-wGH" secondAttribute="trailing" constant="-1" id="zH9-71-k7t"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cXz-We-xTb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9G1-1w-6DH"/>
+                            <constraint firstItem="jDU-yg-w0e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ebd-dM-4aM"/>
                             <constraint firstItem="cXz-We-xTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mt5-TD-F60"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cXz-We-xTb" secondAttribute="trailing" id="on4-Zd-aH4"/>
+                            <constraint firstItem="jDU-yg-w0e" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qY5-li-Q2B"/>
                             <constraint firstItem="cXz-We-xTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vZB-CV-O77"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home" id="H1c-aZ-4bS"/>
                     <connections>
+                        <outlet property="entertainmentButton" destination="EdI-Zd-5az" id="Ao7-Gc-MLG"/>
+                        <outlet property="foodButton" destination="kaI-hj-uRJ" id="Es6-Z6-u0P"/>
+                        <outlet property="hobbiesButton" destination="bno-2i-HYp" id="X9E-gS-1s4"/>
+                        <outlet property="hoverLabel" destination="ucc-BM-gnv" id="Y19-0q-f7Y"/>
                         <outlet property="mapView" destination="cXz-We-xTb" id="6kK-6w-vSm"/>
+                        <outlet property="shoppingButton" destination="ECv-XW-wGH" id="sk3-yk-EkV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -272,6 +353,10 @@
     <resources>
         <image name="add" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
+        <image name="icons8-art_prices" width="96" height="96"/>
+        <image name="icons8-food" width="96" height="96"/>
+        <image name="icons8-party_whistle" width="100" height="100"/>
+        <image name="icons8-shopping_mall_filled" width="100" height="100"/>
         <image name="more" width="25" height="7"/>
         <image name="profile" width="25" height="25"/>
     </resources>
