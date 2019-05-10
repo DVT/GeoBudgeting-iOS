@@ -22,6 +22,9 @@ class ExploreTableView: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Expenses"
+        
         self.tableView.rowHeight = 75
         self.tableView.clipsToBounds = true
         tableView.allowsMultipleSelectionDuringEditing = false
@@ -58,7 +61,7 @@ class ExploreTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell
         let postItem = items[indexPath.row]
-        cell?.storeName?.text = postItem.key
+        cell?.storeName?.text = postItem.key.capitalized
         cell?.category?.text = postItem.category
         ref.observe(.value, with: { snapshot in
             // live reload haoppens because of this observe
@@ -66,7 +69,7 @@ class ExploreTableView: UITableViewController {
                 if let snapshot = child as? DataSnapshot,
                    let postItem = PostItem(snapshot: snapshot) {
                     var amount = 0.00
-                    let title = postItem.key
+                    let title = postItem.key.capitalized
                     Database.database().reference().child("receipts").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
                         if datasnapshot.exists() {
                             var keyArray = [String]()
@@ -88,6 +91,7 @@ class ExploreTableView: UITableViewController {
         })
         return cell!
     }
+
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
