@@ -66,13 +66,16 @@ func ocr (cameraImage: UIImage, completionHandler: @escaping (FormModel) -> ()) 
         
         if !output.tel.isEmpty {
             CategoryListFinder().getCategories(telNo: output.tel, completionHandler: { (cat, name, lat, lng) in
-                if name.isEmpty {
+                if name.isEmpty || name == "" {
                     form = FormModel(storeName: nil, category: nil, date: output.date, total: output.total, lat: nil, lng: nil)
                 } else {
                     form = FormModel(storeName: name, category: cat, date: output.date, total: output.total, lat: lat, lng: lng)
                 }
                 completionHandler(form!)
             })
+        } else {
+            form = FormModel(storeName: nil, category: nil, date: output.date, total: output.total, lat: nil, lng: nil)
+            completionHandler(form!)
         }
         
         
