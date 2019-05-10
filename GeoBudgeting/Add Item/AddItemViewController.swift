@@ -85,19 +85,28 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             }
             
             if let cat = model.category {
-                self.refineCategories(cats: cat)
-                print(cat)
+                let fetchedStorecategory = self.refineCategories(cats: cat)
+                var count = 0
+                for category in self.storeCategories {
+                    if category == fetchedStorecategory {
+                       self.categorySpinner.selectRow(count, inComponent: 0, animated: true)
+                    }
+                    count += 1
+                }
                 DispatchQueue.main.async {
                     self.categorySpinner.reloadAllComponents()
                 }
             }
-            if let total:Double = model.total {
-                let  price = String(total)
-                DispatchQueue.main.async {
-                    self.priceEditText.text = price
+            
+            if let total: Double = model.total {
+                if total != -1 {
+                    let  price = String(total)
+                    DispatchQueue.main.async {
+                        self.priceEditText.text = price
+                    }
+                } else {
+                    error += "Total could not be found on receipt, please enter manually"
                 }
-            } else {
-                error += "Total could not be found on receipt, please enter manually"
             }
             
             self.lat = model.lat
@@ -111,18 +120,19 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         
     }
     
-    func refineCategories(cats: [String]) {
-        storeCategories.removeAll()
+    func refineCategories(cats: [String]) -> String {
+        //storeCategories.removeAll()
+        var refinedCategories: [String] = []
         for cat in cats {
             var c = ""
             switch cat {
             case "finances","accounting","atm","bank":
-                c = "finances"
+                c = "Finances"
             case "transport",
                  "airport","bus_station","car_dealer","car_rental","gas_station","parking", "subway_station", "taxi_stand",
                  "train_station",
                  "transit_station":
-                c = "transport"
+                c = "Transport"
             case "entertainment",
                  "amusement_park","aquarium","art_gallery","book_store","bowling_alley", "bar","campground", "casino","lodging",
                  "museum",
@@ -133,18 +143,18 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                  "travel_agency",
                  "movie_rental",
                  "movie_theater","zoo":
-                c = "entertainment"
+                c = "Entertainment"
             case "food",
                  "bakery", "cafe", "meal_delivery",
                  "restaurant":
-                c = "food"
+                c = "Food"
             case "health",
                  "beauty_salon","dentist","hair_care","hospital",
                  "veterinary_care","pharmacy":
                 c = "health"
             case "hobbies",
                  "bicycle_store","gym":
-                c = "hobbies"
+                c = "Hobbies"
             case "services","car_repair","car_wash","cemetery","church","courthouse","doctor","electrician","city_hall","embassy",
                  "fire_station","funeral_home","hindu_temple","insurance_agency","laundry","lawyer","library",
                  "local_government_office",
@@ -162,24 +172,26 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                  "school",
                  "storage",
                  "synagogue":
-                c = "services"
+                c = "Services"
             case "shopping","clothing_store","convenience_store","department_store","electronics_store","florist","furniture_store","hardware_store","home_goods_store","insurance_agency","liquor_store",
                  "shoe_store",
                  "shopping_mall",
                  "store",
                  "supermarket",
                  "pet_store":
-                c = "shopping"
+                c = "Shopping"
             default:
                 c = ""
             }
             
             if !c.isEmpty {
-                if !storeCategories.contains(c) {
-                    storeCategories.append(c)
+                if !refinedCategories.contains(c) {
+                    refinedCategories.append(c)
                 }
             }
         }
+        
+        return refinedCategories[0]
     }
     
     
