@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController {
         loadPreviousSettings()
     }
     
+    // save button
     @IBAction func saveCurrentChanges(_ sender: Any) {
         UserDefaults.standard.set(selectedHistoryOptionIndex, forKey: "history")
     }
