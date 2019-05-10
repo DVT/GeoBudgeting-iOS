@@ -10,6 +10,8 @@ target 'GeoBudgeting' do
   pod 'Firebase'
   pod 'Firebase/Database'
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 #
  target 'GeoBudgetingTests' do
     inherit! :search_paths
