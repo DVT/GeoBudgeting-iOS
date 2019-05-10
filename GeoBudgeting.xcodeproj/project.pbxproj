@@ -71,7 +71,6 @@
 		F6AD3094228034E70050B861 /* ExploreTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3093228034E70050B861 /* ExploreTableView.swift */; };
 		F6AD3097228035FD0050B861 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3096228035FD0050B861 /* PostCell.swift */; };
 		F6AD309A228039970050B861 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3099228039970050B861 /* PostItem.swift */; };
-		F6AD30A1228190580050B861 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD30A0228190580050B861 /* MapModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,7 +167,6 @@
 		F6AD3093228034E70050B861 /* ExploreTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableView.swift; sourceTree = "<group>"; };
 		F6AD3096228035FD0050B861 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		F6AD3099228039970050B861 /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
-		F6AD30A0228190580050B861 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -484,7 +482,6 @@
 		F6AD3095228035E80050B861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F6AD30A0228190580050B861 /* MapModel.swift */,
 				F6AD3096228035FD0050B861 /* PostCell.swift */,
 				F6AD3099228039970050B861 /* PostItem.swift */,
 			);
@@ -849,7 +846,6 @@
 				C8FA595C22816C4B0003656B /* Results.swift in Sources */,
 				176B989022842C4400A749A1 /* Json4Swift_Base2.swift in Sources */,
 				176B989222842C4400A749A1 /* Opening_hours.swift in Sources */,
-				F6AD30A1228190580050B861 /* MapModel.swift in Sources */,
 				17AB310522815F88004E0C0A /* Geometry.swift in Sources */,
 				F6AD3091228029D90050B861 /* Functions.swift in Sources */,
 				F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */,
