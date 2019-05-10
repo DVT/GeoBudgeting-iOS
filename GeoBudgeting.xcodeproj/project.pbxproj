@@ -35,6 +35,8 @@
 		176B989022842C4400A749A1 /* Json4Swift_Base2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988222842C4400A749A1 /* Json4Swift_Base2.swift */; };
 		176B989122842C4400A749A1 /* PlaceIdBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988322842C4400A749A1 /* PlaceIdBase.swift */; };
 		176B989222842C4400A749A1 /* Opening_hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988422842C4400A749A1 /* Opening_hours.swift */; };
+		17959ADC22855AFA00C61050 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17959ADB22855AFA00C61050 /* api.plist */; };
+		17959B5B22855C2000C61050 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17959B5A22855C1F00C61050 /* LoginViewController.swift */; };
 		17AB310522815F88004E0C0A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310422815F88004E0C0A /* Geometry.swift */; };
 		17AB310722815FC5004E0C0A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310622815FC5004E0C0A /* Location.swift */; };
 		3CA71A6135822B1EDA3856DF /* Pods_GeoBudgeting_GeoBudgetingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */; };
@@ -119,25 +121,26 @@
 		176B988222842C4400A749A1 /* Json4Swift_Base2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base2.swift; sourceTree = "<group>"; };
 		176B988322842C4400A749A1 /* PlaceIdBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceIdBase.swift; sourceTree = "<group>"; };
 		176B988422842C4400A749A1 /* Opening_hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening_hours.swift; sourceTree = "<group>"; };
+		17959ADB22855AFA00C61050 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
+		17959B5A22855C1F00C61050 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17AB310422815F88004E0C0A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		17AB310622815FC5004E0C0A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgeting_GeoBudgetingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; sourceTree = "<group>"; };
-		47AC8818BEA5B04777F88C27 /* Pods-GeoBudgetingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		501715D922842D600096C3FB /* OCRParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRParsing.swift; sourceTree = "<group>"; };
 		501715E1228555B70096C3FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		501715E5228555D30096C3FB /* api.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 		501715E62285565D0096C3FB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		6F19BD94CA199A0893A78912 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		707DEBE42284420A009F94B4 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		70CC36C02281760D006F7658 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		70CC36C722817A90006F7658 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		70CC36C92281893B006F7658 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		70CC36EA2281A0D5006F7658 /* OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCR.swift; sourceTree = "<group>"; };
-		8E737A5DBF40CA80694B6726 /* Pods-GeoBudgeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.debug.xcconfig"; sourceTree = "<group>"; };
+		86CD2C07E5BA8A53384DDE83 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF8EBFA64E248E8886E6083 /* Pods_GeoBudgetingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgetingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8DEF46838554EF7A59AADD5 /* Pods-GeoBudgeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.release.xcconfig"; sourceTree = "<group>"; };
+		ACDE10A1A0D872ECA5887C79 /* Pods-GeoBudgetingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD5F6128CFCEB8C124B33038 /* Pods-GeoBudgeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.release.xcconfig"; sourceTree = "<group>"; };
+		C351EA469E602468F5D1EBD7 /* Pods-GeoBudgetingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C870ADB422845083008196C8 /* StorePurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePurchasesViewController.swift; sourceTree = "<group>"; };
 		C870ADB622845092008196C8 /* PurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
 		C870ADB82284509D008196C8 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
@@ -145,7 +148,7 @@
 		C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		C8A13CC12280623800FD6A00 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		C8FA595B22816C4B0003656B /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
-		D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.release.xcconfig"; sourceTree = "<group>"; };
+		D50009D1CF69E5496879D6C6 /* Pods-GeoBudgeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.debug.xcconfig"; sourceTree = "<group>"; };
 		F307CC8522843B3500615DE7 /* OCRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRModel.swift; sourceTree = "<group>"; };
 		F6AD3047227C30370050B861 /* GeoBudgeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBudgeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6AD304A227C30370050B861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +245,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		17959B5822855C1F00C61050 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				17959B5922855C1F00C61050 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		17959B5922855C1F00C61050 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17959B5A22855C1F00C61050 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		17AB310122815CAA004E0C0A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,12 +343,12 @@
 		F2FF08A3DDF1ABF65960677A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8E737A5DBF40CA80694B6726 /* Pods-GeoBudgeting.debug.xcconfig */,
-				A8DEF46838554EF7A59AADD5 /* Pods-GeoBudgeting.release.xcconfig */,
-				4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */,
-				45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */,
-				47AC8818BEA5B04777F88C27 /* Pods-GeoBudgetingTests.debug.xcconfig */,
-				D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */,
+				D50009D1CF69E5496879D6C6 /* Pods-GeoBudgeting.debug.xcconfig */,
+				AD5F6128CFCEB8C124B33038 /* Pods-GeoBudgeting.release.xcconfig */,
+				86CD2C07E5BA8A53384DDE83 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */,
+				6F19BD94CA199A0893A78912 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */,
+				C351EA469E602468F5D1EBD7 /* Pods-GeoBudgetingTests.debug.xcconfig */,
+				ACDE10A1A0D872ECA5887C79 /* Pods-GeoBudgetingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -360,7 +379,8 @@
 		F6AD3049227C30370050B861 /* GeoBudgeting */ = {
 			isa = PBXGroup;
 			children = (
-				501715E5228555D30096C3FB /* api.plist */,
+				17959B5822855C1F00C61050 /* Login */,
+				17959ADB22855AFA00C61050 /* api.plist */,
 				501715E1228555B70096C3FB /* GoogleService-Info.plist */,
 				501715D822842CF70096C3FB /* OCRParsing */,
 				C870ADB222844FFD008196C8 /* StorePurchases */,
@@ -602,6 +622,7 @@
 				C8A13CB72280299500FD6A00 /* (null) in Resources */,
 				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
+				17959ADC22855AFA00C61050 /* api.plist in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
@@ -809,6 +830,7 @@
 				176B988822842C4400A749A1 /* Viewport.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
 				176B988F22842C4400A749A1 /* Southwest.swift in Sources */,
+				17959B5B22855C2000C61050 /* LoginViewController.swift in Sources */,
 				176B988A22842C4400A749A1 /* Periods.swift in Sources */,
 				F307CC8622843B3500615DE7 /* OCRModel.swift in Sources */,
 				176B986B22842B6B00A749A1 /* Southwest.swift in Sources */,
@@ -1008,11 +1030,11 @@
 		};
 		F6AD3070227C30390050B861 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E737A5DBF40CA80694B6726 /* Pods-GeoBudgeting.debug.xcconfig */;
+			baseConfigurationReference = D50009D1CF69E5496879D6C6 /* Pods-GeoBudgeting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 248XUAAJP7;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = "$(SRCROOT)/GeoBudgeting/General/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1027,11 +1049,11 @@
 		};
 		F6AD3071227C30390050B861 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DEF46838554EF7A59AADD5 /* Pods-GeoBudgeting.release.xcconfig */;
+			baseConfigurationReference = AD5F6128CFCEB8C124B33038 /* Pods-GeoBudgeting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 248XUAAJP7;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = "$(SRCROOT)/GeoBudgeting/General/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1046,7 +1068,7 @@
 		};
 		F6AD3073227C30390050B861 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47AC8818BEA5B04777F88C27 /* Pods-GeoBudgetingTests.debug.xcconfig */;
+			baseConfigurationReference = C351EA469E602468F5D1EBD7 /* Pods-GeoBudgetingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1068,7 +1090,7 @@
 		};
 		F6AD3074227C30390050B861 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */;
+			baseConfigurationReference = ACDE10A1A0D872ECA5887C79 /* Pods-GeoBudgetingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1090,7 +1112,7 @@
 		};
 		F6AD3076227C30390050B861 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */;
+			baseConfigurationReference = 86CD2C07E5BA8A53384DDE83 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1111,7 +1133,7 @@
 		};
 		F6AD3077227C30390050B861 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */;
+			baseConfigurationReference = 6F19BD94CA199A0893A78912 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
