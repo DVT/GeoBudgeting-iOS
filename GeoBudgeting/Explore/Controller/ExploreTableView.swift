@@ -19,8 +19,12 @@ class ExploreTableView: UITableViewController {
    let ref = Database.database().reference(withPath: "receipts/\(userID)")
     let Dateref = Database.database().reference(withPath: "date/receipts")
     let postCell = PostCell()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Expenses"
+        
         self.tableView.rowHeight = 75
         self.tableView.clipsToBounds = true
         tableView.allowsMultipleSelectionDuringEditing = false
@@ -51,10 +55,11 @@ class ExploreTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell
         let postItem = items[indexPath.row]
-        cell?.storeName?.text = postItem.key
+        cell?.storeName?.text = postItem.key.capitalized
         cell?.category?.text = postItem.category
         
         if userID != "" {
@@ -86,9 +91,12 @@ class ExploreTableView: UITableViewController {
         }
         return cell!
     }
+
+
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+
     override func tableView(_ tableView: UITableView,
                             commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -96,7 +104,7 @@ class ExploreTableView: UITableViewController {
             postItem.ref?.removeValue()
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storeName = items[indexPath.item].key
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -106,6 +114,7 @@ class ExploreTableView: UITableViewController {
     }
 
 }
+
 func convertTimestamp(serverTimestamp: String) -> String {
     let time = Int(serverTimestamp) ?? 0 / 1000
     let date = NSDate(timeIntervalSince1970: TimeInterval(time))

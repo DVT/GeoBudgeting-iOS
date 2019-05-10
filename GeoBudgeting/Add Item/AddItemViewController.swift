@@ -44,7 +44,10 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         scrollviewInsets = self.scrollView.contentInset
         
         toastView.layer.cornerRadius = 8
+        addItemButton.isEnabled = false
         
+        storeNameTextField.delegate = self
+        priceEditText.delegate = self
     }
     
     @IBAction func openCamera(_ sender: Any) {
@@ -381,3 +384,37 @@ extension AddItemViewController {
     }
 }
 
+extension AddItemViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        var isFilledName = false
+        var isFilledPrice = false
+        if (storeNameTextField.text?.isEmpty)! {
+            isFilledName = false
+        } else {
+            isFilledName = true
+        }
+        
+        if (priceEditText.text?.isEmpty)! {
+            isFilledPrice = false
+        } else {
+            isFilledPrice = true
+        }
+        
+        
+        if isFilledPrice && isFilledName {
+            addItemButton.isEnabled = true
+        } else {
+            addItemButton.isEnabled = false
+        }
+    }
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        storeNameTextField.resignFirstResponder()
+        priceEditText.resignFirstResponder()
+        dismissKeyboard()
+        return true
+    }
+}

@@ -38,12 +38,21 @@ extension StorePurchasesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: PurchaseCell = purchasesTableView.dequeueReusableCell(withIdentifier: "PurchaseCell") as! PurchaseCell else {
-            return PurchaseCell()
+            return UITableViewCell()
         }
         
         cell.amountLabel.text = String(purchases[indexPath.item].amount)
-        cell.dateLabel.text = purchases[indexPath.item].date
-        
+        let dateString: String = purchases[indexPath.item].date
+        cell.dateLabel.text = fixDate(dateString: dateString)
         return cell
+    }
+    
+    private func fixDate(dateString: String) -> String {
+        
+        let split = dateString.split(separator: " ")
+        print("the split \(split)")
+        let date = split[0] + " " + split[1] + " " + split[2]
+        print(date)
+        return date
     }
 }
