@@ -11,19 +11,19 @@ import FirebaseDatabase
 
 class FirebaseServices {
     
-    func addNewItem(storeName: String, storeCategory: String, dateTime: String, amount: Double, latitude: Double, longitude: Double) {
+    func addNewItem(userID: String, storeName: String, storeCategory: String, dateTime: String, amount: Double, latitude: Double, longitude: Double) {
         let ref: DatabaseReference = Database.database().reference()
-        ref.child("receipts/\(storeName)/category").setValue(storeCategory)
-        ref.child("receipts/\(storeName)/date/\(dateTime)").setValue(amount)
-        ref.child("receipts/\(storeName)/mapLatitude").setValue(latitude)
-        ref.child("receipts/\(storeName)/mapLongitude").setValue(longitude)
+        ref.child("receipts/\(userID)/\(storeName)/category").setValue(storeCategory)
+        ref.child("receipts/\(userID)/\(storeName)/date/\(dateTime)").setValue(amount)
+        ref.child("receipts/\(userID)/\(storeName)/mapLatitude").setValue(latitude)
+        ref.child("receipts/\(userID)/\(storeName)/mapLongitude").setValue(longitude)
     }
     
-    func fetchAllPurchases(forStore storeName: String, completion: @escaping ([Purchase]) -> Void) {
+    func fetchAllPurchases(forUser userID: String, andforStore storeName: String, completion: @escaping ([Purchase]) -> Void) {
         var purchases: [Purchase] = [Purchase]()
         
         let ref: DatabaseReference = Database.database().reference()
-        ref.child("receipts/\(storeName)/date").observeSingleEvent(of: .value, with: {(datasnapshot) in
+        ref.child("receipts/\(userID)/\(storeName)/date").observeSingleEvent(of: .value, with: {(datasnapshot) in
             let children = datasnapshot.children
             for childSnapshot in children {
                 let child = childSnapshot as! DataSnapshot
