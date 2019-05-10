@@ -3,15 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		171D867D2280269500B29BA1 /* CategoryListFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D867C2280269500B29BA1 /* CategoryListFinder.swift */; };
 		171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D86942280306700B29BA1 /* Json4Swift_Base.swift */; };
-		1766E6E32284903B006178F1 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766E6E12284903B006178F1 /* FormModel.swift */; };
-		1766E6E42284903B006178F1 /* OCRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766E6E22284903B006178F1 /* OCRModel.swift */; };
-		1766E6E922849089006178F1 /* OCRParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766E6E822849089006178F1 /* OCRParsing.swift */; };
 		176B986822842B6B00A749A1 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B985B22842B6B00A749A1 /* Viewport.swift */; };
 		176B986922842B6B00A749A1 /* Opening_hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B985C22842B6B00A749A1 /* Opening_hours.swift */; };
 		176B986A22842B6B00A749A1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B985D22842B6B00A749A1 /* Result.swift */; };
@@ -25,11 +22,29 @@
 		176B987222842B6B00A749A1 /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B986522842B6B00A749A1 /* Open.swift */; };
 		176B987322842B6B00A749A1 /* Plus_code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B986622842B6B00A749A1 /* Plus_code.swift */; };
 		176B987422842B6B00A749A1 /* PlaceIdBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B986722842B6B00A749A1 /* PlaceIdBase.swift */; };
+		176B988622842C4400A749A1 /* Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987822842C4400A749A1 /* Close.swift */; };
+		176B988722842C4400A749A1 /* Northeast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987922842C4400A749A1 /* Northeast.swift */; };
+		176B988822842C4400A749A1 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987A22842C4400A749A1 /* Viewport.swift */; };
+		176B988922842C4400A749A1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987B22842C4400A749A1 /* Result.swift */; };
+		176B988A22842C4400A749A1 /* Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987C22842C4400A749A1 /* Periods.swift */; };
+		176B988B22842C4400A749A1 /* Plus_code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987D22842C4400A749A1 /* Plus_code.swift */; };
+		176B988C22842C4400A749A1 /* Candidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987E22842C4400A749A1 /* Candidates.swift */; };
+		176B988D22842C4400A749A1 /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B987F22842C4400A749A1 /* Open.swift */; };
+		176B988E22842C4400A749A1 /* Address_components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988022842C4400A749A1 /* Address_components.swift */; };
+		176B988F22842C4400A749A1 /* Southwest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988122842C4400A749A1 /* Southwest.swift */; };
+		176B989022842C4400A749A1 /* Json4Swift_Base2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988222842C4400A749A1 /* Json4Swift_Base2.swift */; };
+		176B989122842C4400A749A1 /* PlaceIdBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988322842C4400A749A1 /* PlaceIdBase.swift */; };
+		176B989222842C4400A749A1 /* Opening_hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988422842C4400A749A1 /* Opening_hours.swift */; };
+		17959ADC22855AFA00C61050 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17959ADB22855AFA00C61050 /* api.plist */; };
+		17959B5B22855C2000C61050 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17959B5A22855C1F00C61050 /* LoginViewController.swift */; };
 		17AB310522815F88004E0C0A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310422815F88004E0C0A /* Geometry.swift */; };
 		17AB310722815FC5004E0C0A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310622815FC5004E0C0A /* Location.swift */; };
 		3CA71A6135822B1EDA3856DF /* Pods_GeoBudgeting_GeoBudgetingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */; };
 		4B4375CDE380B9D7B25BBC81 /* Pods_GeoBudgeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */; };
-		70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36BE2281755A006F7658 /* GoogleService-Info.plist */; };
+		501715DA22842D600096C3FB /* OCRParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501715D922842D600096C3FB /* OCRParsing.swift */; };
+		501715E2228555B70096C3FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 501715E1228555B70096C3FB /* GoogleService-Info.plist */; };
+		501715E72285565D0096C3FB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501715E62285565D0096C3FB /* Login.storyboard */; };
+		707DEBE52284420A009F94B4 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DEBE42284420A009F94B4 /* FormModel.swift */; };
 		70CC36C12281760D006F7658 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C02281760D006F7658 /* TabController.swift */; };
 		70CC36C822817A90006F7658 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C722817A90006F7658 /* Settings.storyboard */; };
 		70CC36CA2281893B006F7658 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C92281893B006F7658 /* SettingsViewController.swift */; };
@@ -43,6 +58,7 @@
 		C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */; };
 		C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CC12280623800FD6A00 /* FirebaseServices.swift */; };
 		C8FA595C22816C4B0003656B /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA595B22816C4B0003656B /* Results.swift */; };
+		F307CC8622843B3500615DE7 /* OCRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307CC8522843B3500615DE7 /* OCRModel.swift */; };
 		F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304A227C30370050B861 /* AppDelegate.swift */; };
 		F6AD304D227C30370050B861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304C227C30370050B861 /* MapViewController.swift */; };
 		F6AD3050227C30370050B861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD304E227C30370050B861 /* Main.storyboard */; };
@@ -55,9 +71,7 @@
 		F6AD3094228034E70050B861 /* ExploreTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3093228034E70050B861 /* ExploreTableView.swift */; };
 		F6AD3097228035FD0050B861 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3096228035FD0050B861 /* PostCell.swift */; };
 		F6AD309A228039970050B861 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3099228039970050B861 /* PostItem.swift */; };
-		F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD309C228178170050B861 /* GoogleService-Info.plist */; };
 		F6AD30A1228190580050B861 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD30A0228190580050B861 /* MapModel.swift */; };
-		F6AD30A52284222D0050B861 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AD30A42284222D0050B861 /* api.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +95,6 @@
 		171D86792280253100B29BA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		171D867C2280269500B29BA1 /* CategoryListFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListFinder.swift; sourceTree = "<group>"; };
 		171D86942280306700B29BA1 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
-		1766E6E12284903B006178F1 /* FormModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
-		1766E6E22284903B006178F1 /* OCRModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRModel.swift; sourceTree = "<group>"; };
-		1766E6E822849089006178F1 /* OCRParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRParsing.swift; sourceTree = "<group>"; };
 		176B985B22842B6B00A749A1 /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
 		176B985C22842B6B00A749A1 /* Opening_hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening_hours.swift; sourceTree = "<group>"; };
 		176B985D22842B6B00A749A1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -97,21 +108,39 @@
 		176B986522842B6B00A749A1 /* Open.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		176B986622842B6B00A749A1 /* Plus_code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plus_code.swift; sourceTree = "<group>"; };
 		176B986722842B6B00A749A1 /* PlaceIdBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceIdBase.swift; sourceTree = "<group>"; };
+		176B987822842C4400A749A1 /* Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Close.swift; sourceTree = "<group>"; };
+		176B987922842C4400A749A1 /* Northeast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Northeast.swift; sourceTree = "<group>"; };
+		176B987A22842C4400A749A1 /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
+		176B987B22842C4400A749A1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		176B987C22842C4400A749A1 /* Periods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periods.swift; sourceTree = "<group>"; };
+		176B987D22842C4400A749A1 /* Plus_code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plus_code.swift; sourceTree = "<group>"; };
+		176B987E22842C4400A749A1 /* Candidates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidates.swift; sourceTree = "<group>"; };
+		176B987F22842C4400A749A1 /* Open.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
+		176B988022842C4400A749A1 /* Address_components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address_components.swift; sourceTree = "<group>"; };
+		176B988122842C4400A749A1 /* Southwest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Southwest.swift; sourceTree = "<group>"; };
+		176B988222842C4400A749A1 /* Json4Swift_Base2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base2.swift; sourceTree = "<group>"; };
+		176B988322842C4400A749A1 /* PlaceIdBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceIdBase.swift; sourceTree = "<group>"; };
+		176B988422842C4400A749A1 /* Opening_hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening_hours.swift; sourceTree = "<group>"; };
+		17959ADB22855AFA00C61050 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
+		17959B5A22855C1F00C61050 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17AB310422815F88004E0C0A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		17AB310622815FC5004E0C0A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1F9C9459C83E40CBB915FBE8 /* Pods_GeoBudgeting_GeoBudgetingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgeting_GeoBudgetingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		201864C5B555A2429FC76BD4 /* Pods_GeoBudgeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; sourceTree = "<group>"; };
-		47AC8818BEA5B04777F88C27 /* Pods-GeoBudgetingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		70CC36BE2281755A006F7658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		501715D922842D600096C3FB /* OCRParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRParsing.swift; sourceTree = "<group>"; };
+		501715E1228555B70096C3FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		501715E62285565D0096C3FB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		6F19BD94CA199A0893A78912 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		707DEBE42284420A009F94B4 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		70CC36C02281760D006F7658 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		70CC36C722817A90006F7658 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		70CC36C92281893B006F7658 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		70CC36EA2281A0D5006F7658 /* OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCR.swift; sourceTree = "<group>"; };
-		8E737A5DBF40CA80694B6726 /* Pods-GeoBudgeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.debug.xcconfig"; sourceTree = "<group>"; };
+		86CD2C07E5BA8A53384DDE83 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF8EBFA64E248E8886E6083 /* Pods_GeoBudgetingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBudgetingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8DEF46838554EF7A59AADD5 /* Pods-GeoBudgeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.release.xcconfig"; sourceTree = "<group>"; };
+		ACDE10A1A0D872ECA5887C79 /* Pods-GeoBudgetingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD5F6128CFCEB8C124B33038 /* Pods-GeoBudgeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.release.xcconfig"; sourceTree = "<group>"; };
+		C351EA469E602468F5D1EBD7 /* Pods-GeoBudgetingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C870ADB422845083008196C8 /* StorePurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePurchasesViewController.swift; sourceTree = "<group>"; };
 		C870ADB622845092008196C8 /* PurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
 		C870ADB82284509D008196C8 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
@@ -119,7 +148,8 @@
 		C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		C8A13CC12280623800FD6A00 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		C8FA595B22816C4B0003656B /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
-		D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgetingTests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests.release.xcconfig"; sourceTree = "<group>"; };
+		D50009D1CF69E5496879D6C6 /* Pods-GeoBudgeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.debug.xcconfig"; sourceTree = "<group>"; };
+		F307CC8522843B3500615DE7 /* OCRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRModel.swift; sourceTree = "<group>"; };
 		F6AD3047227C30370050B861 /* GeoBudgeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBudgeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6AD304A227C30370050B861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6AD304C227C30370050B861 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -138,9 +168,7 @@
 		F6AD3093228034E70050B861 /* ExploreTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableView.swift; sourceTree = "<group>"; };
 		F6AD3096228035FD0050B861 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		F6AD3099228039970050B861 /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
-		F6AD309C228178170050B861 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6AD30A0228190580050B861 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
-		F6AD30A42284222D0050B861 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +211,19 @@
 		171D867E22802E3200B29BA1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				176B988022842C4400A749A1 /* Address_components.swift */,
+				176B987E22842C4400A749A1 /* Candidates.swift */,
+				176B987822842C4400A749A1 /* Close.swift */,
+				176B988222842C4400A749A1 /* Json4Swift_Base2.swift */,
+				176B987922842C4400A749A1 /* Northeast.swift */,
+				176B987F22842C4400A749A1 /* Open.swift */,
+				176B988422842C4400A749A1 /* Opening_hours.swift */,
+				176B987C22842C4400A749A1 /* Periods.swift */,
+				176B988322842C4400A749A1 /* PlaceIdBase.swift */,
+				176B987D22842C4400A749A1 /* Plus_code.swift */,
+				176B987B22842C4400A749A1 /* Result.swift */,
+				176B988122842C4400A749A1 /* Southwest.swift */,
+				176B987A22842C4400A749A1 /* Viewport.swift */,
 				176B985F22842B6B00A749A1 /* Address_components.swift */,
 				176B986422842B6B00A749A1 /* Candidates.swift */,
 				176B986122842B6B00A749A1 /* Close.swift */,
@@ -204,12 +245,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1766E6E722849070006178F1 /* OCRParsing */ = {
+		17959B5822855C1F00C61050 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				1766E6E822849089006178F1 /* OCRParsing.swift */,
+				17959B5922855C1F00C61050 /* Controller */,
 			);
-			path = OCRParsing;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		17959B5922855C1F00C61050 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17959B5A22855C1F00C61050 /* LoginViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		17AB310122815CAA004E0C0A /* Recovered References */ = {
@@ -218,6 +267,14 @@
 				171D86792280253100B29BA1 /* GoogleService-Info.plist */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		501715D822842CF70096C3FB /* OCRParsing */ = {
+			isa = PBXGroup;
+			children = (
+				501715D922842D600096C3FB /* OCRParsing.swift */,
+			);
+			path = OCRParsing;
 			sourceTree = "<group>";
 		};
 		5ADDA4A7792C660E9EA4698C /* Frameworks */ = {
@@ -250,9 +307,9 @@
 		70CC36E92281A0B2006F7658 /* OCR */ = {
 			isa = PBXGroup;
 			children = (
-				1766E6E12284903B006178F1 /* FormModel.swift */,
-				1766E6E22284903B006178F1 /* OCRModel.swift */,
 				70CC36EA2281A0D5006F7658 /* OCR.swift */,
+				F307CC8522843B3500615DE7 /* OCRModel.swift */,
+				707DEBE42284420A009F94B4 /* FormModel.swift */,
 			);
 			path = OCR;
 			sourceTree = "<group>";
@@ -286,12 +343,12 @@
 		F2FF08A3DDF1ABF65960677A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8E737A5DBF40CA80694B6726 /* Pods-GeoBudgeting.debug.xcconfig */,
-				A8DEF46838554EF7A59AADD5 /* Pods-GeoBudgeting.release.xcconfig */,
-				4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */,
-				45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */,
-				47AC8818BEA5B04777F88C27 /* Pods-GeoBudgetingTests.debug.xcconfig */,
-				D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */,
+				D50009D1CF69E5496879D6C6 /* Pods-GeoBudgeting.debug.xcconfig */,
+				AD5F6128CFCEB8C124B33038 /* Pods-GeoBudgeting.release.xcconfig */,
+				86CD2C07E5BA8A53384DDE83 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */,
+				6F19BD94CA199A0893A78912 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */,
+				C351EA469E602468F5D1EBD7 /* Pods-GeoBudgetingTests.debug.xcconfig */,
+				ACDE10A1A0D872ECA5887C79 /* Pods-GeoBudgetingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -322,13 +379,13 @@
 		F6AD3049227C30370050B861 /* GeoBudgeting */ = {
 			isa = PBXGroup;
 			children = (
-				1766E6E722849070006178F1 /* OCRParsing */,
+				17959B5822855C1F00C61050 /* Login */,
+				17959ADB22855AFA00C61050 /* api.plist */,
+				501715E1228555B70096C3FB /* GoogleService-Info.plist */,
+				501715D822842CF70096C3FB /* OCRParsing */,
 				C870ADB222844FFD008196C8 /* StorePurchases */,
 				70CC36E92281A0B2006F7658 /* OCR */,
-				F6AD30A42284222D0050B861 /* api.plist */,
-				F6AD309C228178170050B861 /* GoogleService-Info.plist */,
 				70CC36C522817A7B006F7658 /* Settings */,
-				70CC36BE2281755A006F7658 /* GoogleService-Info.plist */,
 				F6AD3092228034840050B861 /* Explore */,
 				C8A13CBA2280373800FD6A00 /* Add Item */,
 				171D867B2280265400B29BA1 /* Category */,
@@ -364,6 +421,7 @@
 		F6AD3078227C32410050B861 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				501715E62285565D0096C3FB /* Login.storyboard */,
 				F6AD3090228029D90050B861 /* Functions.swift */,
 				F6AD307A227C32510050B861 /* Resources */,
 				F6AD3079227C32470050B861 /* Delegates */,
@@ -560,15 +618,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501715E72285565D0096C3FB /* Login.storyboard in Resources */,
 				C8A13CB72280299500FD6A00 /* (null) in Resources */,
 				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
+				17959ADC22855AFA00C61050 /* api.plist in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
-				F6AD30A52284222D0050B861 /* api.plist in Resources */,
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
-				F6AD309E228178170050B861 /* GoogleService-Info.plist in Resources */,
-				70CC36BF2281755A006F7658 /* GoogleService-Info.plist in Resources */,
+				501715E2228555B70096C3FB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,18 +653,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -641,18 +692,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgetingTests/Pods-GeoBudgetingTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -665,18 +709,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -689,20 +726,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -737,20 +765,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -788,43 +807,57 @@
 			files = (
 				176B986C22842B6B00A749A1 /* Address_components.swift in Sources */,
 				F6AD309A228039970050B861 /* PostItem.swift in Sources */,
+				501715DA22842D600096C3FB /* OCRParsing.swift in Sources */,
 				176B986F22842B6B00A749A1 /* Periods.swift in Sources */,
 				70CC36C12281760D006F7658 /* TabController.swift in Sources */,
+				707DEBE52284420A009F94B4 /* FormModel.swift in Sources */,
+				176B988622842C4400A749A1 /* Close.swift in Sources */,
+				176B988C22842C4400A749A1 /* Candidates.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
-				1766E6E922849089006178F1 /* OCRParsing.swift in Sources */,
 				176B987222842B6B00A749A1 /* Open.swift in Sources */,
 				70CC36EB2281A0D5006F7658 /* OCR.swift in Sources */,
 				C870ADB722845092008196C8 /* PurchaseCell.swift in Sources */,
 				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
+				176B988922842C4400A749A1 /* Result.swift in Sources */,
+				176B988D22842C4400A749A1 /* Open.swift in Sources */,
 				176B987322842B6B00A749A1 /* Plus_code.swift in Sources */,
 				176B986D22842B6B00A749A1 /* Northeast.swift in Sources */,
 				176B987022842B6B00A749A1 /* Json4Swift_Base2.swift in Sources */,
 				176B986E22842B6B00A749A1 /* Close.swift in Sources */,
 				F6AD3094228034E70050B861 /* ExploreTableView.swift in Sources */,
+				176B988E22842C4400A749A1 /* Address_components.swift in Sources */,
 				C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */,
+				176B988822842C4400A749A1 /* Viewport.swift in Sources */,
 				F6AD3082227C3AA40050B861 /* SearchView.swift in Sources */,
+				176B988F22842C4400A749A1 /* Southwest.swift in Sources */,
+				17959B5B22855C2000C61050 /* LoginViewController.swift in Sources */,
+				176B988A22842C4400A749A1 /* Periods.swift in Sources */,
+				F307CC8622843B3500615DE7 /* OCRModel.swift in Sources */,
 				176B986B22842B6B00A749A1 /* Southwest.swift in Sources */,
 				F6AD304D227C30370050B861 /* MapViewController.swift in Sources */,
 				C870ADB522845083008196C8 /* StorePurchasesViewController.swift in Sources */,
 				176B987122842B6B00A749A1 /* Candidates.swift in Sources */,
 				C870ADB92284509D008196C8 /* Purchase.swift in Sources */,
 				C8A13CC22280623800FD6A00 /* FirebaseServices.swift in Sources */,
+				176B988722842C4400A749A1 /* Northeast.swift in Sources */,
 				171D867D2280269500B29BA1 /* CategoryListFinder.swift in Sources */,
 				17AB310722815FC5004E0C0A /* Location.swift in Sources */,
-				1766E6E42284903B006178F1 /* OCRModel.swift in Sources */,
 				171D86952280306700B29BA1 /* Json4Swift_Base.swift in Sources */,
+				176B989122842C4400A749A1 /* PlaceIdBase.swift in Sources */,
 				176B986A22842B6B00A749A1 /* Result.swift in Sources */,
 				176B987422842B6B00A749A1 /* PlaceIdBase.swift in Sources */,
 				C8FA595C22816C4B0003656B /* Results.swift in Sources */,
+				176B989022842C4400A749A1 /* Json4Swift_Base2.swift in Sources */,
+				176B989222842C4400A749A1 /* Opening_hours.swift in Sources */,
 				F6AD30A1228190580050B861 /* MapModel.swift in Sources */,
 				17AB310522815F88004E0C0A /* Geometry.swift in Sources */,
-				1766E6E32284903B006178F1 /* FormModel.swift in Sources */,
 				F6AD3091228029D90050B861 /* Functions.swift in Sources */,
 				F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */,
 				176B986922842B6B00A749A1 /* Opening_hours.swift in Sources */,
 				176B986822842B6B00A749A1 /* Viewport.swift in Sources */,
 				F6AD3097228035FD0050B861 /* PostCell.swift in Sources */,
 				70CC36CA2281893B006F7658 /* SettingsViewController.swift in Sources */,
+				176B988B22842C4400A749A1 /* Plus_code.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -997,7 +1030,7 @@
 		};
 		F6AD3070227C30390050B861 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E737A5DBF40CA80694B6726 /* Pods-GeoBudgeting.debug.xcconfig */;
+			baseConfigurationReference = D50009D1CF69E5496879D6C6 /* Pods-GeoBudgeting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1016,7 +1049,7 @@
 		};
 		F6AD3071227C30390050B861 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DEF46838554EF7A59AADD5 /* Pods-GeoBudgeting.release.xcconfig */;
+			baseConfigurationReference = AD5F6128CFCEB8C124B33038 /* Pods-GeoBudgeting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1035,7 +1068,7 @@
 		};
 		F6AD3073227C30390050B861 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47AC8818BEA5B04777F88C27 /* Pods-GeoBudgetingTests.debug.xcconfig */;
+			baseConfigurationReference = C351EA469E602468F5D1EBD7 /* Pods-GeoBudgetingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1057,7 +1090,7 @@
 		};
 		F6AD3074227C30390050B861 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5262CD030D97C9A56D8D2D4 /* Pods-GeoBudgetingTests.release.xcconfig */;
+			baseConfigurationReference = ACDE10A1A0D872ECA5887C79 /* Pods-GeoBudgetingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1079,7 +1112,7 @@
 		};
 		F6AD3076227C30390050B861 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A31E0EF833F563D39623F18 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */;
+			baseConfigurationReference = 86CD2C07E5BA8A53384DDE83 /* Pods-GeoBudgeting-GeoBudgetingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1100,7 +1133,7 @@
 		};
 		F6AD3077227C30390050B861 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45C23C6A3ACCF52F13522245 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */;
+			baseConfigurationReference = 6F19BD94CA199A0893A78912 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

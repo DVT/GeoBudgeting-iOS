@@ -28,11 +28,18 @@ class CategoryListFinder {
             do {
                 let jsonDecoder = JSONDecoder()
                 let responseModel = try jsonDecoder.decode(PlaceIdBase.self, from: data!)
-                guard let placeId = responseModel.candidates?[0].place_id else {
-                    print("Error getting Place ID")
-                    return
+                
+                let candidates = responseModel.candidates
+                
+                if let noPlace = responseModel.candidates?.isEmpty{
+                    if noPlace {
+                        print("Error: No Place found using phone number")
+                    }else{
+                        if let placeId = candidates?[0].place_id{
+                            completionHandler(placeId)
+                        }
+                    }
                 }
-                completionHandler(placeId)
             } catch let error as NSError {
                 print(error)
                 print("Error")
