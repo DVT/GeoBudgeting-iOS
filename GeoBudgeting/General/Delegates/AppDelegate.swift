@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             return googleAuthentication
     }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        
         if let error = error {
             print("Failed to log in with Google", error)
             return
@@ -56,10 +58,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             if error != nil {
                 return
             }
+            
+            self.saveGoogleUserInfo(user: user)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let homePage = mainStoryboard.instantiateViewController(withIdentifier: "TabController")
             self.window?.rootViewController = homePage
         }
 }
+    
+    private func saveGoogleUserInfo(user: GIDGoogleUser) {
+        let userId = user.userID
+        let idToken = user.authentication.idToken
+        let fullName = user.profile.name
+        let givenName = user.profile.givenName
+        let familyName = user.profile.familyName
+        let email = user.profile.email
+        print("this user has profile picture \(user.profile.hasImage)")
+        let profileURL = user.profile.imageURL(withDimension: 100).absoluteString
+        let preferences = UserDefaults.standard
+        
+        preferences.set(userId, forKey: USER_ID)
+        preferences.set(idToken, forKey: ID_TOKEN)
+        preferences.set(fullName, forKey: FULL_NAME)
+        preferences.set(givenName, forKey: GIVEN_NAME)
+        preferences.set(familyName, forKey: FAMILY_NAME)
+        preferences.set(email, forKey: EMAIL)
+        preferences.set(profileURL, forKey: PROFILE_URL)
+        
+        let sync = preferences.synchronize()
+        print("it synced \(sync)")
+    }
 }
 

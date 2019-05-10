@@ -64,3 +64,4 @@ extension SettingsViewController: UIPickerViewDelegate {
         selectedHistoryOptionIndex = row
     }
 }
+
