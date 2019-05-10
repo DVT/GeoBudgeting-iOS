@@ -84,3 +84,46 @@ func addTabs(tabIndex: Int, tabController: UITabBarController) {
         return
     }
 }
+
+class Functions {
+    static var loginLodingIndicator: UIActivityIndicatorView?
+    static var container: UIView?
+    static var loadingView: UIView?
+    
+    static func showLoadingIndicator(mustShow: Bool, viewController: UIViewController) {
+        
+        if mustShow {
+            container = UIView()
+            container!.frame = viewController.view.frame
+            container!.center = viewController.view.center
+            container!.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.7)
+            
+            loadingView = UIView()
+            loadingView!.frame = CGRect(x: 0.0, y: 0.0, width: 80, height: 80)
+            loadingView!.center = viewController.view.center
+            loadingView!.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.4)
+            loadingView!.clipsToBounds = true
+            loadingView!.layer.cornerRadius = 10
+            
+            loginLodingIndicator = UIActivityIndicatorView()
+            loginLodingIndicator!.frame = CGRect(x: 0.0, y: 0.0, width: 40, height: 40)
+            
+            let frameWidth = loadingView!.frame.size.width
+            let frameHeight = loadingView!.frame.size.height
+            loginLodingIndicator?.center = CGPoint(x: frameWidth / 2, y: frameHeight / 2)
+            loginLodingIndicator?.hidesWhenStopped = true
+            loginLodingIndicator?.style = UIActivityIndicatorView.Style.whiteLarge
+            loadingView!.addSubview(loginLodingIndicator!)
+            container!.addSubview(loadingView!)
+            viewController.view.addSubview(container!)
+            loginLodingIndicator?.startAnimating()
+        } else {
+            DispatchQueue.main.async {
+                container?.isHidden = true
+                loadingView?.isHidden = true
+                loginLodingIndicator?.stopAnimating()
+                loginLodingIndicator = nil
+            } 
+        }
+    }
+}
