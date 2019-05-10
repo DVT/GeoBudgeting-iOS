@@ -12,8 +12,11 @@ class SettingsViewController: UIViewController {
 
     let historyOptions : [String] = ["last 30 days", "last 60 days", "last 90 days"]
     
-    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var historyPicker: UIPickerView!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
+    
+    
     var selectedHistoryOptionIndex: Int = 0
     
     override func viewDidLoad() {
@@ -28,6 +31,9 @@ class SettingsViewController: UIViewController {
         UserDefaults.standard.set(selectedHistoryOptionIndex, forKey: "history")
     }
     
+    @IBAction func logoutBtn(_ sender: Any) {
+        
+    }
     func loadPreviousSettings() {
         selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
         print("historyOption:\(selectedHistoryOptionIndex)")
