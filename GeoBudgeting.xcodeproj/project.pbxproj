@@ -35,7 +35,6 @@
 		176B989022842C4400A749A1 /* Json4Swift_Base2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988222842C4400A749A1 /* Json4Swift_Base2.swift */; };
 		176B989122842C4400A749A1 /* PlaceIdBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988322842C4400A749A1 /* PlaceIdBase.swift */; };
 		176B989222842C4400A749A1 /* Opening_hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B988422842C4400A749A1 /* Opening_hours.swift */; };
-		17959ADC22855AFA00C61050 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17959ADB22855AFA00C61050 /* api.plist */; };
 		17959B5B22855C2000C61050 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17959B5A22855C1F00C61050 /* LoginViewController.swift */; };
 		17AB310522815F88004E0C0A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310422815F88004E0C0A /* Geometry.swift */; };
 		17AB310722815FC5004E0C0A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB310622815FC5004E0C0A /* Location.swift */; };
@@ -53,6 +52,7 @@
 		C870ADB522845083008196C8 /* StorePurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C870ADB422845083008196C8 /* StorePurchasesViewController.swift */; };
 		C870ADB722845092008196C8 /* PurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C870ADB622845092008196C8 /* PurchaseCell.swift */; };
 		C870ADB92284509D008196C8 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C870ADB82284509D008196C8 /* Purchase.swift */; };
+		C870C67C228597F6004F41D0 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = C870C67B228597F6004F41D0 /* api.plist */; };
 		C8A13CB72280299500FD6A00 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */; };
 		C8A13CBC2280375400FD6A00 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */; };
@@ -121,7 +121,6 @@
 		176B988222842C4400A749A1 /* Json4Swift_Base2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base2.swift; sourceTree = "<group>"; };
 		176B988322842C4400A749A1 /* PlaceIdBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceIdBase.swift; sourceTree = "<group>"; };
 		176B988422842C4400A749A1 /* Opening_hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening_hours.swift; sourceTree = "<group>"; };
-		17959ADB22855AFA00C61050 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 		17959B5A22855C1F00C61050 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17AB310422815F88004E0C0A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		17AB310622815FC5004E0C0A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -144,6 +143,7 @@
 		C870ADB422845083008196C8 /* StorePurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePurchasesViewController.swift; sourceTree = "<group>"; };
 		C870ADB622845092008196C8 /* PurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
 		C870ADB82284509D008196C8 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		C870C67B228597F6004F41D0 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = api.plist; path = ../../../../Downloads/api.plist; sourceTree = "<group>"; };
 		C8A13CB822802AFE00FD6A00 /* AddItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddItem.storyboard; sourceTree = "<group>"; };
 		C8A13CBB2280375400FD6A00 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		C8A13CC12280623800FD6A00 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
@@ -379,8 +379,8 @@
 		F6AD3049227C30370050B861 /* GeoBudgeting */ = {
 			isa = PBXGroup;
 			children = (
+				C870C67B228597F6004F41D0 /* api.plist */,
 				17959B5822855C1F00C61050 /* Login */,
-				17959ADB22855AFA00C61050 /* api.plist */,
 				501715E1228555B70096C3FB /* GoogleService-Info.plist */,
 				501715D822842CF70096C3FB /* OCRParsing */,
 				C870ADB222844FFD008196C8 /* StorePurchases */,
@@ -484,6 +484,7 @@
 		F6AD3095228035E80050B861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6AD30A0228190580050B861 /* MapModel.swift */,
 				F6AD3096228035FD0050B861 /* PostCell.swift */,
 				F6AD3099228039970050B861 /* PostItem.swift */,
 			);
@@ -501,7 +502,6 @@
 		F6AD309F228190300050B861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F6AD30A0228190580050B861 /* MapModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -622,7 +622,7 @@
 				C8A13CB72280299500FD6A00 /* (null) in Resources */,
 				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
-				17959ADC22855AFA00C61050 /* api.plist in Resources */,
+				C870C67C228597F6004F41D0 /* api.plist in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
 				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
