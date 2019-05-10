@@ -54,7 +54,7 @@ class ExploreTableView: UITableViewController {
         let postItem = items[indexPath.row]
         cell?.storeName?.text = postItem.key
         cell?.category?.text = postItem.category
-        ref.observe(.value, with: { snapshot in
+        ref.observe(.value, with: { snapshot in  // live reload haoppens because of this observe
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                     let postItem = PostItem(snapshot: snapshot) {
