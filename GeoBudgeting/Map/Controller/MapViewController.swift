@@ -211,16 +211,16 @@ extension MapViewController {
     }
     func getCategory(category: String) -> UIColor {
     let finances = [
-        "finances","accounting","atm","bank"]
+        "Finances","finances","accounting","atm","bank"]
     let transport =
-    ["transport",
+    ["Transport", "transport",
         "airport","bus_station","car_dealer","car_rental","gas_station","parking",
     "subway_station",
     "taxi_stand",
     "train_station",
     "transit_station"]
     let entertainment =
-    ["entertainment",
+    ["Entertainment", "entertainment",
         "amusement_park","aquarium","art_gallery","book_store","bowling_alley", "bar","campground", "casino","lodging",
     "museum",
     "night_club",
@@ -231,17 +231,17 @@ extension MapViewController {
     "movie_rental",
     "movie_theater","zoo"]
     let food =
-    ["food",
+    ["Food", "food" ,
         "bakery", "cafe", "meal_delivery",
     "restaurant"]
     let health =
-    ["health",
+    ["Health", "health",
         "beauty_salon","dentist","hair_care","hospital",
     "veterinary_care","pharmacy"]
     let hobbies =
-    ["hobbies",
+    ["Hobbies", "hobbies",
         "bicycle_store","gym"]
-        let services =  ["services","car_repair","car_wash","cemetery","church","courthouse","doctor","electrician","city_hall","embassy",
+        let services =  ["Services","services","car_repair","car_wash","cemetery","church","courthouse","doctor","electrician","city_hall","embassy",
                         "fire_station","funeral_home","hindu_temple","insurance_agency","laundry","lawyer","library",
     "local_government_office",
     "locksmith",
@@ -258,7 +258,7 @@ extension MapViewController {
     "school",
     "storage",
     "synagogue"]
-    let shopping = ["shopping","clothing_store","convenience_store","department_store","electronics_store","florist","furniture_store","hardware_store","home_goods_store","insurance_agency","liquor_store",
+    let shopping = ["Shopping","shopping","clothing_store","convenience_store","department_store","electronics_store","florist","furniture_store","hardware_store","home_goods_store","insurance_agency","liquor_store",
     "shoe_store",
     "shopping_mall",
     "store",
@@ -267,7 +267,7 @@ extension MapViewController {
         var currentIndex = 0
         for items in finances
         {
-            if items == category.lowercased() {
+            if items == category {
                 let color = UIColor.black
                 return color
             }
@@ -277,7 +277,7 @@ extension MapViewController {
         currentIndex = 0
         for items in transport
         {
-            if items == category.lowercased() {
+            if items == category {
                 let color = UIColor.orange
                 return color
             }
@@ -287,7 +287,7 @@ extension MapViewController {
        currentIndex = 0
         for items in entertainment
         {
-            if items == category.lowercased() {
+            if items == category {
                 let color = UIColor.purple
                 return color
             }
@@ -297,7 +297,7 @@ extension MapViewController {
         currentIndex = 0
         for items in food
         {
-            if items == category.lowercased() {
+            if items == category {
                 let color = UIColor.brown
                 return color
             }
@@ -307,7 +307,7 @@ extension MapViewController {
         currentIndex = 0
         for items in health
         {
-            if items == category.lowercased() {
+            if items == category {
                 let color = UIColor.green
                 return color
             }
@@ -316,7 +316,7 @@ extension MapViewController {
         }
         for items in hobbies
         {
-            if items == category.lowercased() {
+            if items == category {
                 let color = UIColor.white
                 return color
             }
@@ -325,7 +325,7 @@ extension MapViewController {
         }
         for items in services
         {
-            if items == category.lowercased() {
+            if items == category {
                 let color = UIColor.yellow
                 return color
             }
@@ -334,7 +334,7 @@ extension MapViewController {
         }
         for items in shopping
         {
-            if items == category.lowercased() {
+            if items == category {
                 let color = UIColor.blue
                 return color
             }
