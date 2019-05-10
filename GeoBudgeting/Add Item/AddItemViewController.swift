@@ -19,6 +19,8 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var priceEditText: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var toastView: UIView!
+    @IBOutlet weak var viewOnMapButton: UIButton!
     
    
     
@@ -40,6 +42,9 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         
         registerForKeyboardNotifications()
         scrollviewInsets = self.scrollView.contentInset
+        
+        toastView.layer.cornerRadius = 8
+        
     }
     
     @IBAction func openCamera(_ sender: Any) {
@@ -70,7 +75,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             
             if let date = model.date {
                 DispatchQueue.main.async {
-                    self.datePicker.date = date
+                    self.datePicker.setDate(date, animated: true)
                 }
             } else {
                 error += "Date could not be found on receipt, please select manually. \n"
@@ -212,6 +217,10 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                                               longitude: long )
             }
         }
+        
+        refreshForm()
+        showAddedItemMessage()
+
     }
     
    
@@ -246,6 +255,24 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         let dotIndex = timestampString.firstIndex(of: ".")
         timestampString = String(timestampString.prefix(upTo: dotIndex!))
         return timestampString
+    }
+    
+    func refreshForm() {
+        storeNameTextField.text = ""
+        priceEditText.text = ""
+        categorySpinner.selectRow(0, inComponent: 0, animated: true)
+        datePicker.setDate(Date(), animated: true)
+    }
+    
+    func showAddedItemMessage() {
+        toastView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.toastView.isHidden = true
+        }
+    }
+    
+    @IBAction func viewOnMap(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 0 //To go to map to see
     }
     
 }
