@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SettingsNav-->
+        <!--Settings-->
         <scene sceneID="dFl-js-ga4">
             <objects>
-                <navigationController storyboardIdentifier="Settings" title="SettingsNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fRM-d1-gUW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Settings" title="Settings" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fRM-d1-gUW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Don-U8-hf2">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -87,30 +87,30 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaP-Cu-nbv">
                                         <rect key="frame" x="0.0" y="145" width="414" height="85"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spending History period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkV-0h-wV4">
-                                                <rect key="frame" x="8" y="31" width="248" height="23"/>
+                                            <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rnS-ba-gWI">
+                                                <rect key="frame" x="234" y="0.0" width="180" height="85"/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spending History period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkV-0h-wV4">
+                                                <rect key="frame" x="0.0" y="31" width="256" height="23"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="248" id="WJI-PE-IKj"/>
+                                                    <constraint firstAttribute="width" constant="256" id="WJI-PE-IKj"/>
                                                     <constraint firstAttribute="height" constant="23" id="nUr-Tf-6o8"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnS-ba-gWI">
-                                                <rect key="frame" x="272" y="0.0" width="126" height="85"/>
-                                            </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="PkV-0h-wV4" firstAttribute="centerY" secondItem="rnS-ba-gWI" secondAttribute="centerY" id="IpE-9M-KjQ"/>
                                             <constraint firstItem="rnS-ba-gWI" firstAttribute="top" secondItem="XaP-Cu-nbv" secondAttribute="top" id="Zu0-Pb-FoB"/>
-                                            <constraint firstItem="rnS-ba-gWI" firstAttribute="leading" secondItem="PkV-0h-wV4" secondAttribute="trailing" constant="16" id="cUw-dp-INm"/>
-                                            <constraint firstItem="PkV-0h-wV4" firstAttribute="leading" secondItem="XaP-Cu-nbv" secondAttribute="leadingMargin" id="fyE-4I-7Kn"/>
+                                            <constraint firstItem="rnS-ba-gWI" firstAttribute="leading" secondItem="PkV-0h-wV4" secondAttribute="trailing" constant="-22" id="cUw-dp-INm"/>
+                                            <constraint firstItem="PkV-0h-wV4" firstAttribute="leading" secondItem="XaP-Cu-nbv" secondAttribute="leadingMargin" constant="-8" id="fyE-4I-7Kn"/>
                                             <constraint firstAttribute="bottom" secondItem="rnS-ba-gWI" secondAttribute="bottom" id="jlY-gG-UXl"/>
                                             <constraint firstItem="PkV-0h-wV4" firstAttribute="top" secondItem="XaP-Cu-nbv" secondAttribute="top" constant="31" id="nzQ-P4-yf6"/>
                                             <constraint firstItem="PkV-0h-wV4" firstAttribute="centerY" secondItem="XaP-Cu-nbv" secondAttribute="centerY" id="sGN-Ng-ciS"/>
-                                            <constraint firstAttribute="trailing" secondItem="rnS-ba-gWI" secondAttribute="trailing" constant="16" id="t2g-yU-dKG"/>
+                                            <constraint firstAttribute="trailing" secondItem="rnS-ba-gWI" secondAttribute="trailing" id="t2g-yU-dKG"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8a-3t-Y40">
