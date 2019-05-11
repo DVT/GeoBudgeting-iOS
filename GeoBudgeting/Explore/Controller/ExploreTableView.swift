@@ -69,7 +69,7 @@ class ExploreTableView: UITableViewController {
                         let postItem = PostItem(snapshot: snapshot) {
                         var amount = 0.00
                         let title = postItem.key
-                        Database.database().reference().child("receipts\(userID)").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
+                        Database.database().reference().child("receipts/\(userID)").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
                             if datasnapshot.exists() {
                                 var keyArray = [String]()
                                 for snap in datasnapshot.children.allObjects {
@@ -77,7 +77,7 @@ class ExploreTableView: UITableViewController {
                                         let key = snap.key
                                         let moneySpent = snap.value
                                         amount += moneySpent as! Double
-                                        if (cell?.storeName?.text == title){
+                                        if ((cell?.storeName?.text)?.lowercased() == title){
                                             let totalMoneySpent = String(format: "%g", amount)
                                             cell?.totalAmount?.text = "R" + String(totalMoneySpent)
                                         }
