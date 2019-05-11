@@ -76,6 +76,7 @@ extension SettingsViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        (pickerView.view(forRow: row, forComponent: component) as? UILabel)?.adjustsFontSizeToFitWidth = true
         return historyOptions[row]
     }
 }
