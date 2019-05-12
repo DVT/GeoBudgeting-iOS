@@ -88,29 +88,32 @@
                                         <rect key="frame" x="0.0" y="145" width="414" height="85"/>
                                         <subviews>
                                             <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rnS-ba-gWI">
-                                                <rect key="frame" x="234" y="0.0" width="180" height="85"/>
+                                                <rect key="frame" x="234" y="0.0" width="160" height="85"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="QBj-mJ-LT4"/>
+                                                    <constraint firstAttribute="height" constant="85" id="icZ-9E-0lI"/>
+                                                </constraints>
                                             </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spending History period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkV-0h-wV4">
-                                                <rect key="frame" x="0.0" y="31" width="256" height="23"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spending history period" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkV-0h-wV4">
+                                                <rect key="frame" x="20" y="31" width="256" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="256" id="WJI-PE-IKj"/>
                                                     <constraint firstAttribute="height" constant="23" id="nUr-Tf-6o8"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="rnS-ba-gWI" firstAttribute="centerY" secondItem="XaP-Cu-nbv" secondAttribute="centerY" id="AMy-kL-RvU"/>
                                             <constraint firstItem="PkV-0h-wV4" firstAttribute="centerY" secondItem="rnS-ba-gWI" secondAttribute="centerY" id="IpE-9M-KjQ"/>
                                             <constraint firstItem="rnS-ba-gWI" firstAttribute="top" secondItem="XaP-Cu-nbv" secondAttribute="top" id="Zu0-Pb-FoB"/>
-                                            <constraint firstItem="rnS-ba-gWI" firstAttribute="leading" secondItem="PkV-0h-wV4" secondAttribute="trailing" constant="-22" id="cUw-dp-INm"/>
-                                            <constraint firstItem="PkV-0h-wV4" firstAttribute="leading" secondItem="XaP-Cu-nbv" secondAttribute="leadingMargin" constant="-8" id="fyE-4I-7Kn"/>
                                             <constraint firstAttribute="bottom" secondItem="rnS-ba-gWI" secondAttribute="bottom" id="jlY-gG-UXl"/>
                                             <constraint firstItem="PkV-0h-wV4" firstAttribute="top" secondItem="XaP-Cu-nbv" secondAttribute="top" constant="31" id="nzQ-P4-yf6"/>
                                             <constraint firstItem="PkV-0h-wV4" firstAttribute="centerY" secondItem="XaP-Cu-nbv" secondAttribute="centerY" id="sGN-Ng-ciS"/>
-                                            <constraint firstAttribute="trailing" secondItem="rnS-ba-gWI" secondAttribute="trailing" id="t2g-yU-dKG"/>
+                                            <constraint firstAttribute="trailing" secondItem="rnS-ba-gWI" secondAttribute="trailing" constant="20" id="t2g-yU-dKG"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8a-3t-Y40">
@@ -121,15 +124,14 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="LOGOUT">
-                                            <color key="titleColor" red="1" green="0.27226849679999998" blue="0.2094911283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="1" green="0.27226849679999998" blue="0.2094911283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.20530781149999999" green="0.46923267839999999" blue="0.96475356820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="logoutBtn:" destination="YTa-ut-2c5" eventType="touchUpInside" id="7i7-XJ-1pe"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="v8a-3t-Y40" secondAttribute="trailing" id="4sL-2q-ze3"/>
                                     <constraint firstItem="XaP-Cu-nbv" firstAttribute="top" secondItem="JqT-Wy-2zF" secondAttribute="bottom" constant="32" id="4ye-hP-GfH"/>
@@ -141,6 +143,7 @@
                                     <constraint firstItem="XaP-Cu-nbv" firstAttribute="leading" secondItem="JqT-Wy-2zF" secondAttribute="leading" id="PxP-kp-nIn"/>
                                     <constraint firstItem="JqT-Wy-2zF" firstAttribute="leading" secondItem="zJU-cW-6t8" secondAttribute="leading" id="Th3-Kb-4Nx"/>
                                     <constraint firstItem="JqT-Wy-2zF" firstAttribute="top" secondItem="zJU-cW-6t8" secondAttribute="top" constant="32" id="dVc-Qx-9L6"/>
+                                    <constraint firstItem="PkV-0h-wV4" firstAttribute="leading" secondItem="zJU-cW-6t8" secondAttribute="leading" constant="20" id="v4e-Qr-Usp"/>
                                 </constraints>
                             </view>
                         </subviews>

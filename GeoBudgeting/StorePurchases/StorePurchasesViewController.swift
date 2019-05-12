@@ -20,7 +20,11 @@ class StorePurchasesViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = storeName
         
-        FirebaseServices().fetchAllPurchases(forUser: userID, andforStore: storeName!) { [weak self] purchases in
+//        FirebaseServices().fetchAllPurchases(forUser: userID, andforStore: storeName!) { [weak self] purchases in
+//            self!.updateTable(purchases: purchases)
+//        }
+        
+        FirebaseServices().fetchAllPurchasesListener(forUser: userID, andForStore: storeName!) { [weak self] purchases in
             self!.updateTable(purchases: purchases)
         }
     }
