@@ -100,7 +100,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
                     button.backgroundColor = .clear
                     //remove filter from map
                 } else {
-                    button.backgroundColor = .cyan
+                    button.backgroundColor = .lightGray
                     //add fitler to map
                 }
             } else {
