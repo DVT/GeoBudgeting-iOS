@@ -37,7 +37,7 @@
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ftc-Js-ZEK">
                                         <rect key="frame" x="47" y="287" width="320" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="578827191.261958">
-                                            <!--1440-09-02 9:19:51 AM +0000-->
+                                            <!--2019-05-06 09:19:51 +0000-->
                                         </date>
                                     </datePicker>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kng-D9-Xu6">
@@ -158,11 +158,11 @@
             </objects>
             <point key="canvasLocation" x="784.05797101449286" y="-87.053571428571431"/>
         </scene>
-        <!--Add-->
+        <!--Add Item-->
         <scene sceneID="LSl-id-CAg">
             <objects>
                 <navigationController storyboardIdentifier="AddItemNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="0Gi-lX-ZWf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" id="sRn-lA-NXb"/>
+                    <tabBarItem key="tabBarItem" title="Add Item" id="sRn-lA-NXb"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="m3B-1m-6A3">

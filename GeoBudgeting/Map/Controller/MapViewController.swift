@@ -19,6 +19,8 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
     @IBOutlet weak var hobbiesButton: UIButton!
     @IBOutlet weak var hoverLabel: UILabel!
     
+    var buttonGroup: [UIButton] = []
+    
     
     //Firebase
     let ref = Database.database().reference(withPath: "receipts/\(userID)")
@@ -29,6 +31,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
     //layouts and delegates
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonGroup = [foodButton, entertainmentButton, shoppingButton, hobbiesButton]
         setUpLocationManager()
         mapView.delegate = self
         search.searchTextView.delegate = self
@@ -89,39 +92,62 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    func showSelect(selectedIndex: Int) {
+        for i in 0..<buttonGroup.count {
+            let button = buttonGroup[i]
+            if i == selectedIndex {
+                if button.backgroundColor == UIColor.cyan {
+                    button.backgroundColor = .clear
+                    //remove filter from map
+                } else {
+                    button.backgroundColor = .cyan
+                    //add fitler to map
+                }
+            } else {
+                button.backgroundColor = .clear
+            }
+        }
+    }
     
     @IBAction func applyFoodFilter(_ sender: Any) {
+        showSelect(selectedIndex: 0)
         hoverLabel.center.y = foodButton.center.y
         hoverLabel.text = "Food"
         hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.hoverLabel.isHidden = true
         }
     }
     
     @IBAction func applyEntertainmentFilter(_ sender: Any) {
+        showSelect(selectedIndex: 1)
         hoverLabel.center.y = entertainmentButton.center.y
         hoverLabel.text = "Entertainment"
         hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.hoverLabel.isHidden = true
         }
     }
     
     @IBAction func applyShoppingFilter(_ sender: Any) {
+        showSelect(selectedIndex: 2)
         hoverLabel.center.y = shoppingButton.center.y
         hoverLabel.text = "Shopping"
         hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.hoverLabel.isHidden = true
         }
     }
     
     @IBAction func applyHobbiesFilter(_ sender: Any) {
+        showSelect(selectedIndex: 3)
         hoverLabel.center.y = hobbiesButton.center.y
         hoverLabel.text = "Hobbies"
         hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.hoverLabel.isHidden = true
         }

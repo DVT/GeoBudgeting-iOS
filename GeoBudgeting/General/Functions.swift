@@ -80,19 +80,24 @@ func addTabs(tabIndex: Int, tabController: UITabBarController) {
         //        tabController.selectedViewController = initialViewController
         return
     case 2:
-                let addItemStoryboard = UIStoryboard(name: "AddItem", bundle: nil)
-                let initialViewController = addItemStoryboard.instantiateViewController(withIdentifier: "AddItemNavigationController")
-                initialViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-                tabController.viewControllers?.remove(at: tabIndex)
-                tabController.viewControllers?.append(initialViewController)
-                tabController.selectedViewController = initialViewController
+        let addItemStoryboard = UIStoryboard(name: "AddItem", bundle: nil)
+        let initialViewController = addItemStoryboard.instantiateViewController(withIdentifier: "AddItemNavigationController")
+        initialViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        initialViewController.tabBarItem.image = UIImage(named: "addItem")
+        initialViewController.tabBarItem.selectedImage = UIImage(named: "addItem")
+        initialViewController.tabBarItem.title = "Add Receipt"
+        tabController.viewControllers?[tabIndex] = initialViewController
+        tabController.selectedViewController = initialViewController
+        
         return
     case 3:
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
         let initialViewController = settingsStoryboard.instantiateViewController(withIdentifier: "Settings")
         initialViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        tabController.viewControllers?.remove(at: tabIndex)
-        tabController.viewControllers?.append(initialViewController)
+        initialViewController.tabBarItem.image = UIImage(named: "settings")
+        initialViewController.tabBarItem.selectedImage = UIImage(named: "settings")
+         initialViewController.tabBarItem.title = "Settings"
+        tabController.viewControllers?[tabIndex] = initialViewController
         tabController.selectedViewController = initialViewController
     default:
         return

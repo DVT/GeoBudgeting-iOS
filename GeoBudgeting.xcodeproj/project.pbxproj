@@ -43,6 +43,7 @@
 		501715DA22842D600096C3FB /* OCRParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501715D922842D600096C3FB /* OCRParsing.swift */; };
 		501715E2228555B70096C3FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 501715E1228555B70096C3FB /* GoogleService-Info.plist */; };
 		501715E72285565D0096C3FB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501715E62285565D0096C3FB /* Login.storyboard */; };
+		706C31E92287191A00368794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706C31E82287191A00368794 /* Assets.xcassets */; };
 		707DEBE52284420A009F94B4 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707DEBE42284420A009F94B4 /* FormModel.swift */; };
 		70CC36C12281760D006F7658 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC36C02281760D006F7658 /* TabController.swift */; };
 		70CC36C822817A90006F7658 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CC36C722817A90006F7658 /* Settings.storyboard */; };
@@ -64,7 +65,6 @@
 		F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304A227C30370050B861 /* AppDelegate.swift */; };
 		F6AD304D227C30370050B861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304C227C30370050B861 /* MapViewController.swift */; };
 		F6AD3050227C30370050B861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD304E227C30370050B861 /* Main.storyboard */; };
-		F6AD3052227C30390050B861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6AD3051227C30390050B861 /* Assets.xcassets */; };
 		F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD3053227C30390050B861 /* LaunchScreen.storyboard */; };
 		F6AD3060227C30390050B861 /* GeoBudgetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD305F227C30390050B861 /* GeoBudgetingTests.swift */; };
 		F6AD306B227C30390050B861 /* GeoBudgetingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD306A227C30390050B861 /* GeoBudgetingUITests.swift */; };
@@ -131,6 +131,7 @@
 		501715E1228555B70096C3FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		501715E62285565D0096C3FB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		6F19BD94CA199A0893A78912 /* Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting-GeoBudgetingUITests/Pods-GeoBudgeting-GeoBudgetingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		706C31E82287191A00368794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		707DEBE42284420A009F94B4 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		70CC36C02281760D006F7658 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		70CC36C722817A90006F7658 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -157,7 +158,6 @@
 		F6AD304A227C30370050B861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6AD304C227C30370050B861 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F6AD304F227C30370050B861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F6AD3051227C30390050B861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6AD3054227C30390050B861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6AD3056227C30390050B861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6AD305B227C30390050B861 /* GeoBudgetingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoBudgetingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -444,7 +444,7 @@
 		F6AD307A227C32510050B861 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F6AD3051227C30390050B861 /* Assets.xcassets */,
+				706C31E82287191A00368794 /* Assets.xcassets */,
 				F6AD3056227C30390050B861 /* Info.plist */,
 			);
 			path = Resources;
@@ -627,8 +627,8 @@
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
 				C870C67C228597F6004F41D0 /* api.plist in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
-				F6AD3052227C30390050B861 /* Assets.xcassets in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
+				706C31E92287191A00368794 /* Assets.xcassets in Resources */,
 				501715E2228555B70096C3FB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
