@@ -17,6 +17,18 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
     @IBOutlet weak var entertainmentButton: UIButton!
     @IBOutlet weak var shoppingButton: UIButton!
     @IBOutlet weak var hobbiesButton: UIButton!
+    @IBOutlet weak var transportButton: UIButton!
+    @IBOutlet weak var servicesButton: UIButton!
+    @IBOutlet weak var healthButton: UIButton!
+    @IBOutlet weak var financesButton: UIButton!
+    @IBOutlet weak var unknownButton: UIButton!
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var hoverLabel: UILabel!
     
     var buttonGroup: [UIButton] = []
@@ -31,7 +43,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
     //layouts and delegates
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonGroup = [foodButton, entertainmentButton, shoppingButton, hobbiesButton]
+        buttonGroup = [foodButton, entertainmentButton, shoppingButton, hobbiesButton, transportButton, healthButton, servicesButton, financesButton, unknownButton]
         setUpLocationManager()
         mapView.delegate = self
         search.searchTextView.delegate = self
@@ -173,6 +185,61 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
         showSelect(selectedIndex: 3)
         hoverLabel.center.y = hobbiesButton.center.y
         hoverLabel.text = "Hobbies"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyTransportButton(_ sender: Any) {
+        showSelect(selectedIndex: 4)
+        hoverLabel.center.y = transportButton.center.y
+        hoverLabel.text = "Transport"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyHealthFilter(_ sender: Any) {
+        showSelect(selectedIndex: 5)
+        hoverLabel.center.y = healthButton.center.y
+        hoverLabel.text = "Health"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyServicesFilter(_ sender: Any) {
+        showSelect(selectedIndex: 6)
+        hoverLabel.center.y = servicesButton.center.y
+        hoverLabel.text = "Services"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyFinancesFilter(_ sender: Any) {
+        showSelect(selectedIndex: 7)
+        hoverLabel.center.y = financesButton.center.y
+        hoverLabel.text = "Finances"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyUnknownFilter(_ sender: Any) {
+        showSelect(selectedIndex: 8)
+        hoverLabel.center.y = unknownButton.center.y
+        hoverLabel.text = "Unknown"
         hoverLabel.isHidden = false
         hoverLabel.sizeToFit()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
