@@ -19,8 +19,13 @@ class FirebaseServices {
         ref.child("receipts/\(userID)/\(storeName)/mapLongitude").setValue(longitude)
     
         ref.child("receipts/\(userID)/\(storeName)/date/\(dateTime)").observeSingleEvent(of: .value, with: { (datasnapshot) -> Void in
-            let currentAmount: Double = datasnapshot.value as! Double
-            let updatedAmount: Double = currentAmount + amount
+            if let datasnapshotValue = datasnapshot.value {
+                let currentAmount: Double = datasnapshotValue as? Double ?? 0
+                let updatedAmount: Double = currentAmount + amount
+                ref.child("receipts/\(userID)/\(storeName)/date/\(dateTime)").setValue(updatedAmount)
+            } else {
+                ref.child("receipts/\(userID)/\(storeName)/date/\(dateTime)").setValue(amount)
+            }
         })
     }
     
