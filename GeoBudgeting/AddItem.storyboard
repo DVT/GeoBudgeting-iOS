@@ -135,7 +135,7 @@
                         <viewLayoutGuide key="safeArea" id="uHF-Yc-3gW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="zrG-B9-X5X">
-                        <barButtonItem key="rightBarButtonItem" title="Scan" image="Scan" style="plain" id="9MS-zk-Pdf">
+                        <barButtonItem key="rightBarButtonItem" title="Scan" style="plain" id="9MS-zk-Pdf">
                             <connections>
                                 <action selector="openCamera:" destination="mU2-kn-Gh9" id="uu1-3X-OhB"/>
                             </connections>
@@ -179,7 +179,4 @@
             <point key="canvasLocation" x="-126.08695652173914" y="-87.053571428571431"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Scan" width="24" height="24"/>
-    </resources>
 </document>
