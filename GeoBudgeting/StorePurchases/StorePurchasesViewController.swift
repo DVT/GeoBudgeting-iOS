@@ -24,8 +24,17 @@ class StorePurchasesViewController: UIViewController {
 //            self!.updateTable(purchases: purchases)
 //        }
         
+//        FirebaseServices().fetchAllPurchasesListener(forUser: userID, andForStore: storeName!) { [weak self] purchases in
+//            self!.updateTable(purchases: purchases)
+//        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         FirebaseServices().fetchAllPurchasesListener(forUser: userID, andForStore: storeName!) { [weak self] purchases in
-            self!.updateTable(purchases: purchases)
+            guard let tempSelf = self else {
+                return
+            }
+            tempSelf.updateTable(purchases: purchases)
         }
     }
     
