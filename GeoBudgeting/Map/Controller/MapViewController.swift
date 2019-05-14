@@ -68,19 +68,46 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
                             if datasnapshot.exists() {
                                 for snap in datasnapshot.children.allObjects {
                                     if let snap = snap as? DataSnapshot {
-                                        let key = snap.key
-                                        let moneySpent = snap.value
-                                        amountMarker += moneySpent as! Double
+                                        let timestamp = snap.key
+                                        let purchaseDate = self.getDateFromStamp(serverTimestamp: timestamp)
+                                        let currentDate = Date()
+                                        let difference = currentDate.interval(ofComponent: .day, fromDate: purchaseDate)
+                                        
+                                        let selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
+                                        var period = 0
+                                        
+                                        switch selectedHistoryOptionIndex {
+                                        case 0: period = 30
+                                        case 1: period = 60
+                                        case 2: period = 90
+                                        default:
+                                            period = 0
+                                        }
+                                        
+                                        if difference <= period {
+                                            let moneySpent = snap.value
+                                            amountMarker += moneySpent as! Double
+                                        }
+                                        
                                     }
                                 }
                             }
-                            self.showMarkers(title: titleMarker, amount: amountMarker, lat: latMarker, long: longMarker, categoryMarker : category)
+                            if amountMarker > 0 {
+                                 self.showMarkers(title: titleMarker, amount: amountMarker, lat: latMarker, long: longMarker, categoryMarker : category)
+                            }
                         }
                     }
                 }
             })
         }
     }
+    
+    func getDateFromStamp(serverTimestamp: String) -> Date {
+        let time = Int(serverTimestamp) ?? 0 / 1000
+        let date = Date(timeIntervalSince1970: TimeInterval(time))
+        return date
+    }
+    
     //location manager
     func setUpLocationManager() {
         locationManager.delegate = self
@@ -245,6 +272,20 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
 }
+
+extension Date {
+    
+    func interval(ofComponent comp: Calendar.Component, fromDate date: Date) -> Int {
+        
+        let currentCalendar = Calendar.current
+        
+        guard let start = currentCalendar.ordinality(of: comp, in: .era, for: date) else { return 0 }
+        guard let end = currentCalendar.ordinality(of: comp, in: .era, for: self) else { return 0 }
+        
+        return end - start
+    }
+}
+
 //Search places
 extension MapViewController: GMSAutocompleteViewControllerDelegate {
     func textFieldShouldBeginEditing(_ searchTextView: UITextField) -> Bool {
@@ -438,4 +479,5 @@ extension MapViewController {
         return UIColor.gray
     }
 }
+
 

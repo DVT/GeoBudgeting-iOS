@@ -52,8 +52,15 @@ class FirebaseServices {
         })
     }
     
+    func getDateFromStamp(serverTimestamp: String) -> Date {
+        let time = Int(serverTimestamp) ?? 0 / 1000
+        let date = Date(timeIntervalSince1970: TimeInterval(time))
+        return date
+    }
+    
     func fetchAllPurchasesListener(forUser userID: String, andForStore storeName: String, completion: @escaping ([Purchase]) -> Void) {
         var purchases: [Purchase] = [Purchase]()
+        var counter = 0
         let ref: DatabaseReference = Database.database().reference()
         ref.child("receipts/\(userID)/\(storeName)/date").observe(.value, with: { (datasnapshot) -> Void in
             let children = datasnapshot.children
@@ -62,11 +69,30 @@ class FirebaseServices {
                 let timestamp = child.key
                 let date = convertTimestamp(serverTimestamp: timestamp)
                 let amount = child.value! as! Double
+
+                let purchaseDate = self.getDateFromStamp(serverTimestamp: timestamp)
+                let currentDate = Date()
+                let difference = currentDate.interval(ofComponent: .day, fromDate: purchaseDate)
                 
-                let purchase = Purchase(date: date, amount: amount)
-                purchases.append(purchase)
+                let selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
+                var period = 0
                 
-                if purchases.count == datasnapshot.childrenCount {
+                switch selectedHistoryOptionIndex {
+                case 0: period = 30
+                case 1: period = 60
+                case 2: period = 90
+                default:
+                    period = 0
+                }
+                
+                if difference <= period {
+                    let purchase = Purchase(date: date, amount: amount)
+                    purchases.append(purchase)
+                }
+
+                counter += 1
+                
+                if counter == datasnapshot.childrenCount {
                     completion(purchases)
                 }
             }
