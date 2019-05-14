@@ -8,6 +8,20 @@
 
 import Foundation
 import UIKit
+import GoogleSignIn
+
+var userID: String {
+    if GIDSignIn.sharedInstance()?.currentUser != nil {
+        if let email = GIDSignIn.sharedInstance()?.currentUser.profile.email {
+            let emailString = email.replacingOccurrences(of: ".", with: "_")
+            return emailString
+        } else {
+            return ""
+        }
+    } else {
+        return ""
+    }
+}
 
 struct API: Codable {
     let GoogleMapsAPI: String!

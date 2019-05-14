@@ -224,7 +224,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         let timestampString = getDateForStartOfDayAsString(fromDate: datePicker.date)
         
         if let lat = lat, let long = lng {
-            FirebaseServices().addNewItem(storeName: storeName.lowercased(),
+            FirebaseServices().addNewItem(userID: userID, storeName: storeName.lowercased(),
                                           storeCategory: category,
                                           dateTime: timestampString,
                                           amount: amount,
@@ -232,7 +232,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
                                           longitude: long )
         } else {
             CategoryListFinder().getCategories(storeName: storeName) { categories, lat, long in
-                FirebaseServices().addNewItem(storeName: storeName.lowercased(),
+                FirebaseServices().addNewItem(userID: userID, storeName: storeName.lowercased(),
                                               storeCategory: category,
                                               dateTime: timestampString,
                                               amount: amount,

@@ -180,26 +180,26 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jDU-yg-w0e">
+                            <view alpha="0.80000000000000004" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jDU-yg-w0e">
                                 <rect key="frame" x="0.0" y="600" width="42" height="213"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-hj-uRJ">
-                                        <rect key="frame" x="-2" y="0.0" width="44" height="44"/>
+                                        <rect key="frame" x="-2" y="6" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="LZm-VK-0iR"/>
                                             <constraint firstAttribute="width" constant="44" id="tK1-Sy-l0c"/>
                                         </constraints>
-                                        <state key="normal" image="icons8-food"/>
+                                        <state key="normal" image="icons8-360-degrees-filled-50-4"/>
                                         <connections>
                                             <action selector="applyFoodFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lc4-ES-vxu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdI-Zd-5az">
-                                        <rect key="frame" x="-2" y="64" width="44" height="44"/>
+                                        <rect key="frame" x="-2" y="60" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="DES-SI-Yck"/>
                                         </constraints>
-                                        <state key="normal" image="icons8-party_whistle"/>
+                                        <state key="normal" image="icons8-360-degrees-filled-50-3"/>
                                         <connections>
                                             <action selector="applyEntertainmentFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OVW-FT-XOH"/>
                                         </connections>
@@ -210,23 +210,23 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="6FW-m5-dbb"/>
                                             <constraint firstAttribute="height" constant="44" id="p7m-f2-7WI"/>
                                         </constraints>
-                                        <state key="normal" image="icons8-art_prices"/>
+                                        <state key="normal" image="icons8-360-degrees-filled-50-6"/>
                                         <connections>
                                             <action selector="applyHobbiesFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TtK-HG-1AZ"/>
                                         </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-BM-gnv">
-                                        <rect key="frame" x="50" y="12" width="59" height="21"/>
+                                        <rect key="frame" x="50" y="12" width="59" height="17"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECv-XW-wGH">
-                                        <rect key="frame" x="-2" y="116" width="44" height="44"/>
+                                        <rect key="frame" x="-2" y="114" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Qk9-f4-Hss"/>
                                         </constraints>
-                                        <state key="normal" image="icons8-shopping_mall_filled"/>
+                                        <state key="normal" image="icons8-360-degrees-filled-50-8"/>
                                         <connections>
                                             <action selector="applyShoppingFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NLt-O5-J0g"/>
                                         </connections>
@@ -240,11 +240,12 @@
                                     <constraint firstItem="kaI-hj-uRJ" firstAttribute="trailing" secondItem="EdI-Zd-5az" secondAttribute="trailing" id="6wk-6T-x6f"/>
                                     <constraint firstAttribute="width" constant="42" id="Eme-zZ-HKG"/>
                                     <constraint firstItem="kaI-hj-uRJ" firstAttribute="trailing" secondItem="bno-2i-HYp" secondAttribute="trailing" id="GF4-wM-FxO"/>
-                                    <constraint firstItem="ECv-XW-wGH" firstAttribute="top" secondItem="EdI-Zd-5az" secondAttribute="bottom" constant="8" id="MW6-Sl-yR0"/>
+                                    <constraint firstItem="kaI-hj-uRJ" firstAttribute="top" secondItem="jDU-yg-w0e" secondAttribute="top" constant="6" id="Lr8-eU-mhD"/>
+                                    <constraint firstItem="ECv-XW-wGH" firstAttribute="top" secondItem="EdI-Zd-5az" secondAttribute="bottom" constant="10" id="MW6-Sl-yR0"/>
                                     <constraint firstItem="EdI-Zd-5az" firstAttribute="top" secondItem="ucc-BM-gnv" secondAttribute="bottom" constant="31" id="WWg-Gm-Wtg"/>
                                     <constraint firstItem="bno-2i-HYp" firstAttribute="leading" secondItem="jDU-yg-w0e" secondAttribute="leading" id="WbY-Zg-OlH"/>
-                                    <constraint firstItem="bno-2i-HYp" firstAttribute="top" secondItem="ECv-XW-wGH" secondAttribute="bottom" constant="8" id="baa-8n-1uw"/>
-                                    <constraint firstItem="EdI-Zd-5az" firstAttribute="top" secondItem="kaI-hj-uRJ" secondAttribute="bottom" constant="20" id="jYd-dA-AVw"/>
+                                    <constraint firstItem="bno-2i-HYp" firstAttribute="top" secondItem="ECv-XW-wGH" secondAttribute="bottom" constant="10" id="baa-8n-1uw"/>
+                                    <constraint firstItem="EdI-Zd-5az" firstAttribute="top" secondItem="kaI-hj-uRJ" secondAttribute="bottom" constant="10" id="jYd-dA-AVw"/>
                                     <constraint firstItem="bno-2i-HYp" firstAttribute="centerX" secondItem="jDU-yg-w0e" secondAttribute="centerX" id="k9p-6D-NGh"/>
                                     <constraint firstAttribute="trailing" secondItem="ucc-BM-gnv" secondAttribute="trailing" constant="-67" id="m7p-Nj-Gea"/>
                                     <constraint firstItem="kaI-hj-uRJ" firstAttribute="leading" secondItem="bno-2i-HYp" secondAttribute="leading" constant="-2" id="nc7-0z-OGx"/>
@@ -391,10 +392,10 @@
     <resources>
         <image name="addItem" width="25" height="25"/>
         <image name="expenses" width="25" height="25"/>
-        <image name="icons8-art_prices" width="25" height="25"/>
-        <image name="icons8-food" width="25" height="25"/>
-        <image name="icons8-party_whistle" width="25" height="25"/>
-        <image name="icons8-shopping_mall_filled" width="25" height="25"/>
+        <image name="icons8-360-degrees-filled-50-3" width="50" height="50"/>
+        <image name="icons8-360-degrees-filled-50-4" width="50" height="50"/>
+        <image name="icons8-360-degrees-filled-50-6" width="50" height="50"/>
+        <image name="icons8-360-degrees-filled-50-8" width="50" height="50"/>
         <image name="maps" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
     </resources>

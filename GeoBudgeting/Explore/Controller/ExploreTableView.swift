@@ -16,7 +16,7 @@ class ExploreTableView: UITableViewController {
 
     var items: [PostItem] = []
     // MARK: Properties
-    let ref = Database.database().reference(withPath: "receipts")
+   let ref = Database.database().reference(withPath: "receipts/\(userID)")
     let Dateref = Database.database().reference(withPath: "date/receipts")
     let postCell = PostCell()
 
@@ -29,29 +29,27 @@ class ExploreTableView: UITableViewController {
         self.tableView.clipsToBounds = true
         tableView.allowsMultipleSelectionDuringEditing = false
 //Get values from database
-        ref.queryOrdered(byChild: "date").observe(.value, with: { snapshot in
-            var newItems: [PostItem] = []
-            for child in snapshot.children {
-                if let snapshot = child as? DataSnapshot,
-                   let postItem = PostItem(snapshot: snapshot) {
-                    newItems.append(postItem)
-                    Database.database().reference().child("receipts").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
-                        if datasnapshot.exists() {
-                            for snap in datasnapshot.children.allObjects {
-                                if let snap = snap as? DataSnapshot {
-                                    let date = snap.key
-                                    self.moneySpent = snap.value as! Double
-                                    self.dateArray.append(date)
-
+        if userID != "" {
+            ref.queryOrdered(byChild: "date").observe(.value, with: { snapshot in
+                var newItems: [PostItem] = []
+                for child in snapshot.children {
+                    if let snapshot = child as? DataSnapshot,
+                        let postItem = PostItem(snapshot: snapshot) {
+                        newItems.append(postItem)
+                        Database.database().reference().child("receipts/\(userID)").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
+                            if datasnapshot.exists() {
+                                for snap in datasnapshot.children.allObjects {
+                                    if let snap = snap as? DataSnapshot {
+                                        let date = snap.key
+                                        self.moneySpent = snap.value as! Double
+                                        self.dateArray.append(date)
+                                        
+                                    }
                                 }
-                            }
-                            self.items = newItems
-                            self.tableView.reloadData()
-                        }
-                    }
-                }
-            }
-        })
+                                self.items = newItems
+                                self.tableView.reloadData()
+                            }}}}})
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,32 +61,34 @@ class ExploreTableView: UITableViewController {
         let postItem = items[indexPath.row]
         cell?.storeName?.text = postItem.key.capitalized
         cell?.category?.text = postItem.category
-        ref.observe(.value, with: { snapshot in
-            // live reload haoppens because of this observe
-            for child in snapshot.children {
-                if let snapshot = child as? DataSnapshot,
-                   let postItem = PostItem(snapshot: snapshot) {
-                    var amount = 0.00
-                    let title = postItem.key.capitalized
-                    Database.database().reference().child("receipts").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
-                        if datasnapshot.exists() {
-                            var keyArray = [String]()
-                            for snap in datasnapshot.children.allObjects {
-                                if let snap = snap as? DataSnapshot {
-                                    let key = snap.key
-                                    let moneySpent = snap.value
-                                    amount += moneySpent as! Double
-                                    if (cell?.storeName?.text == title) {
-                                        let totalMoneySpent = String(format: "%g", amount)
-                                        cell?.totalAmount?.text = "R" + String(totalMoneySpent)
+        
+        if userID != "" {
+            ref.observe(.value, with: { snapshot in
+                for child in snapshot.children {
+                    if let snapshot = child as? DataSnapshot,
+                        let postItem = PostItem(snapshot: snapshot) {
+                        var amount = 0.00
+                        let title = postItem.key
+                        Database.database().reference().child("receipts/\(userID)").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
+                            if datasnapshot.exists() {
+                                var keyArray = [String]()
+                                for snap in datasnapshot.children.allObjects {
+                                    if let snap = snap as? DataSnapshot {
+                                        let key = snap.key
+                                        let moneySpent = snap.value
+                                        amount += moneySpent as! Double
+                                        if ((cell?.storeName?.text)?.lowercased() == title){
+                                            let totalMoneySpent = String(format: "%g", amount)
+                                            cell?.totalAmount?.text = "R" + String(totalMoneySpent)
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-            }
-        })
+            })
+        }
         return cell!
     }
 

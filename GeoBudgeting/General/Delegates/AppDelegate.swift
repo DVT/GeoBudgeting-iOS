@@ -28,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
                                               bundle: Bundle.main)
                 .instantiateViewController(withIdentifier: "SignIn")
             self.window?.rootViewController = rootController
-            return true
+        } else {
+            GIDSignIn.sharedInstance()?.signInSilently()
         }
         //Google Services
         GMSServices.provideAPIKey(getGoogleAPIKey())

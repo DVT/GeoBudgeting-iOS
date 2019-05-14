@@ -23,7 +23,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
     
     
     //Firebase
-    let ref = Database.database().reference(withPath: "receipts")
+    let ref = Database.database().reference(withPath: "receipts/\(userID)")
     //Selecting location
     let search = SearchView()
     let locationManager = CLLocationManager()
@@ -37,36 +37,37 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
         search.searchTextView.delegate = self
         setUpTextView()
         //database
-        ref.observe(.value, with: { snapshot in
-            print(snapshot.value as Any)
-        })
-        
-        
-        ref.observe(.value, with: { snapshot in
-            for child in snapshot.children {
-                if let snapshot = child as? DataSnapshot,
-                    let postItem = PostItem(snapshot: snapshot) {
-                    let latMarker = postItem.mapLatitude
-                    let longMarker = postItem.mapLongitude
-                    let titleMarker = postItem.key
-                    let selectedCategory = postItem.category
-                    let category = self.getCategory(category: selectedCategory)
-                   var amountMarker = 0.00
-                    Database.database().reference().child("receipts").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
-                        if datasnapshot.exists() {
-                            for snap in datasnapshot.children.allObjects {
-                                if let snap = snap as? DataSnapshot {
-                                    let key = snap.key
-                                    let moneySpent = snap.value
-                                    amountMarker += moneySpent as! Double
+//        ref.observe(.value, with: { snapshot in
+//            print(snapshot.value as Any)
+//        })
+                
+        if userID != "" {
+            ref.observe(.value, with: { snapshot in
+                for child in snapshot.children {
+                    if let snapshot = child as? DataSnapshot,
+                        let postItem = PostItem(snapshot: snapshot) {
+                        let latMarker = postItem.mapLatitude
+                        let longMarker = postItem.mapLongitude
+                        let titleMarker = postItem.key
+                        let selectedCategory = postItem.category
+                        let category = self.getCategory(category: selectedCategory)
+                        var amountMarker = 0.00
+                        Database.database().reference().child("receipts").child(userID).child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
+                            if datasnapshot.exists() {
+                                for snap in datasnapshot.children.allObjects {
+                                    if let snap = snap as? DataSnapshot {
+                                        let key = snap.key
+                                        let moneySpent = snap.value
+                                        amountMarker += moneySpent as! Double
+                                    }
                                 }
                             }
+                            self.showMarkers(title: titleMarker, amount: amountMarker, lat: latMarker, long: longMarker, categoryMarker : category)
                         }
-                        self.showMarkers(title: titleMarker, amount: amountMarker, lat: latMarker, long: longMarker, categoryMarker : category)
                     }
                 }
-            }
-        })
+            })
+        }
     }
     //location manager
     func setUpLocationManager() {
@@ -99,7 +100,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
                     button.backgroundColor = .clear
                     //remove filter from map
                 } else {
-                    button.backgroundColor = .cyan
+                    button.backgroundColor = .lightGray
                     //add fitler to map
                 }
             } else {
