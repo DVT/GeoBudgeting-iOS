@@ -22,7 +22,6 @@ class ExploreTableView: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.title = "Expenses"
         
         self.tableView.rowHeight = 75
