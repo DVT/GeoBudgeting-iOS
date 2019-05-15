@@ -231,7 +231,7 @@ extension MapViewController {
                     let user = Auth.auth().currentUser
                     if user != nil {
                     let infoTitle = title
-                    let totalMoneySpent = String(format: "%g", amount)
+                    let totalMoneySpent = String(format: "%.02f", amount)
                     let infoSnippet = totalMoneySpent
                     infoCategory = postItem.category
                     marker.title = infoTitle

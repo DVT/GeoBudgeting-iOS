@@ -87,6 +87,13 @@ class ExploreTableView: UITableViewController {
         cell?.category?.text = postItem.category
         
         //If statements to set image here
+        if postItem.category == "Food" {
+            cell?.categoryImage.image = UIImage(named: "Food")
+        } else if postItem.category == "Shopping" {
+            cell?.categoryImage.image = UIImage(named: "Shopping")
+        } else if postItem.category == "Entertainment" {
+            cell?.categoryImage.image = UIImage(named: "Entertainment")
+        }
         
         cell?.categoryImage.layer.borderWidth = 1
         cell?.categoryImage.layer.masksToBounds = false
