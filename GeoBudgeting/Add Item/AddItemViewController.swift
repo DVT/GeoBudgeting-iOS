@@ -45,6 +45,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         
         toastView.layer.cornerRadius = 8
         addItemButton.isEnabled = false
+        addItemButton.layer.borderColor = UIColor.gray.cgColor
         
         storeNameTextField.delegate = self
         priceEditText.delegate = self
@@ -67,21 +68,22 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             return
         }
         ocr(cameraImage: uiImage) { model in
+            var canEnableButton = true
             var error = ""
             if let name = model.storeName {
                 DispatchQueue.main.async {
                     self.storeNameTextField.text = name
                 }
             } else {
+                canEnableButton = false
                 error += "Store details not found, please enter store name and choose category manually. \n"
             }
-            var canEnableButton = true
+           
             if let date = model.date {
                 DispatchQueue.main.async {
                     self.datePicker.setDate(date, animated: true)
                 }
             } else {
-                canEnableButton = false
                 error += "Date could not be found on receipt, please select manually. \n"
             }
             
@@ -118,6 +120,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             if canEnableButton {
                 DispatchQueue.main.async {
                 self.addItemButton.isEnabled = true
+                self.addItemButton.layer.borderColor = self.view.tintColor.cgColor
                 }
             }
             
@@ -424,8 +427,10 @@ extension AddItemViewController: UITextFieldDelegate {
         
         if isFilledPrice && isFilledName {
             addItemButton.isEnabled = true
+            addItemButton.layer.borderColor = self.view.tintColor.cgColor
         } else {
             addItemButton.isEnabled = false
+            addItemButton.layer.borderColor = UIColor.gray.cgColor
         }
     }
     
