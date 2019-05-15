@@ -61,11 +61,11 @@
 		C8D0190F228BDA0E00BCB31C /* SummerizedPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0190E228BDA0E00BCB31C /* SummerizedPurchase.swift */; };
 		C8D01912228BF0BA00BCB31C /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D01911228BF0BA00BCB31C /* SummaryViewController.swift */; };
 		C8D01914228BF12700BCB31C /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D01913228BF12700BCB31C /* SummaryCell.swift */; };
-		C8D01916228BF70200BCB31C /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8D01915228BF70200BCB31C /* api.plist */; };
 		C8FA595C22816C4B0003656B /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA595B22816C4B0003656B /* Results.swift */; };
 		F307CC8622843B3500615DE7 /* OCRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307CC8522843B3500615DE7 /* OCRModel.swift */; };
 		F34A52712285AC2300193979 /* SettingsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A52702285AC2300193979 /* SettingsUtil.swift */; };
 		F34A52732285AD6400193979 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A52722285AD6400193979 /* User.swift */; };
+		F6183564228C35A200279460 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6183563228C35A200279460 /* api.plist */; };
 		F6AD304B227C30370050B861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304A227C30370050B861 /* AppDelegate.swift */; };
 		F6AD304D227C30370050B861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD304C227C30370050B861 /* MapViewController.swift */; };
 		F6AD3050227C30370050B861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD304E227C30370050B861 /* Main.storyboard */; };
@@ -157,12 +157,12 @@
 		C8D0190E228BDA0E00BCB31C /* SummerizedPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerizedPurchase.swift; sourceTree = "<group>"; };
 		C8D01911228BF0BA00BCB31C /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		C8D01913228BF12700BCB31C /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
-		C8D01915228BF70200BCB31C /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 		C8FA595B22816C4B0003656B /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		D50009D1CF69E5496879D6C6 /* Pods-GeoBudgeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBudgeting.debug.xcconfig"; path = "Target Support Files/Pods-GeoBudgeting/Pods-GeoBudgeting.debug.xcconfig"; sourceTree = "<group>"; };
 		F307CC8522843B3500615DE7 /* OCRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRModel.swift; sourceTree = "<group>"; };
 		F34A52702285AC2300193979 /* SettingsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUtil.swift; sourceTree = "<group>"; };
 		F34A52722285AD6400193979 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F6183563228C35A200279460 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
 		F6AD3047227C30370050B861 /* GeoBudgeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBudgeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6AD304A227C30370050B861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6AD304C227C30370050B861 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 		F6AD3049227C30370050B861 /* GeoBudgeting */ = {
 			isa = PBXGroup;
 			children = (
-				C8D01915228BF70200BCB31C /* api.plist */,
+				F6183563228C35A200279460 /* api.plist */,
 				C8D01910228BF0A200BCB31C /* Summary */,
 				17959B5822855C1F00C61050 /* Login */,
 				501715E1228555B70096C3FB /* GoogleService-Info.plist */,
@@ -647,7 +647,7 @@
 				C8A13CB72280299500FD6A00 /* (null) in Resources */,
 				C8A13CB922802AFE00FD6A00 /* AddItem.storyboard in Resources */,
 				70CC36C822817A90006F7658 /* Settings.storyboard in Resources */,
-				C8D01916228BF70200BCB31C /* api.plist in Resources */,
+				F6183564228C35A200279460 /* api.plist in Resources */,
 				F6AD3055227C30390050B861 /* LaunchScreen.storyboard in Resources */,
 				F6AD3050227C30370050B861 /* Main.storyboard in Resources */,
 				706C31E92287191A00368794 /* Assets.xcassets in Resources */,
@@ -1064,7 +1064,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GLK7J5PP82;
+				DEVELOPMENT_TEAM = ND4RV4252N;
 				INFOPLIST_FILE = "$(SRCROOT)/GeoBudgeting/General/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1083,7 +1083,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GLK7J5PP82;
+				DEVELOPMENT_TEAM = ND4RV4252N;
 				INFOPLIST_FILE = "$(SRCROOT)/GeoBudgeting/General/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
