@@ -59,7 +59,7 @@ extension SummaryViewController: UITableViewDataSource {
         let categories = Array(summerizedPurchases.keys)
         cell.CategoryLabel.text = categories[indexPath.item]
         let amount = summerizedPurchases[categories[indexPath.item]]
-        cell.amountLabel.text = String(format:"%f", amount ?? 0.0)
+        cell.amountLabel.text = String(format:"%.2f", amount ?? 0.0)
         
         return cell
     }

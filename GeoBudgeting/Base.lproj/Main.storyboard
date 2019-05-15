@@ -462,31 +462,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IVz-U4-r4z">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="20" y="44" width="374" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="74" id="oPq-Av-VSb" customClass="SummaryCell" customModule="GeoBudgeting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="74"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oPq-Av-VSb" id="GIO-bQ-QSK" customClass="SummaryCell" customModule="GeoBudgeting" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="73.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXR-no-l7G">
-                                                    <rect key="frame" x="20" y="26" width="133" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXR-no-l7G">
+                                                    <rect key="frame" x="20" y="26.5" width="156" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="156" id="d8l-Sh-QqK"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIk-Gn-77a">
-                                                    <rect key="frame" x="238" y="26" width="156" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIk-Gn-77a">
+                                                    <rect key="frame" x="238" y="26.5" width="156" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="156" id="M27-ad-tpl"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GIk-Gn-77a" firstAttribute="centerY" secondItem="GIO-bQ-QSK" secondAttribute="centerY" id="OLq-hX-mg2"/>
+                                                <constraint firstAttribute="trailing" secondItem="GIk-Gn-77a" secondAttribute="trailing" constant="20" symbolic="YES" id="S4C-ex-46i"/>
+                                                <constraint firstItem="eXR-no-l7G" firstAttribute="leading" secondItem="GIO-bQ-QSK" secondAttribute="leading" constant="20" symbolic="YES" id="tJw-mT-1sa"/>
+                                                <constraint firstItem="eXR-no-l7G" firstAttribute="centerY" secondItem="GIO-bQ-QSK" secondAttribute="centerY" id="vZb-F0-hT2"/>
+                                            </constraints>
                                             <connections>
                                                 <outlet property="accessoryView" destination="oPq-Av-VSb" id="EMq-wm-I0K"/>
                                             </connections>
@@ -504,9 +514,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IVz-U4-r4z" firstAttribute="leading" secondItem="XNF-SW-pch" secondAttribute="leading" id="KA1-wt-kyh"/>
+                            <constraint firstItem="IVz-U4-r4z" firstAttribute="leading" secondItem="XNF-SW-pch" secondAttribute="leading" constant="20" id="KA1-wt-kyh"/>
                             <constraint firstItem="IVz-U4-r4z" firstAttribute="top" secondItem="XNF-SW-pch" secondAttribute="top" id="Pmu-Yt-UwG"/>
-                            <constraint firstItem="XNF-SW-pch" firstAttribute="trailing" secondItem="IVz-U4-r4z" secondAttribute="trailing" id="dKm-rN-hfP"/>
+                            <constraint firstItem="XNF-SW-pch" firstAttribute="trailing" secondItem="IVz-U4-r4z" secondAttribute="trailing" constant="20" id="dKm-rN-hfP"/>
                             <constraint firstItem="XNF-SW-pch" firstAttribute="bottom" secondItem="IVz-U4-r4z" secondAttribute="bottom" id="oZC-L0-XHA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XNF-SW-pch"/>
@@ -523,7 +533,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Summary" width="50" height="50"/>
+        <image name="Summary" width="16.5" height="16.5"/>
         <image name="addItem" width="16.5" height="16.5"/>
         <image name="expenses" width="16.5" height="16.5"/>
         <image name="icons8-360-degrees-filled-50" width="50" height="50"/>
