@@ -15,6 +15,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpGoogleButton()
+        
+    
     }
     func setUpGoogleButton() {
         let googleButton = GIDSignInButton()

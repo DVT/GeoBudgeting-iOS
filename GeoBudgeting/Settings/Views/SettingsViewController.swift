@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var userProfileImg: UIImageView!
+    @IBOutlet weak var logoutBtn: UIButton!
     
     var user: User?
     
@@ -26,6 +27,8 @@ class SettingsViewController: UIViewController {
         historyPicker.dataSource = self
         user = getSignedInUser()
         loadPreviousSettings()
+        
+        logoutBtn.translatesAutoresizingMaskIntoConstraints = false
         
         guard user != nil else {
             //this should never happen
@@ -40,6 +43,11 @@ class SettingsViewController: UIViewController {
             userProfileImg.dowloadFromServer(link: profileURL)
         }
         
+        guard let tabBarController = tabBarController else {
+              print("No tab controller ")
+            return
+            
+        }
     }
     
     // save button

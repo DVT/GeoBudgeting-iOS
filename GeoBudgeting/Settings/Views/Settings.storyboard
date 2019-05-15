@@ -117,10 +117,10 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8a-3t-Y40">
-                                        <rect key="frame" x="0.0" y="632" width="414" height="40"/>
+                                        <rect key="frame" x="0.0" y="663" width="414" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="bv6-Yz-eNb"/>
+                                            <constraint firstAttribute="height" constant="40" id="agE-8h-bg6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="LOGOUT">
@@ -133,16 +133,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="v8a-3t-Y40" secondAttribute="trailing" id="4sL-2q-ze3"/>
                                     <constraint firstItem="XaP-Cu-nbv" firstAttribute="top" secondItem="JqT-Wy-2zF" secondAttribute="bottom" constant="32" id="4ye-hP-GfH"/>
                                     <constraint firstItem="XaP-Cu-nbv" firstAttribute="top" secondItem="zJU-cW-6t8" secondAttribute="top" constant="145" id="9Jk-6p-vEm"/>
                                     <constraint firstItem="XaP-Cu-nbv" firstAttribute="trailing" secondItem="JqT-Wy-2zF" secondAttribute="trailing" id="B1X-sh-acG"/>
-                                    <constraint firstItem="v8a-3t-Y40" firstAttribute="leading" secondItem="zJU-cW-6t8" secondAttribute="leading" id="Fwc-sx-eQt"/>
+                                    <constraint firstAttribute="bottom" secondItem="v8a-3t-Y40" secondAttribute="bottom" constant="53" id="Fno-Pa-NQ0"/>
                                     <constraint firstAttribute="trailing" secondItem="JqT-Wy-2zF" secondAttribute="trailing" id="HRG-uY-7Qs"/>
-                                    <constraint firstAttribute="bottom" secondItem="v8a-3t-Y40" secondAttribute="bottom" constant="84" id="NAL-Bv-SSt"/>
                                     <constraint firstItem="XaP-Cu-nbv" firstAttribute="leading" secondItem="JqT-Wy-2zF" secondAttribute="leading" id="PxP-kp-nIn"/>
                                     <constraint firstItem="JqT-Wy-2zF" firstAttribute="leading" secondItem="zJU-cW-6t8" secondAttribute="leading" id="Th3-Kb-4Nx"/>
+                                    <constraint firstItem="v8a-3t-Y40" firstAttribute="leading" secondItem="XaP-Cu-nbv" secondAttribute="leading" id="W70-DJ-zJW"/>
                                     <constraint firstItem="JqT-Wy-2zF" firstAttribute="top" secondItem="zJU-cW-6t8" secondAttribute="top" constant="32" id="dVc-Qx-9L6"/>
+                                    <constraint firstItem="v8a-3t-Y40" firstAttribute="trailing" secondItem="XaP-Cu-nbv" secondAttribute="trailing" id="fAT-Og-vbA"/>
                                     <constraint firstItem="PkV-0h-wV4" firstAttribute="leading" secondItem="zJU-cW-6t8" secondAttribute="leading" constant="20" id="v4e-Qr-Usp"/>
                                 </constraints>
                             </view>
@@ -160,6 +160,7 @@
                     <connections>
                         <outlet property="emailLbl" destination="2wg-gA-tlc" id="b82-Kr-Bys"/>
                         <outlet property="historyPicker" destination="rnS-ba-gWI" id="heE-dw-ELA"/>
+                        <outlet property="logoutBtn" destination="v8a-3t-Y40" id="CkV-o4-txI"/>
                         <outlet property="nameLbl" destination="ZPt-8w-Q0e" id="xkq-2A-WDt"/>
                         <outlet property="userProfileImg" destination="xSp-hz-qF9" id="6Ol-iS-vtw"/>
                     </connections>
