@@ -16,6 +16,9 @@ class SummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        summaryTableview.contentInset.top = 30
+        
+        
         summerizePurchases() { [weak self] (summerizedPurchases) in
             self?.summerizedPurchases = summerizedPurchases
             self?.summaryTableview.reloadData()
