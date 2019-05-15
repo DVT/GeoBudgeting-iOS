@@ -98,5 +98,37 @@ class FirebaseServices {
             }
         })
     }
-
+    
+    func fetchAllStoreAndPurchaseData(forUser userID: String, completion: @escaping ([Store]) -> Void) {
+        var allData: [Store] = [Store]()
+        let ref: DatabaseReference = Database.database().reference()
+        ref.child("receipts/\(userID)").observe(.value, with: {(datasnapshot) in
+            let storeChildren = datasnapshot.children
+            for storeChild in storeChildren {
+                let storeData: DataSnapshot = storeChild as! DataSnapshot
+                
+                var store = Store()
+                store.storeName = storeData.key
+                
+                if let storeValue = storeData.value as? [String: AnyObject] {
+                    var purcahses: [Purchase] = [Purchase]()
+                    let purchasesInfo = storeValue["date"]
+                    store.category = storeValue["category"] as! String
+                    for purchase in purchasesInfo! as! [String: Double] {
+                        let date = purchase.key
+                        let amount = purchase.value
+                        
+                        purcahses.append(Purchase(date: date, amount: amount))
+                    }
+                    
+                    store.purchases = purcahses
+                    allData.append(store)
+                }
+                
+            }
+            completion(allData)
+            
+            
+        })
+    }
 }
