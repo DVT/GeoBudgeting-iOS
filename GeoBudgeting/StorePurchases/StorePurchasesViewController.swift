@@ -54,7 +54,7 @@ extension StorePurchasesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.amountLabel.text = String(purchases[indexPath.item].amount)
+        cell.amountLabel.text = String(format: "R%.02f", purchases[indexPath.item].amount)
         let dateString: String = purchases[indexPath.item].date
         cell.dateLabel.text = fixDate(dateString: dateString)
         return cell

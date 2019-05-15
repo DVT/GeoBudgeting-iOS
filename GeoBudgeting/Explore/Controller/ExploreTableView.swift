@@ -121,7 +121,7 @@ class ExploreTableView: UITableViewController {
                                         
                                         
                                         if ((cell?.storeName?.text)?.lowercased() == title) {
-                                            let totalMoneySpent = String(format: "%g", amount)
+                                            let totalMoneySpent = String(format: "%.02f", amount)
                                             cell?.totalAmount?.text = "R" + String(totalMoneySpent)
                                         }
                                     }
