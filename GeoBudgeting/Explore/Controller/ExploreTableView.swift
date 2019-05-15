@@ -34,21 +34,46 @@ class ExploreTableView: UITableViewController {
                 for child in snapshot.children {
                     if let snapshot = child as? DataSnapshot,
                         let postItem = PostItem(snapshot: snapshot) {
-                        newItems.append(postItem)
+                        var withinPeriod = false
                         Database.database().reference().child("receipts/\(userID)").child(postItem.key).child("date").observeSingleEvent(of: .value) { datasnapshot in
                             if datasnapshot.exists() {
                                 for snap in datasnapshot.children.allObjects {
                                     if let snap = snap as? DataSnapshot {
                                         let date = snap.key
-                                        self.moneySpent = snap.value as! Double
-                                        self.dateArray.append(date)
+                                        let purchaseDate = self.getDateFromStamp(serverTimestamp: date)
+                                        let currentDate = Date()
+                                        let difference = currentDate.interval(ofComponent: .day, fromDate: purchaseDate)
                                         
+                                        let selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
+                                        var period = 0
+                                        switch selectedHistoryOptionIndex {
+                                        case 0: period = 30
+                                        case 1: period = 60
+                                        case 2: period = 90
+                                        default:
+                                            period = 0
+                                        }
+                                        
+                                        if difference <= period {
+                                            self.moneySpent = snap.value as! Double
+                                            self.dateArray.append(date)
+                                            withinPeriod = true
+                                        }
                                     }
+                                }
+                                if withinPeriod {
+                                    newItems.append(postItem)
                                 }
                                 self.items = newItems
                                 self.tableView.reloadData()
                             }}}}})
         }
+    }
+    
+    func getDateFromStamp(serverTimestamp: String) -> Date {
+        let time = Int(serverTimestamp) ?? 0 / 1000
+        let date = Date(timeIntervalSince1970: TimeInterval(time))
+        return date
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,10 +98,28 @@ class ExploreTableView: UITableViewController {
                                 var keyArray = [String]()
                                 for snap in datasnapshot.children.allObjects {
                                     if let snap = snap as? DataSnapshot {
-                                        let key = snap.key
-                                        let moneySpent = snap.value
-                                        amount += moneySpent as! Double
-                                        if ((cell?.storeName?.text)?.lowercased() == title){
+                                        let date = snap.key
+                                        let purchaseDate = self.getDateFromStamp(serverTimestamp: date)
+                                        let currentDate = Date()
+                                        let difference = currentDate.interval(ofComponent: .day, fromDate: purchaseDate)
+                                        
+                                        let selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
+                                        var period = 0
+                                        switch selectedHistoryOptionIndex {
+                                        case 0: period = 30
+                                        case 1: period = 60
+                                        case 2: period = 90
+                                        default:
+                                            period = 0
+                                        }
+                                        
+                                        if difference <= period {
+                                            let moneySpent = snap.value
+                                            amount += moneySpent as! Double
+                                        }
+                                        
+                                        
+                                        if ((cell?.storeName?.text)?.lowercased() == title) {
                                             let totalMoneySpent = String(format: "%g", amount)
                                             cell?.totalAmount?.text = "R" + String(totalMoneySpent)
                                         }

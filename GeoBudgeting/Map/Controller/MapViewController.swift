@@ -17,6 +17,18 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
     @IBOutlet weak var entertainmentButton: UIButton!
     @IBOutlet weak var shoppingButton: UIButton!
     @IBOutlet weak var hobbiesButton: UIButton!
+    @IBOutlet weak var transportButton: UIButton!
+    @IBOutlet weak var servicesButton: UIButton!
+    @IBOutlet weak var healthButton: UIButton!
+    @IBOutlet weak var financesButton: UIButton!
+    @IBOutlet weak var unknownButton: UIButton!
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var hoverLabel: UILabel!
     
     var buttonGroup: [UIButton] = []
@@ -31,7 +43,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
     //layouts and delegates
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonGroup = [foodButton, entertainmentButton, shoppingButton, hobbiesButton]
+        buttonGroup = [foodButton, entertainmentButton, shoppingButton, hobbiesButton, transportButton, healthButton, servicesButton, financesButton, unknownButton]
         setUpLocationManager()
         mapView.delegate = self
         search.searchTextView.delegate = self
@@ -56,19 +68,46 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
                             if datasnapshot.exists() {
                                 for snap in datasnapshot.children.allObjects {
                                     if let snap = snap as? DataSnapshot {
-                                        let key = snap.key
-                                        let moneySpent = snap.value
-                                        amountMarker += moneySpent as! Double
+                                        let timestamp = snap.key
+                                        let purchaseDate = self.getDateFromStamp(serverTimestamp: timestamp)
+                                        let currentDate = Date()
+                                        let difference = currentDate.interval(ofComponent: .day, fromDate: purchaseDate)
+                                        
+                                        let selectedHistoryOptionIndex = UserDefaults.standard.integer(forKey: "history")
+                                        var period = 0
+                                        
+                                        switch selectedHistoryOptionIndex {
+                                        case 0: period = 30
+                                        case 1: period = 60
+                                        case 2: period = 90
+                                        default:
+                                            period = 0
+                                        }
+                                        
+                                        if difference <= period {
+                                            let moneySpent = snap.value
+                                            amountMarker += moneySpent as! Double
+                                        }
+                                        
                                     }
                                 }
                             }
-                            self.showMarkers(title: titleMarker, amount: amountMarker, lat: latMarker, long: longMarker, categoryMarker : category)
+                            if amountMarker > 0 {
+                                 self.showMarkers(title: titleMarker, amount: amountMarker, lat: latMarker, long: longMarker, categoryMarker : category)
+                            }
                         }
                     }
                 }
             })
         }
     }
+    
+    func getDateFromStamp(serverTimestamp: String) -> Date {
+        let time = Int(serverTimestamp) ?? 0 / 1000
+        let date = Date(timeIntervalSince1970: TimeInterval(time))
+        return date
+    }
+    
     //location manager
     func setUpLocationManager() {
         locationManager.delegate = self
@@ -152,6 +191,61 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
             self.hoverLabel.isHidden = true
         }
     }
+    
+    @IBAction func applyTransportButton(_ sender: Any) {
+        showSelect(selectedIndex: 4)
+        hoverLabel.center.y = transportButton.center.y
+        hoverLabel.text = "Transport"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyHealthFilter(_ sender: Any) {
+        showSelect(selectedIndex: 5)
+        hoverLabel.center.y = healthButton.center.y
+        hoverLabel.text = "Health"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyServicesFilter(_ sender: Any) {
+        showSelect(selectedIndex: 6)
+        hoverLabel.center.y = servicesButton.center.y
+        hoverLabel.text = "Services"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyFinancesFilter(_ sender: Any) {
+        showSelect(selectedIndex: 7)
+        hoverLabel.center.y = financesButton.center.y
+        hoverLabel.text = "Finances"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
+    
+    @IBAction func applyUnknownFilter(_ sender: Any) {
+        showSelect(selectedIndex: 8)
+        hoverLabel.center.y = unknownButton.center.y
+        hoverLabel.text = "Unknown"
+        hoverLabel.isHidden = false
+        hoverLabel.sizeToFit()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.hoverLabel.isHidden = true
+        }
+    }
 }
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus ) {
@@ -178,6 +272,20 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
 }
+
+extension Date {
+    
+    func interval(ofComponent comp: Calendar.Component, fromDate date: Date) -> Int {
+        
+        let currentCalendar = Calendar.current
+        
+        guard let start = currentCalendar.ordinality(of: comp, in: .era, for: date) else { return 0 }
+        guard let end = currentCalendar.ordinality(of: comp, in: .era, for: self) else { return 0 }
+        
+        return end - start
+    }
+}
+
 //Search places
 extension MapViewController: GMSAutocompleteViewControllerDelegate {
     func textFieldShouldBeginEditing(_ searchTextView: UITextField) -> Bool {
@@ -371,4 +479,5 @@ extension MapViewController {
         return UIColor.gray
     }
 }
+
 
