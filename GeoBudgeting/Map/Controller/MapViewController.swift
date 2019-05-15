@@ -43,7 +43,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
     //layouts and delegates
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonGroup = [foodButton, entertainmentButton, shoppingButton, hobbiesButton, transportButton, healthButton, servicesButton, financesButton, unknownButton]
         setUpLocationManager()
         mapView.delegate = self
         search.searchTextView.delegate = self
@@ -147,105 +146,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, GMSMapViewDelega
             }
         }
     }
-    
-    @IBAction func applyFoodFilter(_ sender: Any) {
-        showSelect(selectedIndex: 0)
-        hoverLabel.center.y = foodButton.center.y
-        hoverLabel.text = "Food"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
-    
-    @IBAction func applyEntertainmentFilter(_ sender: Any) {
-        showSelect(selectedIndex: 1)
-        hoverLabel.center.y = entertainmentButton.center.y
-        hoverLabel.text = "Entertainment"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
-    
-    @IBAction func applyShoppingFilter(_ sender: Any) {
-        showSelect(selectedIndex: 2)
-        hoverLabel.center.y = shoppingButton.center.y
-        hoverLabel.text = "Shopping"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
-    
-    @IBAction func applyHobbiesFilter(_ sender: Any) {
-        showSelect(selectedIndex: 3)
-        hoverLabel.center.y = hobbiesButton.center.y
-        hoverLabel.text = "Hobbies"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
-    
-    @IBAction func applyTransportButton(_ sender: Any) {
-        showSelect(selectedIndex: 4)
-        hoverLabel.center.y = transportButton.center.y
-        hoverLabel.text = "Transport"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
-    
-    @IBAction func applyHealthFilter(_ sender: Any) {
-        showSelect(selectedIndex: 5)
-        hoverLabel.center.y = healthButton.center.y
-        hoverLabel.text = "Health"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
-    
-    @IBAction func applyServicesFilter(_ sender: Any) {
-        showSelect(selectedIndex: 6)
-        hoverLabel.center.y = servicesButton.center.y
-        hoverLabel.text = "Services"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
-    
-    @IBAction func applyFinancesFilter(_ sender: Any) {
-        showSelect(selectedIndex: 7)
-        hoverLabel.center.y = financesButton.center.y
-        hoverLabel.text = "Finances"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
-    
-    @IBAction func applyUnknownFilter(_ sender: Any) {
-        showSelect(selectedIndex: 8)
-        hoverLabel.center.y = unknownButton.center.y
-        hoverLabel.text = "Unknown"
-        hoverLabel.isHidden = false
-        hoverLabel.sizeToFit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hoverLabel.isHidden = true
-        }
-    }
 }
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus ) {
@@ -320,7 +220,7 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
     
 }
 extension MapViewController {
-    func showMarkers(title: String, amount: Double, lat: Double, long: Double, categoryMarker: UIColor) {
+    func showMarkers(title: String, amount: Double, lat: Double, long: Double, categoryMarker: UIImage) {
         var colorCategory : String!
         var infoCategory = ""
         let marker=GMSMarker()
@@ -336,7 +236,7 @@ extension MapViewController {
                     infoCategory = postItem.category
                     marker.title = infoTitle
                     marker.snippet = "R" + String(infoSnippet)
-                    marker.icon = GMSMarker.markerImage(with: categoryMarker)
+                    marker.icon = categoryMarker
                     marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                     marker.map = self.mapView
                 }
@@ -344,7 +244,7 @@ extension MapViewController {
             }
             })
     }
-    func getCategory(category: String) -> UIColor {
+    func getCategory(category: String) -> UIImage {
     let finances = [
         "Finances","finances","accounting","atm","bank"]
     let transport =
@@ -403,7 +303,7 @@ extension MapViewController {
         for items in finances
         {
             if items == category {
-                let color = UIColor.black
+                let color = UIImage(named: "Entertainment")!
                 return color
             }
             
@@ -413,7 +313,7 @@ extension MapViewController {
         for items in transport
         {
             if items == category {
-                let color = UIColor.orange
+                let color = UIImage(named: "Entertainment")!
                 return color
             }
             
@@ -423,7 +323,7 @@ extension MapViewController {
         for items in entertainment
         {
             if items == category {
-                let color = UIColor.purple
+                let color = UIImage(named: "Entertainment")!
                 return color
             }
 
@@ -433,7 +333,7 @@ extension MapViewController {
         for items in food
         {
             if items == category {
-                let color = UIColor.brown
+                let color = UIImage(named: "Food")!
                 return color
             }
 
@@ -443,7 +343,7 @@ extension MapViewController {
         for items in health
         {
             if items == category {
-                let color = UIColor.green
+                let color = UIImage(named: "Entertainment")!
                 return color
             }
             
@@ -452,7 +352,7 @@ extension MapViewController {
         for items in hobbies
         {
             if items == category {
-                let color = UIColor.white
+                let color = UIImage(named: "Entertainment")!
                 return color
             }
             
@@ -461,7 +361,7 @@ extension MapViewController {
         for items in services
         {
             if items == category {
-                let color = UIColor.yellow
+                let color = UIImage(named: "Entertainment")!
                 return color
             }
             
@@ -470,13 +370,13 @@ extension MapViewController {
         for items in shopping
         {
             if items == category {
-                let color = UIColor.blue
+                let color = UIImage(named: "Shopping")!
                 return color
             }
             
             currentIndex += 1
         }
-        return UIColor.gray
+        return UIImage(named: "Entertainment")!
     }
 }
 

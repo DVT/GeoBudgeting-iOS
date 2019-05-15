@@ -86,6 +86,14 @@ class ExploreTableView: UITableViewController {
         cell?.storeName?.text = postItem.key.capitalized
         cell?.category?.text = postItem.category
         
+        //If statements to set image here
+        
+        cell?.categoryImage.layer.borderWidth = 1
+        cell?.categoryImage.layer.masksToBounds = false
+        cell?.categoryImage.layer.borderColor = UIColor.black.cgColor
+        cell?.categoryImage.layer.cornerRadius = (cell?.categoryImage.frame.height)! / 2
+        cell?.categoryImage.clipsToBounds = true
+        
         if userID != "" {
             ref.observe(.value, with: { snapshot in
                 for child in snapshot.children {
@@ -120,7 +128,7 @@ class ExploreTableView: UITableViewController {
                                         
                                         
                                         if ((cell?.storeName?.text)?.lowercased() == title) {
-                                            let totalMoneySpent = String(format: "%g", amount)
+                                            let totalMoneySpent = String(format: "%.02f", amount)
                                             cell?.totalAmount?.text = "R" + String(totalMoneySpent)
                                         }
                                     }
