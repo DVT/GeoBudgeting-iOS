@@ -166,26 +166,3 @@ func convertTimestamp(serverTimestamp: String) -> String {
     return formatter.string(from: date as Date)
 }
 
-func summerizePurchases(completion: @escaping ([String: Double]) -> Void){
-    var purchasesSummary = [String: Double]()
-    FirebaseServices().fetchAllStoreAndPurchaseData(forUser: userID){allStoreData in
-        
-        for storeData in allStoreData {
-            
-            if purchasesSummary.index(forKey: storeData.category!) != nil {
-                var currentAmount: Double = purchasesSummary[storeData.category!] ?? 0
-                let storePurchases = storeData.purchases
-                let storePurchaseAmount = storePurchases?.map{$0.amount}.reduce(0, +)
-                currentAmount += storePurchaseAmount ?? 0
-                purchasesSummary[storeData.category!] = (currentAmount)
-                
-            } else {
-                let storePurchases = storeData.purchases
-                let storePurchaseAmount = storePurchases?.map{$0.amount}.reduce(0, +)
-                purchasesSummary[storeData.category!] = storePurchaseAmount
-            }
-        }
-        completion(purchasesSummary)
-    }
-}
-

@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 class SummaryCell: UITableViewCell {
+    @IBOutlet weak var CategoryLabel: UILabel!
     
+    @IBOutlet weak var amountLabel: UILabel!
 }
