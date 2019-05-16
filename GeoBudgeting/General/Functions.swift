@@ -89,8 +89,18 @@ func addTabs(tabIndex: Int, tabController: UITabBarController) {
         tabController.viewControllers?[tabIndex] = initialViewController
         tabController.selectedViewController = initialViewController
         
-        return
     case 3:
+//        let addItemStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let initialViewController = addItemStoryboard.instantiateViewController(withIdentifier: "SummaryViewController")
+//        initialViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+//        initialViewController.tabBarItem.image = UIImage(named: "Summary")
+//        initialViewController.tabBarItem.selectedImage = UIImage(named: "Summary")
+//        initialViewController.tabBarItem.title = "Summary"
+//        tabController.viewControllers?[tabIndex] = initialViewController
+//        tabController.selectedViewController = initialViewController
+        
+        return
+    case 4:
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
         let initialViewController = settingsStoryboard.instantiateViewController(withIdentifier: "Settings")
         initialViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
