@@ -23,8 +23,8 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="XMs-5G-2Rf"/>
                         <segue destination="dHI-RU-sfo" kind="relationship" relationship="viewControllers" id="bwx-Ee-jrc"/>
                         <segue destination="E1h-dh-Qkh" kind="relationship" relationship="viewControllers" id="wjP-Zk-7rd"/>
-                        <segue destination="mnQ-88-V4i" kind="relationship" relationship="viewControllers" id="u7H-w3-lKr"/>
                         <segue destination="Scr-dM-hft" kind="relationship" relationship="viewControllers" id="fzt-Mj-G0r"/>
+                        <segue destination="mnQ-88-V4i" kind="relationship" relationship="viewControllers" id="u7H-w3-lKr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7g-Gn-fUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,7 +135,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ2-CO-Pyr">
-                                                    <rect key="frame" x="307" y="29" width="87" height="17.5"/>
+                                                    <rect key="frame" x="268" y="29" width="87" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -409,7 +409,7 @@
         <!--Summary-->
         <scene sceneID="w6u-1C-uWl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Scr-dM-hft" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SummaryViewControllerNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Scr-dM-hft" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Summary" image="Summary" id="OPD-dD-hJ6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LMg-CI-3de">
