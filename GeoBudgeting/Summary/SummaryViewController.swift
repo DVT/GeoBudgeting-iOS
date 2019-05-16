@@ -15,6 +15,8 @@ class SummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        summaryTableview.contentInset.top = 30
 
         summerizePurchases() { [weak self] (summerizedPurchases) in
             self?.summerizedPurchases = summerizedPurchases
@@ -56,10 +58,27 @@ extension SummaryViewController: UITableViewDataSource {
             return SummaryCell()
         }
         
+        
         let categories = Array(summerizedPurchases.keys)
-        cell.CategoryLabel.text = categories[indexPath.item]
+        let category = categories[indexPath.item]
+        cell.CategoryLabel.text = category
         let amount = summerizedPurchases[categories[indexPath.item]]
         cell.amountLabel.text = String(format:"%.2f", amount ?? 0.0)
+        
+        //If statements to set image here
+        if category == "Food" {
+            cell.categoryImage.image = UIImage(named: "Food")
+        } else if category == "Shopping" {
+            cell.categoryImage.image = UIImage(named: "Shopping")
+        } else if category == "Entertainment" {
+            cell.categoryImage.image = UIImage(named: "Entertainment")
+        }
+        
+        cell.categoryImage.layer.borderWidth = 1
+        cell.categoryImage.layer.masksToBounds = false
+        cell.categoryImage.layer.borderColor = UIColor.black.cgColor
+        cell.categoryImage.layer.cornerRadius = (cell.categoryImage.frame.height) / 2
+        cell.categoryImage.clipsToBounds = true
         
         return cell
     }

@@ -13,4 +13,5 @@ class SummaryCell: UITableViewCell {
     @IBOutlet weak var CategoryLabel: UILabel!
     
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var categoryImage: UIImageView!
 }
