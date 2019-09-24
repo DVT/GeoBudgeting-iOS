@@ -1,0 +1,6 @@
+framework module Pods_GeoBudgeting {
+  umbrella header "Pods-GeoBudgeting-umbrella.h"
+
+  export *
+  module * { export * }
+}
